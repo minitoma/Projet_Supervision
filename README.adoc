@@ -1,4 +1,4 @@
 = Projet d'apprentissage de M1 Info
 Thomas Calatayud
 
-[grey]*Recherche, étude et mise en place d'une solution OpenSource de supervision.*
+[orange]*Recherche, étude et mise en place d'une solution OpenSource de supervision.*
