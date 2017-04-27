@@ -1,0 +1,7 @@
+= Projet d'apprentissage de M1 Info
+Thomas Calatayud
+
+[.text-center]
+****
+[red]_Recherche, étude et mise en place d'une solution OpenSource de supervision._
+****

@@ -1,0 +1,119 @@
+= Critères de séléctions
+v3.0
+:icons: font
+:check: icon:check[role="green"]
+:uncheck: icon:times[role="red"]
+
+****
+[red]_Regroupement des différents critères qui permettront de choisir la solution la plus adaptée._
+****
+
+---
+
+[horizontal]
+.Impératif
+Licences::
+    Avons nous accès à la version complète du produit ou une version réduite d'un produit commercial ? Accès aux dernières sources ? +
+    _Libre (type de Licence)/Limité/Commerciale - Sources accessible/Non accessible_
+
+Développement (Dernière update et date)::
+    Est-ce que le développement est actif ? +
+    _Actif/Inactif - Date et version de la dernière update_
+
+Communauté::
+    La communauté est active ? +
+    _Active/Inactive_
+
+Web API::
+    Interface personnalisable ? Configuration depuis l'interface ? ... +
+    {check}/{uncheck} _- Personnalisable/Non personnalisable_
+
+OS supportés::
+    _Windows/Linux_
+
+Triggers/Alerts::
+    Remonter des alertes quand il le faut et déclencher des évènements pour réagir en fonction. +
+    {check}/{uncheck} _- sms/mail/jabber/slack/IRC/..._
+
+Agentless::
+    Est-il possible de superviser une plateforme sans installer l'agent ? Si oui par quels moyens ? (SSH, Telnet, NRPE, TCP, ICMP,...) +
+    {check}/{uncheck} _- SSH/Telnet/NRPE/TCP/ICMP/..._
+
+SNMP ( Simple Network Management Protocol )::
+    Supervision de la plupart des équipements : switch, firewall, routeurs, UPS,... +
+    {check}/{uncheck}
+
+---
+
+[horizontal]
+.Souhaitable
+Supervision distribuée (scalability)::
+    Autoriser l'environement à s'élargir et à superviser des infrastructures plus larges. Superviser plusieurs sites avec une seule installation. +
+    {check}/{uncheck}
+
+Configuration::
+    Méthode de configuration, depuis la console via des fichier de configuration ? Depuis une API ? Configuration simple, rapide ? +
+    _Fichiers(type de fichiers) - CLI/API_
+
+Plugins::
+    Possibilité de rajouter des plugins existants ou de creer les siens ? +
+    {check}/{uncheck} _- nagios/personnels/autres_
+
+Compatibilité nagios::
+    Peut-on rapidement remettre en place le système déjà présent ou faut-il repartir de zéro ? +
+    {check}/{uncheck}
+
+Gestion des utilisateurs::
+    Permet de créer et de gérer des utilisateurs. Donner certains droits à certains utilisateurs. +
+    {check}/{uncheck}
+
+---
+
+[horizontal]
+.Bonus
+Graphiques et visualisation::
+    Rendu des données récoltés pour avoir un apperçu global de ce que l'on supervise. +
+    {check}/{uncheck} _- Intégrés/Importés_
+
+Installation::
+    Installation simple ? Rapide ? Plusieurs modules à installer ? +
+    _Simple/Laborieuse/Rapide/Longue/AIO/Modulable_
+
+Application Mobile::
+    Recevoir les alertes sur son téléphone. +
+    {check}/{uncheck}
+
+Support::
+    Support des développeurs ? +
+    _Actif/Inactif - Payant/Gratuit_
+
+Trend prediction::
+    Regarde comment l'infrastructure s'est comportée au fil du temps et essais de prédire comment elle risque de se comporter dans le futur. Pour prédire et éventuellement résoudre les problèmes avant qu'ils ne soient réellement des problèmes. +
+    {check}/{uncheck}
+
+Découverte automatique (Auto Discovery)::
+    Rajoute automatiquement dans le système les nouveaux équipements qui ont été ajouté au réseau. +
+    {check}/{uncheck}
+
+Syslog::
+    Gestion des logs ? +
+    {check}/{uncheck}
+
+Isolement/Détection des problèmes::
+    Identifier la réelle source du problème. +
+    {check}/{uncheck}
+
+Desktop API::
+    Eviter de passer par un explorateur internet. +
+    {check}/{uncheck}
+
+Langages utilisés::
+    Quel langage est utilisé ? +
+    _Python/C/java/..._
+
+Methode de stockage des données::
+    _MySQL/PostgreSQL/RRDTool/Oracle/..._
+
+Map du réseau::
+    Aperçu du réseau. +
+    {check}/{uncheck}

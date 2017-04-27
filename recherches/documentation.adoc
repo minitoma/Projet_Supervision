@@ -1,0 +1,85 @@
+Documentation diverse concernant les différentes solutions de supervision
+=========================================================================
+
+[NOTE]
+====
+link:inventoring.adoc[Inventaire des solutions]
+
+link:../nagios-2/config.adoc[Nagios-2 Config]
+====
+
+.Brève présentation de ce qu'est la supervision avec quelques éxemples d'outils.
+
+* https://wiki.monitoring-fr.org/supervision/start#supervision
+* https://doc.ubuntu-fr.org/supervision
+* http://linuxfr.org/sections/supervision
+* http://igm.univ-mlv.fr/~dr/XPOSE2010/supervision/
+* https://www.fr.paessler.com/how-to-choose-the-right-network-monitoring-solution
+* https://fr.wikipedia.org/wiki/Supervision_(informatique)
+* https://www.supinfo.com/articles/single/3124-comparaison-outils-supervison
+* https://www.supinfo.com/articles/single/2789-monitoring-supervision
+* http://www.monitortools.com/
+* https://www.opsview.com/it-monitoring-sysadmins
+* https://prezi.com/hg59kfkm-wka/solutions-de-monitoring/
+* http://alternativeto.net/software/nagios/
+* *https://github.com/crazy-canux/awesome-monitoring*
+* http://www.formation-it.com/2016/08/les-solutions-de-supervision-open-source.html
+
+[IMPORTANT]
+.*TABLEAU COMPARATIF et Listes :* 
+=====
+https://en.wikipedia.org/wiki/Comparison_of_network_monitoring_systems +
+https://github.com/monitoringsucks/tool-repos +
+*https://wiki.monitoring-fr.org/supervision/links*
+
+
+.Importantes features d'un système de supervision
+*http://searchnetworking.techtarget.com/feature/Essential-network-monitoring-system-features-for-the-enterprise*
+=====
+
+.Site majeur de la communauté francophone de la supervision libre.
+
+* https://www.monitoring-fr.org/
+
+.Discussion sur Nagios.
+
+* http://www.lolokai.com/blog/2014/05/06/la-supervision-open-source-pourquoi-jai-laisse-de-cote-nagios/
+* https://www.monitoring-fr.org/2014/03/supervision-un-avenir-sans-nagios/
+
+.Comparaison Nagios / Icinga2 / Sensu.
+
+* http://phillbarber.blogspot.fr/2015/03/nagios-vs-sensu-vs-icinga2.html
+
+.Comparaison Nagios / Shinken (Shinken docs).
+  
+* http://shinken.readthedocs.io/en/2.2/01_about/whatsnew.html
+
+.Comparaison Shinken / Sensu / Icinga2 / Zabbix
+* https://terrty.net/2016/shinken-vs-sensu-vs-icinga2-vs-zabbix/
+
+.Liste et Comparatif
+* http://network-management.softwareinsider.com/
+
+.Présentation de plusieurs solution
+* *http://www.o00o.org/monitoring/solutions.html*
+
+.Talk about icinga, nagios, observium, zabbix, Zenoss
+* http://blog.capterra.com/top-open-source-free-network-monitoring-software/
+
+.Centreon Icinga2
+* https://www.systemcodegeeks.com/monitoring/nagios/nagios-alternatives-centreon-icinga/
+
+.Comparaison
+* http://bestreviews2017.com/best-nagios-alternatives-2017/
+
+.Nagios
+* https://www.1and1.fr/digitalguide/serveur/outils/nagios-une-vue-densemble-des-systemes-et-reseaux/
+
+.OMD
+* http://blog.unicsolution.com/2013/11/best-monitoring-solution-omd-nagios.html
+
+.SNMP
+* https://wiki.monitoring-fr.org/supervision/snmp
+
+.Option
+* https://www.futurehosting.com/blog/open-source-server-monitoring-what-are-your-options/

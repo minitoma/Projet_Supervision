@@ -1,0 +1,493 @@
+Inventaire des solutions libres/Open-Sources de Supervision
+===========================================================
+
+[NOTE]
+====
+link:documentation.adoc[Documentation] 
+
+link:../nagios-2/config.adoc[Nagios-2 Config]
+====
+
+[cols="2,5a",options="header"]
+|===
+|solutions
+|commentaires
+
+| https://www.nagios.org/[Nagios]
+| 
+    * Nagios...
+    * https://www.nagios.org/projects/nagios-core/history/4x/[Changelog]
+    * Dernière update : v4.3.1 - 2017-02-23
+
+| https://mathias-kettner.com/check_mk.html[*check_mk*]
+| 
+[[check_mk]]
+.utilisable sur Nagios et ses compères
+    * Service de reconnaissance et automatisation des configurations
+    * Livestatus (états des services et hotes en direct)
+    * Multisite Web-GUI http://demo.mathias-kettner.de/demo/check_mk/index.py?start_url=%2Fdemo%2Fcheck_mk%2Fdashboard.py[Demo (demo663/demo)] 
+    * Outils d'administration web
+    * Système de notifications personalisées
+    * Console d'évenements
+    * Application mobile
+    * Business Intelligence 
+    * Dernière update (stable): v1.2.8
+    * Mailing List
+    * https://mathias-kettner.com/check_mk_werks.php?HTML=yes[Dernière update de developpement : 1.5.0 - 2017-04-12]
+
+| http://www.fullyautomatednagios.org/download/[FAN(Fully Automated Nagios)]
+|
+    * Dernière update : v2.4 - 2013-03-14
+
+| http://www.openqrm-enterprise.com/index.html[OpenQRM]
+| 
+
+| http://www.zabbix.com/[*Zabbix*]
+| 
+[[zabbix]]
+    * Prise en main très simple
+    * Découverte automatique de service
+    * https://wiki.monitoring-fr.org/zabbix/zabbix-use[configuration] possible entièrement depuis l'interface Web à base d'hotes, groupes et templates
+    * Visualisation de graphiques
+    * Interface configurable et simple d'utilisation mais non extensible
+    * Communauté active
+    * Dernière Update : v3.2.4 - 2017-02-27
+    * https://zabbix.org/zabbix/zabbix.php?action=dashboard.view[Demo]
+
+| https://www.opennms.org/en[OpenNMS]
+|
+
+| https://www.alienvault.com/products/ossim[AlienVault OSSIM]
+|
+
+| https://sourceforge.net/projects/gulfsoft/[OpenESM]
+|
+
+| http://www.jffnms.org/[JFFNMS]
+|
+
+| http://argus.tcp4me.com/[Argus]
+|
+
+| http://dimitrik.free.fr/blog/[dimStat]
+|
+
+| http://www.snag-view.de/[SnagView]
+|
+
+| http://www.bartlby.org/Bartlby/index.php[Bartlby]
+|
+
+| https://my.vmware.com/en/web/vmware/info/slug/infrastructure_operations_management/vmware_vrealize_hyperic/5_8#open_source[vRealize Hyperic]
+|
+
+| http://moodss.sourceforge.net/[moodss]
+|
+
+| http://www.monitorix.org/[Monitorix]
+|
+
+| https://www.netxms.org/[NetXMS]
+|
+    * Deploiement rapide et simple configuration
+    * Découverte de réseau automatique
+    * Support des pluggins Nagios
+    * GUI Windows et Unix customisable simplement (pas de Web-GUI)
+
+| http://xymon.sourceforge.net/[Xymon]
+| 
+
+| http://www.shinken-monitoring.org/[Shinken]
+|
+    * Garde la configuration de nagios et ses plugins
+    * Python
+    * Semble mourir - Dernière update : 2.4.3 - 2015 ?
+
+
+| http://www.alignak.net/[*Alignak*]
+|
+[[alignak]]
+    * Application Bureau pour Windows et Linux et Web-GUI(Configurable)
+    * Configuration depuis l'interface Web
+    * Intègration TSDB(Time Series Data Base), GRAPHANA
+    * http://demo.alignak.net/livestate[Demo (admin/admin)]
+    * Nagios feature
+    * Très bonne documentation et developpement récent et actif
+
+| https://www.centreon.com/fr/[*Centreon*]
+| 
+[[centreon]]
+    * https://demo.centreon.com/centreon/main.php[Demo (admin/centreon)]
+    * Basé sur le système Nagios mais a refait entièrement son propre moteur
+    * Configuration et utilisation très simple depuis l'interface web
+    * Web-GUI très complète
+    * Communauté active
+    * https://www.centreon.com/fr/solution/centreon-solution-monitoring/[Features]
+    * Dernière Update : v3.4.1 - 2017-01-30
+
+| https://sensuapp.org/[*Sensu*]
+|
+[[sensu]]
+    * https://www.uchiwa.io/#/[Uchiwa Web-GUI pour sensu] 
+    * https://sensuapp.org/docs/latest/overview/what-is-sensu.html[Overview]
+    * système de subscribers pour les checks
+    * configuration via des fichiers JSON
+    * Compatible avec les plugins Nagios
+    * https://buzut.fr/collecter-grapher-metriques-serveurs-grafana/[Graphiques]
+    * https://sensuapp.org/support#community-support[Community Support] 
+    * Dernière Update : v0.29 - 2017-04-07
+
+| https://www.icinga.com/[*Icinga2*]
+|
+[[icinga]]
+    * Ultra modulable (graphana,nagVis,...)
+    * Configurable via l'interface Web
+    * Configuration basé sur le principe Objet
+    * Bonne documentation
+    * https://www.icinga.com/community/get-involved/[Communauté] active
+    * https://www.icinga.com/products/icinga-2/features/[Features]
+    * https://www.icinga.com/demo/dashboard[Demo - demo/demo]
+    * Dernière update : v2.6.3 - 2017-03-29
+
+| http://www.naemon.org/[*Naemon*]
+|
+[[naemon]]
+    * http://thruk.org/[Thruk Web-GUI]
+    * http://mathias-kettner.com/checkmk_livestatus.html[livestatus à rajouter]
+    * https://www.naemonbox.com/fr/supervision-dentreprise-avec-naemonbox/[Description en français]
+    * En plein développement
+    * https://demo.thruk.org/thruk/cgi-bin/login.cgi[Demo]
+    * Ecrit en C
+    * Découverte automatique des hotes
+    * Outil de configuration des hotes/services depuis l'interface
+    * Graphiques
+    * Templates
+    * Supporte de nombreux protocoles pour la supervision sans agents ( TCP, SNMP, SSH, TELNET, NRPE, SQL …) 
+    * Dernière update : v1.0.6 - 2017-01-23
+
+| http://www.observium.org/[*Observium*]
+|
+    * http://demo.observium.org/[Demo - demo/demo]
+    * Rapide à mettre en place et simple d'utilisation
+    * SNMP seulement
+    * Configuration des devices/modules/graphiques/alertes depuis l'interface web
+    * Supervision limité, moins poussée(impossible de creer ses propre check)
+    * Update tous les 6 mois, dernière update : v0.16.10 - 2016-10-26
+
+| https://www.zenoss.com/[zenoss]
+|
+    * Seulement 1000 devices pour la solution open-source(https://www.zenoss.com/product/platform-overview[Zenoss Core]
+    * Web-GUI configurable
+    * Découverte automatique des devices
+    * Efficace pour les réseaux statiques qui ne s'agrandissent pas
+    
+| https://www.nedi.ch/[NeDi]
+|
+    * La dernière update devient open-source dès qu'une nouvelle sort (prochaine update 1.7 ce printemps) donc solution en plein développement 
+    * Dernière update (open-source) : v1.5 - 2016-10-03
+
+| http://www.ntop.org/[ntop]
+|
+    * Supervision réseau principalement
+
+| https://www.eyesofnetwork.com/?lang=fr[*Eyes Of Network*]
+|
+    * Utilise le système Nagio en plus de nombreux autres outils packagés
+    * Configuration depuis l'interface web
+    * Génération automatique de graphique PnP
+    * Interface Web de définition des processus métiers
+    * Dernière update : v5.1 - 2017-02-26
+
+| https://www.gwos.com/[GroundWork]
+|
+    * Limite de 50 devices pour la version open-source
+    * Utilise le système Icinga et de nombreux autres outils packagés
+    * Intégration NetApp
+    * Découverte automatique du réseau
+    * Configuration depuis l'interface Web
+    * Customisation du panneau de contrôle
+    * Graphiques
+    * Dernière update : v7.1.1 - 2016-12-19
+
+| https://www.elastic.co/products/x-pack[elastic/x-pack]
+|
+    * Supervision du système Elastic Search
+    * Dernière update : v5.2.2 - 2017-02-28
+
+| https://pandorafms.org/en/features/monitoring-software/[pandoraFMS]
+|
+[[pandoraFMS]]
+    * Supervision réseaux, serveurs, applications, matériel en réseau
+    * Graphiques customisés
+    * https://pandorafms.org/en/features/features/[Features]
+    * Nagios plugins supportés
+    * Création de rapport html,pdf et xml
+    * Configuration poussée des alertes
+    * Panneau de contrôle customisable
+    * Découverte automatique des devices
+    * Configuration simple via l'interface Web
+    * Dernière update : v7.0 NG - 2017-03-28
+
+| https://www.vigilo-nms.com/en/home-page/[vigilo-nms]
+|
+    * Supervision basé sur le système Nagios -> offre donc tous les outils disponible avec Nagios
+    * Gestion de Vigilo entièrement depuis l'interface Web légère 
+    * Très efficace pour les très large réseaux
+    * Gestion des services métiers
+    * https://www.vigilo-nms.com/home/communaute/telechargement/[Plus de sources ?] https://www.vigilo-nms.org/[ et communauté vide ?]
+
+| http://ganglia.info/[Ganglia]
+|
+    * Supervision d'un groupe de serveur qui effectuent les mêmes taches
+    * Principalement les mêmes fonctionnalité que graphana qui semble mieu suivi et plus actif
+    * Dernière update : v3.7.2 - 2016-06-04
+
+| https://nicolargo.github.io/glances/[*Glances*]
+|
+    * Python
+    * Web GUI, API bureau et mobile
+    * https://github.com/nicolargo/glances/tree/master/docs[Sources GitHub]
+    * Dernière Update : v2.9.1 - 2017-03-29 
+
+| http://www.galipe.net/articles/darkstat-monitoring-trafic-reseau-bande-passante/[Darkstat]
+|
+    * Supervision simple et peu gourmande
+    * Statistique de base
+
+| http://www.rudder-project.org/site/[rudder]
+|
+    * https://demo.rudder-project.org/[Demo]
+    * Outils de configuration automatique de serveur
+    * Ready-to-use
+    * Dernière update : v4.0.3 - 2017-02-20
+
+| http://ezservermonitor.com/[eSM]
+|
+    * Interface Web et sh
+    * Dernière update : v2.5 - 2015-09-18
+
+| http://rhq-project.github.io/rhq/[RHQ]
+|
+    * https://github.com/rhq-project/rhq[Projet GitHub]
+    * Découverte automatique
+    * https://docs.jboss.org/author/display/RHQ/Features[Features]
+    * Dernière update : v4.13 - 2014-12-05
+
+| http://www.perfwatcher.org/[perfwatcher]
+|
+
+| http://nmon.sourceforge.net/pmwiki.php[nmon]
+|
+    * Permet de voir en console les importantes informations concernant les performances
+
+| http://monalisa.cacr.caltech.edu/monalisa.htm[MonALISA]
+|
+    * Découvertes des services et applications
+    * Supervise les noeuds d'ordinateur et clusters, les réseaux, les services, les systèmes
+    * Graphiques
+    * Dernière update : v14.06.05 - 2014-06-16
+
+| http://gnetwatch.sourceforge.net/[GNetWatch]
+|
+
+| http://www.torrus.org/[Torrus]
+|
+
+| http://pikt.org/pikt/index.html[PIKT]
+| 
+
+| https://nav.uninett.no/[NAV]
+| Supervision réseau 
+
+| http://www.storageim.com/[StorageIM]
+| Monitoring du stockage réseau
+
+| http://www.centerity.com/[Centerity]
+|
+    * Version Demo de 30 jours
+    * Configuration depuis l'interface Web
+    * Supervision flexible et modulable
+    * 100aine d'hotes et services prédéfinis, Tous les devices connecté au réseau capable d'être analysé directement ou indirectement
+    * Graphiques
+    * http://www.centerity.com/standard-edition/overview/[Features] 
+
+| https://www.spiceworks.com/[SpiceWorks]
+|
+[[spiceworks]]
+    * Tableau de bord dynamique
+    * Supervision SNMP, SSH, WMI
+    * Supervision et gestion des services
+    * Support gratuit !
+    * Alertes ajustables 
+    * Plusieurs outils à installer
+    * Application mobile
+    * Dernière update stable : v1.4.00268 - 2017-02-10(rollback depuis la version 1.5)
+
+| https://sourceforge.net/projects/athene/[Athene]
+|
+
+| https://kb.nocproject.org/display/SITE/NOC[NOC]
+|
+
+| http://opensmart.sourceforge.net/index.php/overview[OpenSmart]
+|
+    * http://opensmart.sourceforge.net/index.php/features[Features]
+
+| https://labs.omniti.com/labs/reconnoiter[Reconnoiter]
+|
+
+| http://pastmon.sourceforge.net/wp/[PasTmon]
+|
+
+| http://flapjack.io/[flapjack]
+|
+    * Surcouche pour le système d'alertes
+
+| http://java-monitor.com/forum/welcome.php[Java Monitor]
+| 
+    * Supervision des JVM Tomcat, Glassfish, JBoss, Jetty et Openfire
+
+| http://godrb.com/[GOD]
+|
+    * Fichier de configuration écris en Ruby 
+
+| http://riemann.io/[Riemann]
+|
+    * Supervise CPU, services, mémoire, Disques, ...
+    * Dernière update : v0.2.12 - 2016-12-06
+
+| http://www.e-contract.be/sites/jwatchdog/[jwatchdog]
+|
+
+| https://opmantek.com/network-management-system-nmis/[NMIS]
+|
+
+| http://nino.sourceforge.net/nino/index.html[NINO]
+|
+
+| http://custos.edoceo.com/[Custos]
+|
+
+| https://www.op5.com/op5-monitor/[*OP5*]
+| 
+    * https://demo.op5.com/monitor/index.php/tac/index/23[Demo]
+    * https://www.op5.com/features/[Features]
+    * Tableau de bord ENTIEREMENT customisable
+    * Configuration depuis l'interface Web
+    * Application Mobile
+    * Full REST API
+    * Supervision des performances, snmp
+    * Graphes, objets,...
+    * 20 devices max pour la version open-surce
+
+| https://www.consul.io/[*Consul*]
+|
+    * Découverte de services
+    * https://demo.consul.io/ui/[demo]
+    * Dernière update : v0.8.0 - 2017-04-05
+
+| https://www.paessler.com/prtg[PRTG Monitor]
+|
+    * Découverte automatique du réseau
+    * SNMP WMI SSH
+    * Performance
+    * Mobile application
+    * 100 sondes pour la version freeware
+    * Denière update : v17.1.29 - 2017-02-27
+
+| https://mmonit.com/monit/[Monit]
+|
+    * Proactive supervision
+    * Performance, fichiers, services
+    * Application Mobile
+    * Seulement pour les système Unix
+    * Dernière update : v5.21.0 - 2017-03-07
+
+| http://my-netdata.io/[NetData]
+|
+    * https://github.com/firehol/netdata[GitHub]
+    * http://london.my-netdata.io/[Demo]
+
+| https://www.opsview.com/products/opsview-atom[OPSView Atom]
+|
+    * Limité à 25 hotes
+
+| http://omdistro.org/[*OMD*]
+|   
+[[omd]]
+.Package
+    * Nagios/Icinga/Naemon coeur
+    * Basé sur le plugin check_mk
+    * Installation complète simple
+    * https://labs.consol.de/omd/[Features]
+    * Nagios/Icinga2/Naemon
+    * Thruk Web-GUI
+    * Graphiques : PNP4Nagios, Grafana,...
+    * Plugins Nagios
+    * https://github.com/ConSol/omd/tree/labs[GitHub]
+    * Développement Actif
+    * https://github.com/ConSol/omd/blob/labs/Changelog[Changelog]
+    * Dernière update : v2.20 - 2016-11-18 (Prochaine en Mai)
+
+| https://prometheus.io/[Prometheus]
+|
+[[prometheus]]
+    * https://prometheus.io/docs/introduction/overview/[Features]
+    * Web-GUI avec tableau de bord configurable
+    * Graphana
+    * https://github.com/prometheus/prometheus[GitHub]
+    * http://demo.robustperception.io:9090/consoles/index.html[demo]
+    * Développement récent et actif ainsi que sa communauté
+    * SNMP
+    * Dernière update : v1.5.2 - 2017-02-10
+
+| http://www.sysdig.org/[Sysdig]
+| 
+    * Performances
+
+|===
+
+== Outils
+- http://www.cacti.net/[Cacti]
+- http://munin-monitoring.org/[Munin]
+- http://oss.oetiker.ch/rrdtool/[RRDtool]
+- http://oss.oetiker.ch/mrtg/[MRTG]
+- http://cricket.sourceforge.net/[Cricket]
+- http://www.netmrg.net/[NetMRG]
+- http://pcp.io/index.html[Performance Co-Pilo]
+
+- https://github.com/op5/ninja[*Ninja GUI(Nagios/Naemon)*]
+- http://flapjack.io/[*flapjackp (Surcouche pour le système d'alertes)*]
+
+
+
+- http://freecode.com/projects/openpom[openpom(web interface - Nagios)]
+- https://www.thruk.org/[Thruk - Nagios/icinga/Shinken/Naemon - interface]
+- http://realopinsight.com/[RealOpInsight(Dashboard)]
+- https://www.monitoring-fr.org/2015/03/kaji-la-supervision-dun-nouveau-genre/[kaji(nagios/shinken)]
+- https://www.monitoring-fr.org/2013/06/adagios-nouvelle-console-administration-nagios/[adagio(nagios)]
+- http://docs.pnp4nagios.org/pnp-0.6/install[PNP4Nagios]
+
+== Hypervision
+- http://www.canopsis.org/[Canopsis]
+
+Solutions envisageables
+=======================
+
+*A voir*
+====
+- [ ] <<check_mk, *Check_mk*>>
+- [ ] <<omd, *OMD*>> (Package Check_mk)
+- [x] <<zabbix, Zabbix>>
+- [x] <<alignak, *Alignak*>>
+- [ ] <<sensu, *Sensu*>>
+- [x] <<icinga, *Icinga2*>>
+- [x] <<centreon, *Centreon*>>
+- [ ] <<naemon, *Naemon*>>
+- [ ] <<pandoraFMS, PandoraFMS>>
+- [ ] <<spiceworks, SpiceWorks>>
+====
+
+.Voir éventuellement
+    - flapjack
+    - Ninja GUI

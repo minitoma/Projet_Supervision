@@ -1,0 +1,189 @@
+Configurations du nagios-2
+==========================
+
+[NOTE]
+====
+link:../recherches/inventoring.adoc[Inventaire des solutions]
+
+link:../recherches/documentation.adoc[Documentation]
+====
+
+./usr/local/etc/nagios
+
+* Novell
+* NT (Windows)
+* Linux
+* Switch
+* Router
+* Printer
+* Oracle
+* Tomcat
+* Aix (IBM Unix system)
+* SQL
+* Horus ?
+* Phones
+* Onduleurs
+* senturion ?
+
+
+=== cg49-objects/checkcommands.cfg
+
+* check_tcp (transmission control protocol)
+* check_udp (user datagram protocol)
+* check_ftp (file transfert protocol)
+* check_pop (post office protocol)
+* check_smtp (simple mail transfert protocol)
+* check_nntp (network news transfert protocol)
+* check_http
+* check_telnet (telecomunication protocol)
+* check_ping
+* check_fping
+* check_dns
+* check_hpjd (imprimante)
+* check_local_disk
+* check_local_users
+* check_local_load
+* check_tomcat
+* check_tomcat_arg
+* check_web_site
+* check_ldap (lightweight directory access protocol)
+* check_web_url
+* check_http_url
+
+---
+
+* check-host-alive
+* check_nrpe (nagios remote plugin executor)
+* check_nrpe_ssl (secure socket layer)
+* check_nrpe_1
+* check_nrpe_1_ssl
+* check_nrpe_p
+* check_nrpe_p_ssl
+* check_nrpe_p5_ssl
+* check_nrpe_p7
+* check_nrpe_p7_ssl
+
+---
+
+* check_sqlbackup
+* check_nt_serv
+* check_nt_serv_sql1
+* check_nt_disk
+* check_nt_mem
+* check_nt_cpu
+* check_tbs (oracle tablespace)
+* check_temptbs (temporary oracle tablespace)
+* check_tbsae (oracle tablespace autoextend)
+
+---
+
+* check_xen_vm
+* check_sensatronics
+
+---
+
+* check_liebert_charge (onduleurs)
+* check_liebert_current
+* check_liebert_voltage
+* check_liebert_time
+* check_apc
+* check_nut
+
+---
+
+* check_snmp (simple network manager protocol)
+
+---
+
+* CheckDriveSize (nsclient)
+* CheckVirtMem
+* CheckCpu
+* CheckServiceState
+* CheckOpenmanage
+* Check2minTimeout
+* CheckWindowsTime
+* CheckWinDisk
+
+---
+
+* check_na_faileddisks (NetApp)
+* check_na_temp
+* check_na_fan
+* check_na_ps
+* check_na_nvram
+* check_na_shelf
+* check_na_global
+* check_na_diskused
+* check_snapmirror
+* check_pcvweb 
+* check_prodige 
+* check_liebert_batteryStatus (onduleur)
+* check_liebert_batterySeconds
+* check_liebert_batteryTemperature
+* check_liebert_inputLineBads
+* check_liebert_outputLoadPercent
+* check_liebert_alarmCount
+* check_borne_controller
+* check_nwc_health_cpu 
+* check_nwc_health_memory
+* check_nwc_health_hardware
+* check_switch_module
+* check_interfacetable
+* check_iftraffic
+* check_printer
+* check_ovirt
+
+
+=== /usr/local/libexec/nagios
+
+* check-netapp-ng
+* check-snapmirror
+* check_apt
+* check_breeze
+* check_by_ssh
+* check_clamd
+* check_cluster
+* check_dhcp
+* check_dig
+* check_disk_smb
+* check_dummy
+* check_esx
+* check_file_age
+* check_file_content
+* check_flexlm
+* check_idrac_ipmi
+* check_ifoperstatus
+* check_ifstatus
+* check_iftraffic3
+* check_imap
+* check_interface_table_v3t
+* check_ircd
+* check_jabber
+* check_ldaps
+* check_load
+* check_log
+* check_mailq
+* check_mrtg
+* check_mrtgtraf
+* check_msm_controller
+* check_nagios
+* check_netbackup
+* check_ntp_peer
+* check_ora
+* check_oracle
+* check_overcr
+* check_printer
+* check_procs
+* check_real
+* check_rpc
+* check_sensors
+* check_senturion
+* check_simap
+* check_smtp
+* check_snmp_printer
+* check_spop
+* check_swap
+* check_time
+* check_ups
+* check_wave
+
