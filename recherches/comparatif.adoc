@@ -4,7 +4,6 @@
 :almost: icon:check[role="yellow", size="2x"]
 :uncheck: icon:times[role="red", size="2x"]
 :question: icon:question[role="blue", size="2x"]
-:page-layout: landscape
 
 {check} : Possible +
 {uncheck} : Impossible +
