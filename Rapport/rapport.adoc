@@ -225,14 +225,14 @@ http://asciidoctor.org/docs/user-manual/#tables
 * [x] Projet saeir, nouvelle salle avec création d'un ovirt suivi de la mise en place de son nagios.
 * [x] Intervention Lavoisier montage des baies de stockage.
 * [x] Recherche des outils de supervision
-    - [x] link:PROJET_SUPERVISION/recherches/documentation.adoc[Documentation]
-    - [x] link:PROJET_SUPERVISION/recherches/inventoring.adoc[Inventaire]
+    - [x] link:../recherches/documentation.adoc[Documentation]
+    - [x] link:../recherches/inventoring.adoc[Inventaire]
 * [x] Etude du système Nagios actuellement installé.
     - [x] Reconnaissance des hotes et services supervisés
-    - [x] Liste des sondes, checks installés (link:PROJET_SUPERVISION/nagios-2/config.adoc[Configuration])
+    - [x] Liste des sondes, checks installés (link:../nagios-2/config.adoc[Configuration])
 * [ ] Etude des solutions envisageables
-    - [x] Identification des critères de sélection (link:PROJET_SUPERVISION/recherches/criteres.adoc[Critères])
-    - [ ] Tableau comparatif des solutions/critères (link:PROJET_SUPERVION/recherches/comparatif.ado[Comparatif])
+    - [x] Identification des critères de sélection (link:../recherches/criteres.adoc[Critères])
+    - [ ] Tableau comparatif des solutions/critères (link:../recherches/comparatif.ado[Comparatif])
 * [ ] Proposition des solutions envisageable
 * [ ] Mise en place de la solution retenue
 ====
