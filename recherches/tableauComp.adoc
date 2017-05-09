@@ -21,7 +21,7 @@
 |{check} 
 {set:cellbgcolor:#00FF00}
 |GPL
-{set:cellbgcolor:#FF6600}
+{set:cellbgcolor:#FF8800}
 |Windows - Linux 
 {set:cellbgcolor:#00FF00}
 |Fichiers cfg - CLI 
@@ -31,13 +31,13 @@
 |{check}
 {set:cellbgcolor:#00FF00}
 |{check} - Non personnalisable directement 
-{set:cellbgcolor:#FF6600}
+{set:cellbgcolor:#FF8800}
 |{almost} (via plugin)
-{set:cellbgcolor:#FF6600} 
+{set:cellbgcolor:#FF8800} 
 |{almost} (via plugin) 
-{set:cellbgcolor:#FF6600}
+{set:cellbgcolor:#FF8800}
 |{almost} (via plugin) 
-{set:cellbgcolor:#FF6600}
+{set:cellbgcolor:#FF8800}
 |Simple et rapide 
 {set:cellbgcolor:#00FF00}
 |{check} 
@@ -47,15 +47,15 @@
 |{uncheck} 
 {set:cellbgcolor:#FF0000}
 |{almost} (via plugin)
-{set:cellbgcolor:#FF6600} 
+{set:cellbgcolor:#FF8800} 
 |{almost} (via plugins) 
-{set:cellbgcolor:#FF6600}
+{set:cellbgcolor:#FF8800}
 |{uncheck} 
 {set:cellbgcolor:#FF0000}
 |{uncheck} 
 {set:cellbgcolor:#FF0000}
+|{check}
+{set:cellbgcolor:#008800}
 |C 
 |flatfile, SQL(NDOUtils), MySQL(nconf) 
-|{check}
-{set:cellbgcolor:#00FF00}
 
