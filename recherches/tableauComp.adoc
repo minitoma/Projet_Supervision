@@ -4,3 +4,58 @@
 :almost: icon:check[role="yellow", size="2x"]
 :uncheck: icon:times[role="red", size="2x"]
 :question: icon:question[role="blue", size="2x"]
+
+[cols="<.^h,25*^.^", options="header", width="100%"]
+|===
+| |Licences |Développement |Communauté |Web API |OS Supportés |Triggers/Alertes |Agentless | | | | | | | | | | | | | | | | | |
+
+|Nagios 
+|2017-02-23 - v4.3.1 
+{set:cellbgcolor:#00FF00}
+|Active 
+{set:cellbgcolor:#00FF00}
+|{uncheck}
+{set:cellbgcolor:#FF0000}
+|{check} 
+{set:cellbgcolor:#00FF00}
+|{check} 
+{set:cellbgcolor:#00FF00}
+|GPL
+{set:cellbgcolor:#FF6600}
+|Windows - Linux 
+{set:cellbgcolor:#00FF00}
+|Fichiers cfg - CLI 
+{set:cellbgcolor:#00FF00}
+|{check} - sms/mail 
+{set:cellbgcolor:#00FF00}
+|{check}
+{set:cellbgcolor:#00FF00}
+|{check} - Non personnalisable directement 
+{set:cellbgcolor:#FF6600}
+|{almost} (via plugin)
+{set:cellbgcolor:#FF6600} 
+|{almost} (via plugin) 
+{set:cellbgcolor:#FF6600}
+|{almost} (via plugin) 
+{set:cellbgcolor:#FF6600}
+|Simple et rapide 
+{set:cellbgcolor:#00FF00}
+|{check} 
+{set:cellbgcolor:#00FF00}
+|{check} 
+{set:cellbgcolor:#00FF00}
+|{uncheck} 
+{set:cellbgcolor:#FF0000}
+|{almost} (via plugin)
+{set:cellbgcolor:#FF6600} 
+|{almost} (via plugins) 
+{set:cellbgcolor:#FF6600}
+|{uncheck} 
+{set:cellbgcolor:#FF0000}
+|{uncheck} 
+{set:cellbgcolor:#FF0000}
+|C 
+|flatfile, SQL(NDOUtils), MySQL(nconf) 
+|{check}
+{set:cellbgcolor:#00FF00}
+
