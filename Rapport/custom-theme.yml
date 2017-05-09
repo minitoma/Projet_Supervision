@@ -96,7 +96,7 @@ heading:
 title_page:
   align: right
   logo:
-    image: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/UA-icon.png[pdfwidth=25%]
+    image: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[pdfwidth=25%]
     top: 10%
   title:
     top: 55%
@@ -246,9 +246,9 @@ header:
   vertical_align: bottom
   recto:
     left: 
-      content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[width=80]
+      #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[width=80]
     right:
-      content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/UA-icon.png[width=80]
+      #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/UA-icon.png[width=80]
 footer:
   font_size: $base_font_size_small
   # NOTE if background_color is set, background and border will span width of page
