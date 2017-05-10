@@ -5,15 +5,17 @@
 :uncheck: icon:times[role="red", size="2x"]
 :question: icon:question[role="blue", size="2x"]
 
+image:diagram.png[diagram,1000,1000] 
+
+image:diagram2.png[diagram2,2000,2000]
+
+//{set:cellbgcolor:<color>}
+//[red]#text in red#
+
 {check} : Possible +
 {uncheck} : Impossible +
 {almost} : Possible sous conditions +
 {question} : Pas d'informations
-
-image:diagram.png[diagram,1000,1000] 
-
-//{set:cellbgcolor:<color>}
-//[red]#text in red#
 
 [cols="<.^h,25*^.^", options="header", width="100%"]
 |===
