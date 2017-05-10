@@ -7,55 +7,32 @@
 
 [cols="<.^h,25*^.^", options="header", width="100%"]
 |===
-| |Licences |Développement |Communauté |Web API |OS Supportés |Triggers/Alertes |Agentless | | | | | | | | | | | | | | | | | |
+| |Licences |Développement |Communauté |Web API |OS Supportés |Triggers/Alertes |Agentless |SNMP |Supervision distribuée |Configuration |Plugins |Compatibilité nagios |Gestion des utilisateurs |Graphiques et visualisation |Installation |Application Mobile |Support |Trend prediction |Découverte automatique |Syslog |Isolement/Détection des problèmes |Desktop API |Map du réseau |Langages |Methode de stockage des données
 
-|Nagios 
-|2017-02-23 - v4.3.1 
-{set:cellbgcolor:#00FF00}
-|Active 
-{set:cellbgcolor:#00FF00}
-|{uncheck}
-{set:cellbgcolor:#FF0000}
-|{check} 
-{set:cellbgcolor:#00FF00}
-|{check} 
-{set:cellbgcolor:#00FF00}
-|GPL
-{set:cellbgcolor:#FF8800}
-|Windows - Linux 
-{set:cellbgcolor:#00FF00}
-|Fichiers cfg - CLI 
-{set:cellbgcolor:#00FF00}
-|{check} - sms/mail 
-{set:cellbgcolor:#00FF00}
-|{check}
-{set:cellbgcolor:#00FF00}
-|{check} - Non personnalisable directement 
-{set:cellbgcolor:#FF8800}
-|{almost} (via plugin)
-{set:cellbgcolor:#FF8800} 
-|{almost} (via plugin) 
-{set:cellbgcolor:#FF8800}
-|{almost} (via plugin) 
-{set:cellbgcolor:#FF8800}
-|Simple et rapide 
-{set:cellbgcolor:#00FF00}
-|{check} 
-{set:cellbgcolor:#00FF00}
-|{check} 
-{set:cellbgcolor:#00FF00}
-|{uncheck} 
-{set:cellbgcolor:#FF0000}
-|{almost} (via plugin)
-{set:cellbgcolor:#FF8800} 
-|{almost} (via plugins) 
-{set:cellbgcolor:#FF8800}
-|{uncheck} 
-{set:cellbgcolor:#FF0000}
-|{uncheck} 
-{set:cellbgcolor:#FF0000}
-|{check}
-{set:cellbgcolor:#008800}
-|C 
-|flatfile, SQL(NDOUtils), MySQL(nconf) 
+|Nagios
+|GPL {set:cellbgcolor:#FFFF00} 
+|2017-02-23 - v4.3.1 {set:cellbgcolor:#00FF00}
+|Active {set:cellbgcolor:#00FF00}
+|{check} {set:cellbgcolor:#00FF00}
+|Windows - Linux {set:cellbgcolor:#00FF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{check} {set:cellbgcolor:#00FF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{uncheck} {set:cellbgcolor:#FF0000}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{almost} {set:cellbgcolor:#FFFF00}
+|{uncheck} {set:cellbgcolor:#FF0000}
+|{uncheck} {set:cellbgcolor:#FF0000}
+|{check} {set:cellbgcolor:#00FF00}
+|C {set:cellbgcolor!}
+|flatfile, SQL(NDOUtils), MySQL(nconf)
 
