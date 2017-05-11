@@ -476,15 +476,14 @@ Solutions envisageables
 
 *A voir*
 ====
-- [ ] <<check_mk, *Check_mk*>>
-- [ ] <<omd, *OMD*>> (Package Check_mk)
+- [x] <<check_mk, *Check_mk*>> + <<omd, *OMD*>> (Package Check_mk)
 - [x] <<zabbix, Zabbix>>
 - [x] <<alignak, *Alignak*>>
-- [ ] <<sensu, *Sensu*>>
+- [x] <<sensu, *Sensu*>>
 - [x] <<icinga, *Icinga2*>>
 - [x] <<centreon, *Centreon*>>
-- [ ] <<naemon, *Naemon*>>
-- [ ] <<pandoraFMS, PandoraFMS>>
+- [x] <<naemon, *Naemon*>>
+- [x] <<pandoraFMS, PandoraFMS>>
 - [ ] <<spiceworks, SpiceWorks>>
 ====
 
