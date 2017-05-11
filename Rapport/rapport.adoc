@@ -12,7 +12,6 @@ ifdef::backend-pdf[]
 :toc!:
 endif::[]
 ////
-:check: icon:check[]
 
 [.text-center]
 Rapport rédigé par Thomas CALATAYUD +
@@ -39,9 +38,6 @@ d.pithon@maine-et-loire.fr
 ////
 à rédiger
 ////
-
-__test__
-{check}
 
 <<<
 
@@ -89,6 +85,8 @@ https://www.opsview.com/it-monitoring-sysadmins
 === La Supervision
 
 https://www.monitoring-fr.org/supervision/
+
+La supervision est une fonction permettant d'indiquer, controler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le but est que ces informations soit détectées et traitée de manière automatique. 
 
 <<<
 
