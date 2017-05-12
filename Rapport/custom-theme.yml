@@ -96,10 +96,10 @@ heading:
 title_page:
   align: right
   logo:
-    image: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[pdfwidth=25%]
+    image: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/logos.png[pdfwidth=100%]
     top: 10%
   title:
-    top: 55%
+    top: 45%
     font_size: $heading_h1_font_size
     font_color: 999999
     line_height: 0.9
@@ -113,6 +113,7 @@ title_page:
     font_color: 181818
   revision:
     margin_top: $base_font_size * 1.25
+    font_color: FF0000
 block:
   margin_top: 0
   margin_bottom: $vertical_rhythm

@@ -1,11 +1,13 @@
-= Supervision open-source d'un système d'information
-Thomas Calatayud <t.calatayud@maine-et-loire.fr>
+= Rapport d'apprentissage Master 1 - Informatique: Supervision open-source d'un système d'information
+Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
+2016-2017
 :description: Projet d'alternance de Master réalisé par {author}
 :icons: font
 :source-highlighter: coderay
 :coderay-linemus-mode: inline
 :toc: macro
 :toc-title: Table des matières
+:toclevels: 3
 ////
 Pour enlever le toc en pdf
 ifdef::backend-pdf[]
@@ -31,7 +33,6 @@ Responsable de l'unité système de production +
 Département de Maine et Loire +
 d.pithon@maine-et-loire.fr
 |===
-<<<
 
 == Remerciements
 
@@ -113,7 +114,7 @@ image:Images/Organigramme-SPISP.jpg[]
 
 <<<
 
-=== Projet d' Apprentissage
+== Projet d' Apprentissage
 
 Actuellement, la supervision de l'ensemble du système d'information est opérée par Nagios. Cette solution,
 en place depuis près de 10 ans, contrôle un peu plus de 2700 points de
@@ -145,7 +146,9 @@ Virtualisation sur oVirt (Linux/KVM)
 
 <<<
 
-=== Nagios
+=== Mise à niveau technique et découverte
+
+==== Nagios
 
 Présentation de nagios blabla
 
@@ -153,39 +156,40 @@ image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials
 
 <<<
 
-== Recherches
 
-=== Solutions de supervision
+=== Recherches
 
-<<<
-
-=== Analyse du nagios mis en place
+==== Solutions de supervision
 
 <<<
 
-=== Identification des critères
+==== Analyse du nagios mis en place
 
 <<<
 
-== Etude des solutions
-
-=== Choix 1
+==== Identification des critères
 
 <<<
 
-=== Choix 2
+=== Etude des solutions
+
+==== Choix 1
 
 <<<
 
-=== Choix 3
+==== Choix 2
 
 <<<
 
-== Choix définitif
+==== Choix 3
 
 <<<
 
-== Déploiement de la solution
+=== Choix définitif
+
+<<<
+
+=== Déploiement de la solution
 
 <<<
 
@@ -206,23 +210,15 @@ image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials
 <<<
 
 
-////
-
-Déroulement de l' apprentissage
-
-////
-
-== Tâches  
-
-http://asciidoctor.org/docs/user-manual/#tables
+== Tâches éffectuées
 
 ====
-* [x] Monté en puissance sur l'administration système.
-    - [x] installation du linux, configuration réseaux...
-    - [x] disque virtuel	
+* [x] Monté en puissance sur l'administration système et remise à niveau. _Dans le but de gagner en autonomie._
+    - [x] installation et configuration complète de mon poste de travail
+    - [x] disque virtuel
     - [x] inotify
     - [x] serveur apache
-* [x] Création de VM (ovirt) et configuration de serveur. 
+* [x] Création de VM (via ovirt) et configuration de serveur.
 * [x] Découverte et prise en main avec création et configuration de nagios.
 * [x] Projet de réplication de nagios.
     - [x] script shell
@@ -230,16 +226,16 @@ http://asciidoctor.org/docs/user-manual/#tables
 * [x] Projet saeir, nouvelle salle avec création d'un ovirt suivi de la mise en place de son nagios.
 * [x] Intervention Lavoisier montage des baies de stockage.
 * [x] Recherche des outils de supervision
-    - [x] link:../recherches/documentation.adoc[Documentation]
-    - [x] link:../recherches/inventoring.adoc[Inventaire]
+    - [x] link:../recherches/documentation.html[Documentation]
+    - [x] link:../recherches/inventoring.html[Inventaire]
 * [x] Etude du système Nagios actuellement installé.
     - [x] Reconnaissance des hotes et services supervisés
-    - [x] Liste des sondes, checks installés (link:../nagios-2/config.adoc[Configuration])
-* [ ] Etude des solutions envisageables
-    - [x] Identification des critères de sélection (link:../recherches/criteres.adoc[Critères])
-    - [x] Tableau comparatif des solutions/critères (link:../recherches/comparatif.ado[Comparatif])
+    - [x] Liste des sondes, checks installés (link:../nagios-2/config.html[Configuration])
+* [x] Etude des solutions envisageables
+    - [x] Identification des critères de sélection (link:../recherches/criteres.html[Critères])
+    - [x] Tableau comparatif des solutions/critères (link:../recherches/comparatif.html[Comparatif])
 * [ ] Proposition des solutions envisageable
-* [ ] Etude des solutions sélectionnées 
+* [ ] Etude des solutions sélectionnées
 * [ ] Mise en place de la solution retenue
 ====
 
