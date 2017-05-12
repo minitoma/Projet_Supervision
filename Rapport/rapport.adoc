@@ -41,6 +41,7 @@ d.pithon@maine-et-loire.fr
 
 <<<
 
+////
 == Table des matières
 // voir TOC, choisir si j'utilise le miens ou le toc::[]
 
@@ -69,7 +70,7 @@ d.pithon@maine-et-loire.fr
 . <<Annexes>>
 . <<Table des illustrations>>
 . <<Sources>>
-
+////
 <<<
 
 toc::[]
@@ -96,13 +97,19 @@ La supervision est une fonction permettant d'indiquer, controler, commander l'é
 
 blablabla voir notes de la réunion d'accueil
 
-=== L' unité DLSI
+=== L'unité Système de Production
 
 L'unité système de production travaille au sein de la DLSI du Conseil
 Départemental de Maine-et-Loire sur les problématiques liées au stockage, à la
 sauvegarde, à la virtualisation et à la supervision des matériels et
 applications cotés serveurs, ainsi qu'a l'administration des systèmes Linux et
 Windows.
+
+=== Organigrammes
+
+image:Images/Organigramme-CG.JPG[]
+image:Images/Organigramme-DLSI.jpg[]
+image:Images/Organigramme-SPISP.jpg[]
 
 <<<
 
@@ -118,7 +125,7 @@ consommations CPU, RAM ...).
 ====
 Virtualisation sur oVirt (Linux/KVM)
 
-* ~ 380 VMs (55% Linux, 45% Windows)
+* ~ 400 VMs (55% Linux, 45% Windows)
 
 * la moitié de ces VMs servent les applications métiers des 2500 agents
 
@@ -230,8 +237,9 @@ http://asciidoctor.org/docs/user-manual/#tables
     - [x] Liste des sondes, checks installés (link:../nagios-2/config.adoc[Configuration])
 * [ ] Etude des solutions envisageables
     - [x] Identification des critères de sélection (link:../recherches/criteres.adoc[Critères])
-    - [ ] Tableau comparatif des solutions/critères (link:../recherches/comparatif.ado[Comparatif])
+    - [x] Tableau comparatif des solutions/critères (link:../recherches/comparatif.ado[Comparatif])
 * [ ] Proposition des solutions envisageable
+* [ ] Etude des solutions sélectionnées 
 * [ ] Mise en place de la solution retenue
 ====
 
