@@ -403,6 +403,7 @@ link:../nagios-2/config.adoc[Nagios-2 Config]
     * Seulement pour les système Unix
     * Dernière update : v5.21.0 - 2017-03-07
 
+[[netdata]]
 | http://my-netdata.io/[NetData]
 |
     * https://github.com/firehol/netdata[GitHub]
@@ -440,6 +441,11 @@ link:../nagios-2/config.adoc[Nagios-2 Config]
     * Développement récent et actif ainsi que sa communauté
     * SNMP
     * Dernière update : v1.5.2 - 2017-02-10
+
+[[bosun]]
+| http://bosun.org/[Bosun]
+|
+
 
 | http://www.sysdig.org/[Sysdig]
 | 
@@ -484,7 +490,9 @@ Solutions envisageables
 - [x] <<centreon, *Centreon*>>
 - [x] <<naemon, *Naemon*>>
 - [x] <<pandoraFMS, PandoraFMS>>
-- [ ] <<spiceworks, SpiceWorks>>
+- [x] <<spiceworks, SpiceWorks>>
+- [ ] <<netdata, NetData ??>>
+- [ ] <<bosun, Bosun ??>>
 ====
 
 .Voir éventuellement
