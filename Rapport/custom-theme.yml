@@ -271,21 +271,24 @@ footer:
   recto:
     #columns: "<50% =0% >50%"
     right:
-      #content: '{page-number}'
+      content: '{page-number}'
       #content: '{section-or-chapter-title} | {page-number}'
       #content: '{document-title} | {page-number}'
       #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[width=20]
     center:
-      content: '{page-number}'
+      #content: '{page-number}'
     left:
       #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/UA-icon.png[width=20]
+      content: '*{document-title}* - _{document-subtitle}_'
   verso:
     #columns: $footer_recto_columns
     left:
       #content: $footer_recto_right_content
       #content: '{page-number} | {chapter-title}'
       #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/UA-icon.png[width=20]
+      content: '*{document-title}* - _{document-subtitle}_'
     center:
-      content: '{page-number}'
+      #content: '{page-number}'
     right:
       #content: image:/home/tcalatayud/PROJET_SUPERVISION/Rapport/Images/CG-icon.png[width=20]
+      content: '{page-number}'
