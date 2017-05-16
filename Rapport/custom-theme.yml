@@ -120,6 +120,7 @@ block:
 caption:
   align: left
   font_size: $base_font_size * 0.95
+  font_color: #7a2518
   font_style: italic
   # FIXME perhaps set line_height instead of / in addition to margins?
   margin_inside: $vertical_rhythm / 3

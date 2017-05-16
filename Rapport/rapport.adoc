@@ -101,6 +101,18 @@ La supervision est une fonction permettant d'indiquer, controler, commander l'é
 
 blablabla voir notes de la réunion d'accueil
 
+image:Images/Organigramme-CG.JPG[]
+
+<<<
+
+=== La DLSI
+
+...
+
+image:Images/Organigramme-DLSI.jpg[]
+
+<<<
+
 === L'unité Système de Production
 
 L'unité système de production travaille au sein de la DLSI du Conseil
@@ -109,10 +121,6 @@ sauvegarde, à la virtualisation et à la supervision des matériels et
 applications cotés serveurs, ainsi qu'a l'administration des systèmes Linux et
 Windows.
 
-=== Organigrammes
-
-image:Images/Organigramme-CG.JPG[]
-image:Images/Organigramme-DLSI.jpg[]
 image:Images/Organigramme-SPISP.jpg[]
 
 <<<
@@ -150,6 +158,10 @@ Virtualisation sur oVirt (Linux/KVM)
 <<<
 
 === Mise à niveau technique et découverte
+
+==== Mise à niveau 
+
+Exercices
 
 ==== Nagios
 
@@ -198,7 +210,8 @@ image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials
 
 == Conclusion
 
-//Dire ce que j'ai fais durant cette première année, le déroulement.
+//Synthèse et ouverture
+//Dire ce que j'ai fais durant cette première année, le déroulement. (Missions annexes)
 //Mon ressenti.
 
 <<<
