@@ -45,75 +45,42 @@ d.pithon@maine-et-loire.fr
 
 <<<
 
-////
-== Table des matières
-// voir TOC, choisir si j'utilise le miens ou le toc::[]
-
-// voir pour l'ordre Introduction Présentation
-
-. <<Remerciements>>
-. <<Introduction>>
-.. <<L' Administration système>>
-.. <<La Supervision>>
-. <<Présentation>>
-.. <<Le Conseil Général de Maine-et-Loire>>
-.. <<L' unité DLSI>>
-.. <<Projet d' Apprentissage>>
-.. <<Nagios>>
-. <<Recherches>>
-.. <<Solutions de supervision>>
-.. <<Analyse du nagios mis en place>>
-.. <<Identification des critères>>
-. <<Etude des solutions>>
-.. <<Choix 1>>
-.. <<Choix 2>>
-.. <<Choix 3>>
-. <<Choix définitif>>
-. <<Déploiement de la solution>>
-. <<Conclusion>>
-. <<Annexes>>
-. <<Table des illustrations>>
-. <<Sources>>
-////
-<<<
-
 toc::[]
 
 <<<
 
 == Introduction
 
-=== L' Administration système
-
-https://www.opsview.com/it-monitoring-sysadmins
-
-=== La Supervision
-
-https://www.monitoring-fr.org/supervision/
-
-La supervision est une fonction permettant d'indiquer, controler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le tout dans un but de détection et de traitement automatique. 
+Apprentissage Master 1 Info, offre du CD49, intitulé du projet
+- Pourquoi l'apprentissage ?
+- Centre d'interets (techniques, humains, ...)
+- Le sujet du CD49 : la supervision
 
 <<<
 
-== Présentation
+== I - Le conseil départemental de Maine-et-Loire
 
-=== Le Conseil Général de Maine-et-Loire
+=== Présentation du conseil départemental
 
-blablabla voir notes de la réunion d'accueil
+(Voir notes de la réunion d'accueil)
+Qu'est ce que c'est ? Qu'est ce qu'il fait , Organisation ? (élus, administration teritoriale, directions, services ...)
+- Une collectivité territoriale
+- Missions/compétences
+- Organisation
 
 image:Images/Organigramme-CG.JPG[]
 
 <<<
 
-=== La DLSI
-
-...
+- La DLSI : qu'est ce qu'on fait ?
+    - Les différents services
+    - L'unité système de production
 
 image:Images/Organigramme-DLSI.jpg[]
 
 <<<
 
-=== L'unité Système de Production
+=== L'unité Système de Production et ses missions
 
 L'unité système de production travaille au sein de la DLSI du Conseil
 Départemental de Maine-et-Loire sur les problématiques liées au stockage, à la
@@ -121,11 +88,33 @@ sauvegarde, à la virtualisation et à la supervision des matériels et
 applications cotés serveurs, ainsi qu'a l'administration des systèmes Linux et
 Windows.
 
+Quoi ? missions ? chiffres ?
+-> Stockage
+-> Sauvegarde/restauration
+-> Virtualisation
+-> Administration système et bases de données
+-> Gestion des profils/boite mail
+-> SUPERVISION
+
 image:Images/Organigramme-SPISP.jpg[]
 
 <<<
 
-== Projet d' Apprentissage
+==== La Supervision
+
+https://www.monitoring-fr.org/supervision/
+
+La supervision est une fonction permettant d'indiquer, controler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le tout dans un but de détection et de traitement automatique.
+
+==== Présentation de l'outil Nagios
+
+Supervision de serveurs, services, BD, environnement (Température, Luminosité, clim), équipement,...
+
+image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
+
+<<<
+
+=== Etude et mise en place d'une solution libre/open-source de supervision
 
 Actuellement, la supervision de l'ensemble du système d'information est opérée par Nagios. Cette solution,
 en place depuis près de 10 ans, contrôle un peu plus de 2700 points de
@@ -137,7 +126,7 @@ consommations CPU, RAM ...).
 ====
 Virtualisation sur oVirt (Linux/KVM)
 
-* ~ 400 VMs (55% Linux, 45% Windows)
+* ~ 365 VMs (55% Linux, 45% Windows) réparties sur 42 serveurs physiques
 
 * la moitié de ces VMs servent les applications métiers des 2500 agents
 
@@ -147,7 +136,7 @@ Virtualisation sur oVirt (Linux/KVM)
 
 * 15 To consommés pour la bureautique
 
-* Supervision avec Nagios 
+* Supervision avec Nagios
 ====
 
 .*Il m'est demandé dans le cadre de mon apprentissage de :*
@@ -157,62 +146,76 @@ Virtualisation sur oVirt (Linux/KVM)
 
 <<<
 
-=== Mise à niveau technique et découverte
+=== Mon activité au sein de l'unité
 
-==== Mise à niveau 
+- Montée en puissance technique, nécéssité de me mettre à niveau, de gagner en compétences, ... pour pouvoir être à l'aise et gagner en autonomie.
 
-Exercices
+- Déploiement, découverte, installation et configuration de l'outil Nagios
 
-==== Nagios
+- Script de synchronisation
 
-Présentation de nagios blabla
-
-image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
+- SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles.
 
 <<<
 
+== II - Identification des solutions libres/open-sources de supervision
 
-=== Recherches
+- Problématique :
+    - Solution vieillisante
+    - Problème de maintenance
+    - mise à jour ardue (BSD, versions, ...)
 
-==== Solutions de supervision
+=== Instantanné des solutions libres/open-sources.
 
-<<<
+Premier critère : Libre/Open-source
 
-==== Analyse du nagios mis en place
+- Inventaire exhaustif
 
-<<<
+- Donner les différents types de solutions
 
-==== Identification des critères
+- Les protocoles utilisés
 
-<<<
+- Les types de configuration
 
-=== Etude des solutions
+- Remontée des alertes
 
-==== Choix 1
+- ...
 
-<<<
+Pour trouver une nouvelle solution de supervision adapté au besoin de l'unité, il est nécéssaire de connâitre les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu'elles proposent.
 
-==== Choix 2
+Inventaire le plus exhaustif possible, recherche et exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. En explicant pourquoi je fais ça. Pourquoi je n'utilise pas de cahier des charges.
 
-<<<
-
-==== Choix 3
-
-<<<
-
-=== Choix définitif
+-> apparitions des premiers critères évidents ( snmp, plugins, alertes, ... ), éliminations des solutions qui sont vraiment pas adaptés, premier filtrage.
 
 <<<
 
-=== Déploiement de la solution
+=== Etablir les critères de sélection
+
+- Identifier le domaine à superviser (sur le nagios)
+
+- Lister les sondes
+
+- Croiser les éléments ressorti lors de l'inventaire
+
+- Drésser la liste des critères
+
+Comment je les ai établi (recherche plus poussée sur les solutions les plus intéressantes, études des sondes sur le nagios actuel), pourquoi ils sont nécéssaires, à quoi ils servent, catégorisation, listes avec explication et appréciations, ...
 
 <<<
 
-== Conclusion
+=== Présentation des solutions sélectionnées
 
-//Synthèse et ouverture
-//Dire ce que j'ai fais durant cette première année, le déroulement. (Missions annexes)
-//Mon ressenti.
+Présentation des 2 solutions : carte d'identité des solutions
+
+==== Solution 1
+
+==== Solution 2
+
+== Bilan
+
+Synthèse et ouverture
+Dire ce que j'ai fais durant cette première année, le déroulement. (Missions annexes)
+Mon ressenti ce que j'ai apporté, ce qu'on m'a apporté
 
 <<<
 
@@ -228,7 +231,7 @@ image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials
 
 <<<
 
-
+////
 == Tâches éffectuées
 
 ====
@@ -257,4 +260,4 @@ image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials
 * [ ] Etude des solutions sélectionnées
 * [ ] Mise en place de la solution retenue
 ====
-
+////
