@@ -161,9 +161,6 @@ Cet outil offre de nombreuse possibilités :
 - Gestions d'utilisateurs (accèes liimité à certains utilisateurs)
 - Les plugins sont écrits dans des langages de programmation les plus adaptés à leur tâche : scripts shell (bash, ksh, ...), C++, perl, Python, Ruby, PHP, C#, ... et il est possible de créer les siens.
 
-
-image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
-
 <<<
 
 === Etude et mise en place d'une solution libre/open-source de supervision
@@ -200,13 +197,100 @@ Virtualisation sur oVirt (Linux/KVM)
 
 === Mon activité au sein de l'unité
 
-- Montée en puissance technique, nécéssité de me mettre à niveau, de gagner en compétences, ... pour pouvoir être à l'aise et gagner en autonomie.
+==== Mise à niveau technique
 
-- Déploiement, découverte, installation et configuration de l'outil Nagios
+Dans un premier temps, à mon arrivé, il m'a été conseillé de commencer par me mettre à niveau, pour gagner en compétences techniques et monter en puissance sur le système. On m'a donc proposé une série de petits exercices à difficulté progressive. Ils ont pour but de me faire progresser sur l'environnement Linux côté serveur et les outils qui lui sont habituellement associés et me familiariser avec l'administration système pour gagner en autonomie.
+
+Avant tout, il a fallu que j'installe et je configure entièrement mon poste de travail sous Linux.
+
+J'ai ensuite découvert l'outil Ovirt que notre unité utilise pour l'installation et la gestion de machines virtuelles, pour installer et configurer une machine virtuelle Windows.
+
+===== Monter un disque virtuel
+
+On m'a ensuite demandé de construire et monter un disque virtuel de 500 Po sur mon poste. Il a donc fallu que je trouve un moyen de créer un disque réellement utilisable de 500 Po. Il s'est avéré que désormais, le système d'exploitation empêche de manipuler des volumes aussi gros. J'ai donc pu monter un disque d'une taille seulement de 15 To, ce qui reste un disque conséquent.
+
+[[app-listing]]
+[source,shell]
+----
+tcalatayud@tcalatayud-CD49:~$ df -lh
+...
+/dev/loop0       15T  6,3M   15T   1% /media/tcalatayud/e9567653-9578-4332-b449-37eb63cabc7b # <1>
+...
+----
+<1> J'obtiens donc un disque d'une taille de 15 To sur lequel je peux écrire et lire des fichiers. Cependant, il est bien entendu évident qu'avant de pouvoir le remplir complètement je risque d'avoir quelques problèmes étant limité par la taille du disque dur physique.
+
+<<<
+
+===== Script d'alertes mail, inotify
+
+Il m'a ensuite été proposé, d'écrire un script permettant de transmettre un fichier par mail lorsqu'il apparaît dans un répertoire donnée, puis le supprimer. Il s'aggit donc de surveiller un répertoire et lorsqu'un fichier est écrit et est disponible à l'intérieur de ce dossier pour ensuite le supprimer.
+
+Dans un premier temps j'ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre, si ce fichier est dans le dossier surveillé et le supprime une fois qu'il a été envoyé.
+
+J'ai ensuite écrit une deuxième version, amélioré, utilisant le système inotify.
+
+[[app-listing]]
+[source,bash]
+----
+#!/bin/sh
+
+inotifywait -mqr -e close_write "/home/tcalatayud/sendMailInotify/dossier" | while read FILE # <1>
+
+do
+echo $FILE
+BEGIN=$(echo $FILE | cut -d' ' -f 1)
+END=$(echo $FILE | cut -d' ' -f 3)
+echo $BEGIN
+echo $END
+
+PATHFILE=$BEGIN$END
+
+echo $PATHFILE
+
+echo "Message" | mailx -a $PATHFILE -S from="t.calatayud@maine-et-loire.fr" -S smtp=smtp://smtp.cg49.fr -s "Object du message" t.calatayud@maine-et-loire.fr
+rm $PATHFILE
+done
+----
+<1> cette deuxième version utilise donc la commande inotifywait qui permet de surveiller un répertoire.
+
+<<<
+
+Et enfin, j'ai écrit une dernière version en Python qui s'éxecute en tant que daemon, c'est à dire que le script s'éxecute en tâche de fond par le système, sans le contrôle de l'utilisateur.
+
+J'y ai inclus la gestion de logs pour qu'on puisse avoir un rapport, si nécéssaire, des actions que le script a éffectué et pour permettre d'avoir un apperçu du bon fonctionnement et de la bonne éxecution du programme.
+
+J'ai notamment utilisé un fichier de configuration .ini qui permet de définir à l'utilisateur et de rassembler des variables dans un même endroit pour pouvoir les utiliser ensuite dans le programme.
+
+[[app-listing]]
+[source,ini]
+----
+[config_mail]
+fromaddr = t.calatayud@maine-et-loire.fr # <1>
+toaddr = t.calatayud@maine-et-loire.fr # <2>
+server = smtp.cg49.fr # <3>
+port = 25
+
+[config_inotify]
+watchFolder = /home/tcalatayud/sendMailPython/dossier
+
+[config_daemon]
+pidfile = /home/tcalatayud/sendMailPython/daemon.pid
+logfile = /var/log/MyLog/MyScriptDaemon.log
+----
+
+==== Découverte, déploiement, installation et configuration de l'outil Nagios
+
+Dans la continuité de cette mise à niveau, j'ai commencé à regarder l'outil nagios, à voir comment il fonctionne, comment l'installer, comment le configurer, comment l'utiliser.
+
+image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
+
+J'ai donc décider, pour prendre en main cet outil complexe et puissant, d'installer et de configurer ma propre version de Nagios.
+
+Il m'a donc été nécéssaire d'abord de configurer un serveur pour pouvoir le déployer. J'ai donc installé et configuré une nouvelle machine virtuelle sous CentOS. Puis je me suis lancé dans l'installation du Nagios sur lequel j'ai configuré quelques sondes pour comprendre leurs fonctionnement.
 
 - Script de synchronisation
 
-- SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles.
+- SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.
 
 <<<
 

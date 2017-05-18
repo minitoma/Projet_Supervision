@@ -566,7 +566,12 @@ Département de Maine et Loire<br/>
 </ul>
 </li>
 <li><a href="#_etude_et_mise_en_place_d_une_solution_libre_open_source_de_supervision">Etude et mise en place d&#8217;une solution libre/open-source de supervision</a></li>
-<li><a href="#_mon_activité_au_sein_de_l_unité">Mon activité au sein de l&#8217;unité</a></li>
+<li><a href="#_mon_activité_au_sein_de_l_unité">Mon activité au sein de l&#8217;unité</a>
+<ul class="sectlevel3">
+<li><a href="#_mise_à_niveau_technique">Mise à niveau technique</a></li>
+<li><a href="#_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_identification_des_solutions_libres_open_sources_de_supervision">Identification des solutions libres/open-sources de supervision</a>
@@ -794,11 +799,6 @@ Windows.</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"><img src="Images/nagios4.jpg" alt="nagios4"/></a>
-</div>
-</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -865,23 +865,137 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 </div>
 <div class="sect2">
 <h3 id="_mon_activité_au_sein_de_l_unité">Mon activité au sein de l&#8217;unité</h3>
+<div class="sect3">
+<h4 id="_mise_à_niveau_technique">Mise à niveau technique</h4>
+<div class="paragraph">
+<p>Dans un premier temps, à mon arrivé, il m&#8217;a été conseillé de commencer par me mettre à niveau, pour gagner en compétences techniques et monter en puissance sur le système. On m&#8217;a donc proposé une série de petits exercices à difficulté progressive. Ils ont pour but de me faire progresser sur l&#8217;environnement Linux côté serveur et les outils qui lui sont habituellement associés et me familiariser avec l&#8217;administration système pour gagner en autonomie.</p>
+</div>
+<div class="paragraph">
+<p>Avant tout, il a fallu que j&#8217;installe et je configure entièrement mon poste de travail sous Linux.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai ensuite découvert l&#8217;outil Ovirt que notre unité utilise pour l&#8217;installation et la gestion de machines virtuelles, pour installer et configurer une machine virtuelle Windows.</p>
+</div>
+<div class="sect4">
+<h5 id="_monter_un_disque_virtuel">Monter un disque virtuel</h5>
+<div class="paragraph">
+<p>On m&#8217;a ensuite demandé de construire et monter un disque virtuel de 500 Po sur mon poste. Il a donc fallu que je trouve un moyen de créer un disque réellement utilisable de 500 Po. Il s&#8217;est avéré que désormais, le système d&#8217;exploitation empêche de manipuler des volumes aussi gros. J&#8217;ai donc pu monter un disque d&#8217;une taille seulement de 15 To, ce qui reste un disque conséquent.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">tcalatayud@tcalatayud-CD49:~$ df -lh
+...
+/dev/loop0       15T  6,3M   15T   1% /media/tcalatayud/e9567653-9578-4332-b449-37eb63cabc7b <i class="conum" data-value="1"></i><b>(1)</b>
+...</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>J&#8217;obtiens donc un disque d&#8217;une taille de 15 To sur lequel je peux écrire et lire des fichiers. Cependant, il est bien entendu évident qu&#8217;avant de pouvoir le remplir complètement je risque d&#8217;avoir quelques problèmes étant limité par la taille du disque dur physique.</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect4">
+<h5 id="_script_d_alertes_mail_inotify">Script d&#8217;alertes mail, inotify</h5>
+<div class="paragraph">
+<p>Il m&#8217;a ensuite été proposé, d&#8217;écrire un script permettant de transmettre un fichier par mail lorsqu&#8217;il apparaît dans un répertoire donnée, puis le supprimer. Il s&#8217;aggit donc de surveiller un répertoire et lorsqu&#8217;un fichier est écrit et est disponible à l&#8217;intérieur de ce dossier pour ensuite le supprimer.</p>
+</div>
+<div class="paragraph">
+<p>Dans un premier temps j&#8217;ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre, si ce fichier est dans le dossier surveillé et le supprime une fois qu&#8217;il a été envoyé.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai ensuite écrit une deuxième version, amélioré, utilisant le système inotify.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">#!/bin/sh
+
+inotifywait -mqr -e close_write &quot;/home/tcalatayud/sendMailInotify/dossier&quot; | while read FILE <i class="conum" data-value="1"></i><b>(1)</b>
+
+do
+echo $FILE
+BEGIN=$(echo $FILE | cut -d' ' -f 1)
+END=$(echo $FILE | cut -d' ' -f 3)
+echo $BEGIN
+echo $END
+
+PATHFILE=$BEGIN$END
+
+echo $PATHFILE
+
+echo &quot;Message&quot; | mailx -a $PATHFILE -S from=&quot;t.calatayud@maine-et-loire.fr&quot; -S smtp=smtp://smtp.cg49.fr -s &quot;Object du message&quot; t.calatayud@maine-et-loire.fr
+rm $PATHFILE
+done</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>cette deuxième version utilise donc la commande inotifywait qui permet de surveiller un répertoire.</td>
+</tr>
+</table>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Et enfin, j&#8217;ai écrit une dernière version en Python qui s&#8217;éxecute en tant que daemon, c&#8217;est à dire que le script s&#8217;éxecute en tâche de fond par le système, sans le contrôle de l&#8217;utilisateur.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;y ai inclus la gestion de logs pour qu&#8217;on puisse avoir un rapport, si nécéssaire, des actions que le script a éffectué et pour permettre d&#8217;avoir un apperçu du bon fonctionnement et de la bonne éxecution du programme.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai notamment utilisé un fichier de configuration .ini qui permet de définir à l&#8217;utilisateur et de rassembler des variables dans un même endroit pour pouvoir les utiliser ensuite dans le programme.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="ini">[config_mail]
+fromaddr = t.calatayud@maine-et-loire.fr <i class="conum" data-value="1"></i><b>(1)</b>
+toaddr = t.calatayud@maine-et-loire.fr <i class="conum" data-value="2"></i><b>(2)</b>
+server = smtp.cg49.fr <i class="conum" data-value="3"></i><b>(3)</b>
+port = 25
+
+[config_inotify]
+watchFolder = /home/tcalatayud/sendMailPython/dossier
+
+[config_daemon]
+pidfile = /home/tcalatayud/sendMailPython/daemon.pid
+logfile = /var/log/MyLog/MyScriptDaemon.log</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</h4>
+<div class="paragraph">
+<p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à regarder l&#8217;outil nagios, à voir comment il fonctionne, comment l&#8217;installer, comment le configurer, comment l&#8217;utiliser.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"><img src="Images/nagios4.jpg" alt="nagios4"/></a>
+</div>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai donc décider, pour prendre en main cet outil complexe et puissant, d&#8217;installer et de configurer ma propre version de Nagios.</p>
+</div>
+<div class="paragraph">
+<p>Il m&#8217;a donc été nécéssaire d&#8217;abord de configurer un serveur pour pouvoir le déployer. J&#8217;ai donc installé et configuré une nouvelle machine virtuelle sous CentOS. Puis je me suis lancé dans l&#8217;installation du Nagios sur lequel j&#8217;ai configuré quelques sondes pour comprendre leurs fonctionnement.</p>
+</div>
 <div class="ulist">
 <ul>
-<li>
-<p>Montée en puissance technique, nécéssité de me mettre à niveau, de gagner en compétences, &#8230;&#8203; pour pouvoir être à l&#8217;aise et gagner en autonomie.</p>
-</li>
-<li>
-<p>Déploiement, découverte, installation et configuration de l&#8217;outil Nagios</p>
-</li>
 <li>
 <p>Script de synchronisation</p>
 </li>
 <li>
-<p>SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles.</p>
+<p>SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</p>
 </li>
 </ul>
 </div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 </div>
 </div>
@@ -1016,7 +1130,7 @@ Mon ressenti ce que j&#8217;ai apporté, ce qu&#8217;on m&#8217;a apporté</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-17 15:57:12 CEST
+Last updated 2017-05-18 16:29:17 CEST
 </div>
 </div>
 </body>
