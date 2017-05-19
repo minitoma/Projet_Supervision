@@ -8,6 +8,7 @@ Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
 :toc: preamble
 :toc-title: Table des matières
 :toclevels: 3
+:figure-caption: Image
 ////
 Pour enlever le toc en pdf
 ifdef::backend-pdf[]
@@ -75,7 +76,8 @@ Qu'est ce que c'est ? Qu'est ce qu'il fait , Organisation ? (élus, administrati
 - Missions/compétences
 - Organisation
 
-image:Images/Organigramme-CG.JPG[]
+.Organigramme du Conseil Départemental
+image::Images/Organigramme-CG.JPG[]
 
 <<<
 
@@ -83,7 +85,8 @@ image:Images/Organigramme-CG.JPG[]
     - Les différents services
     - L'unité système de production
 
-image:Images/Organigramme-DLSI.jpg[]
+.Organigramme de la DLSI
+image::Images/Organigramme-DLSI.jpg[]
 
 <<<
 
@@ -103,7 +106,11 @@ Quoi ? missions ? chiffres ?
 -> Gestion des profils/boite mail
 -> SUPERVISION
 
-image:Images/Organigramme-SPISP.jpg[]
+.Organigramme du Service Poste Informatique et Système de Production
+image::Images/Organigramme-SPISP.jpg[]
+
+.Organigramme de l'unité Système de Production
+image::Images/Organigramme-Sysprod.jpg[]
 
 <<<
 
@@ -181,7 +188,7 @@ Virtualisation sur oVirt (Linux/KVM)
 
 * Stockage NAS (NFS et CIFS) répliqué sur deux salles
 
-* 14 To consommés pour les VMs
+* 18 To consommés pour les VMs
 
 * 15 To consommés pour la bureautique
 
@@ -205,6 +212,9 @@ Avant tout, il a fallu que j'installe et je configure entièrement mon poste de 
 
 J'ai ensuite découvert l'outil Ovirt que notre unité utilise pour l'installation et la gestion de machines virtuelles, pour installer et configurer une machine virtuelle Windows.
 
+.Ovirt
+image::Images/ovirt.png[Ovirt]
+
 ===== Monter un disque virtuel
 
 On m'a ensuite demandé de construire et monter un disque virtuel de 500 Po sur mon poste. Il a donc fallu que je trouve un moyen de créer un disque réellement utilisable de 500 Po. Il s'est avéré que désormais, le système d'exploitation empêche de manipuler des volumes aussi gros. J'ai donc pu monter un disque d'une taille seulement de 15 To, ce qui reste un disque conséquent.
@@ -223,39 +233,18 @@ tcalatayud@tcalatayud-CD49:~$ df -lh
 
 ===== Script d'alertes mail, inotify
 
-Il m'a ensuite été proposé, d'écrire un script permettant de transmettre un fichier par mail lorsqu'il apparaît dans un répertoire donnée, puis le supprimer. Il s'aggit donc de surveiller un répertoire et lorsqu'un fichier est écrit et est disponible à l'intérieur de ce dossier pour ensuite le supprimer.
+Il m'a ensuite été proposé, d'écrire un script permettant de transmettre un fichier par mail lorsqu'il apparaît dans un répertoire donnée, puis le supprimer. Il s'aggit donc d'éffectuer la surveillance d'un répertoire et de rapporté par mail tout ce qu'il s'y est passé.
 
-Dans un premier temps j'ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre, si ce fichier est dans le dossier surveillé et le supprime une fois qu'il a été envoyé.
+Dans un premier temps j'ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s'il est dans le répertoire surveillé et il le supprime une fois qu'il a été envoyé.
 
-J'ai ensuite écrit une deuxième version, amélioré, utilisant le système inotify.
+J'ai ensuite écrit une deuxième version, amélioré, utilisant le mécanisme inotify qui fournit des notification concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associés à l'évolution de l'état du système de fichiers. Les principaux événements qui peuvent être suviis sont :
 
-[[app-listing]]
-[source,bash]
-----
-#!/bin/sh
+- *IN_ACCESS* : Le fichier est accédé en lecture
+- *IN_MODIFY* : Le fichier est modifié
+- *IN_CLOSE_WRITE* : Le fichier est fermé après avoir été ouvert en écriture
+- ...
 
-inotifywait -mqr -e close_write "/home/tcalatayud/sendMailInotify/dossier" | while read FILE # <1>
-
-do
-echo $FILE
-BEGIN=$(echo $FILE | cut -d' ' -f 1)
-END=$(echo $FILE | cut -d' ' -f 3)
-echo $BEGIN
-echo $END
-
-PATHFILE=$BEGIN$END
-
-echo $PATHFILE
-
-echo "Message" | mailx -a $PATHFILE -S from="t.calatayud@maine-et-loire.fr" -S smtp=smtp://smtp.cg49.fr -s "Object du message" t.calatayud@maine-et-loire.fr
-rm $PATHFILE
-done
-----
-<1> cette deuxième version utilise donc la commande inotifywait qui permet de surveiller un répertoire.
-
-<<<
-
-Et enfin, j'ai écrit une dernière version en Python qui s'éxecute en tant que daemon, c'est à dire que le script s'éxecute en tâche de fond par le système, sans le contrôle de l'utilisateur.
+Et enfin, j'ai écrit une dernière version en Python3 qui s'éxecute en tant que daemon, c'est à dire que le programme s'éxecute en tâche de fond par le système, sans le contrôle de l'utilisateur.
 
 J'y ai inclus la gestion de logs pour qu'on puisse avoir un rapport, si nécéssaire, des actions que le script a éffectué et pour permettre d'avoir un apperçu du bon fonctionnement et de la bonne éxecution du programme.
 
@@ -271,26 +260,143 @@ server = smtp.cg49.fr # <3>
 port = 25
 
 [config_inotify]
-watchFolder = /home/tcalatayud/sendMailPython/dossier
+watchFolder = /home/tcalatayud/sendMailPython/dossier # <4>
 
 [config_daemon]
-pidfile = /home/tcalatayud/sendMailPython/daemon.pid
-logfile = /var/log/MyLog/MyScriptDaemon.log
+pidfile = /home/tcalatayud/sendMailPython/daemon.pid # <5>
+logfile = /var/log/MyLog/MyScriptDaemon.log # <6>
 ----
+<1> Adresse mail de l'expéditeur
+<2> Adresse mail du destinataire
+<3> Serveur smtp
+<4> Chemin du répertoire surveillé
+<5> Chemin du fichier où on retrouve l'id du processus
+<6> Chemin du fichier de log
+
+Pour l'éxécuté, il suffit de lancer le programme avec l'argument "start". On l'arrête avec l'argument "stop". Il est possible d'obtenir les informations concernant le statut du programme avec l'argument "status".
 
 ==== Découverte, déploiement, installation et configuration de l'outil Nagios
 
-Dans la continuité de cette mise à niveau, j'ai commencé à regarder l'outil nagios, à voir comment il fonctionne, comment l'installer, comment le configurer, comment l'utiliser.
+Dans la continuité de cette mise à niveau, j'ai commencé à jeter un oeil sur l'outil nagios, à voir comment il fonctionne, comment l'installer, comment le configurer, comment l'utiliser.
 
+.How to install nagios4
 image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
 
-J'ai donc décider, pour prendre en main cet outil complexe et puissant, d'installer et de configurer ma propre version de Nagios.
+J'ai donc décidé, pour prendre en main cet outil complexe et puissant, d'installer et de configurer ma propre version de Nagios.
 
-Il m'a donc été nécéssaire d'abord de configurer un serveur pour pouvoir le déployer. J'ai donc installé et configuré une nouvelle machine virtuelle sous CentOS. Puis je me suis lancé dans l'installation du Nagios sur lequel j'ai configuré quelques sondes pour comprendre leurs fonctionnement.
+Il m'a donc été nécéssaire d'abord, de configurer un serveur pour pouvoir le déployer. J'ai donc installé et configuré une nouvelle machine virtuelle sous CentOS grâce à l'outil Ovirt. Puis je me suis lancé dans l'installation du Nagios en suivant la documentation, sur lequel j'ai configuré quelques sondes pour comprendre leurs fonctionnement.
 
-- Script de synchronisation
+Pour fonctionner, Nagios est basé sur un système de fichiers de configuration. Ces fichiers de configuration sont situés dans le dossier _/usr/local/nagios/etc/_ et classés sous forme de contact, d'hôtes, de services et de commandes.
 
-- SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.
+Les contacts sont les différents utilisateurs de l'outils. On peut leur attribuer différents degrés de droit d'accès, définir une adresse mail, les périodes de notifications, ...
+
+Les hôtes sont les différents serveurs, équipements en réseaux que l'on supervise. Il est impératif de lui définir l'adresse IP à laquelle l'hôte est affecté sur le réseau.
+
+Pour chaque hôtes on définit les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments si nécéssaire. Ils remontent via les commandes et les checks l'état dans lequel ils sont. Classiquement, on reconnait trois types d'états pour les services :
+
+- *OK*
+- *WARNING*
+- *CRITICAL*
+
+Les checks sont les scripts éxécutées par les commandes des différents services qui vont permettre de récupérer les données nécéssaires pour indiquer et mettre à jours l'état de ces services.
+
+Dans un premier temps il a fallut que je configure un contact pour y déclarer principalement l'adresse mail sur laquelle je compte recevoir les alertes.
+[[app-listing]]
+[source,cfg]
+.contacts.cfg
+----
+define contact{
+        contact_name                    nagiosadmin             ; Short name of user
+        use                             generic-contact         ; Inherit default values from generic-contact template (defined above)
+        alias                           Nagios Admin            ; Full name of user
+
+        email                           t.calatayud@maine-et-loire.fr   ; <<***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+        service_notification_period             24x7
+        service_notification_options            w,u,c,r,f,s
+        service_notification_commands           notify-service-by-email
+        host_notification_period                24x7
+        host_notification_options               d,u,r,f,s
+        host_notification_commands              notify-host-by-email
+        }
+----
+
+Dans un second temps, j'ai rajouté les différents hôtes que je souhaite superviser.
+Voici un éxemple d'hôtes que j'ai configurer. C'est le serveur hébergeant le site web interne prévu pour les agents du département.
+[[app-listing]]
+[source,cfg]
+.hosts/melinfo.cfg
+----
+define host {
+        use                     generic-host                    ; Inherit default values from a template
+        host_name               melinfo                         ; The name we're giving to this host
+        alias                   Melinfo                 ; A longer name associated with the host
+        address                 10.100.49.110                   ; IP address of the host
+        hostgroups              linux-servers
+        check_interval          5
+        retry_interval          1
+        check_command           check-host-alive
+        max_check_attempts      10
+        contact_groups          admins
+        register                1
+}
+----
+
+Ensuite, il faut configurer les services liés à chaque hôte, les données que je souhaite superviser.
+[[app-listing]]
+[source,cfg]
+.services/melinfo_service.cfg
+----
+define service {
+        use                     generic-service
+        host_name               melinfo
+        service_description     HTTP
+        check_command           check_http
+        notifications_enabled   0
+} # <1>
+
+define service {
+        use                     generic-service
+        host_name               melinfo
+        service_description     PING
+        check_command           check_ping!100.0,20%!400.0,90%
+} # <2>
+----
+<1> Ce service va utiliser un check, une commande qui va envoyé une requête http dans le but de savoir si oui ou non le serveur web répond.
+<2> Ce service va utiliser un check qui va remonter le temps de réponse, le ping. Cette commande est configuré de sorte à ce que si le temps de réponse dépasse 100 ms il se placera dans l'état WARNING. Si le temps de réponse dépasse 400 ms il se placera dans l'état CRITICAL.
+
+Voici quelques éxemples de commandes utilisant des checks définit par Nagios.
+[[app-listing]]
+[source,cfg]
+----
+define command{
+        command_name    check_http
+        command_line    $USER1$/check_http -I $HOSTADDRESS$ $ARG1$
+        }
+
+define command{
+        command_name    check_ping
+        command_line    $USER1$/check_ping -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$ -p 5
+        }
+
+define command {
+       command_name     check_local_disk
+       command_line     $USER1$/check_disk -w $ARG1$ -c $ARG2$ -p $ARG3$
+}
+----
+
+Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permette d'uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.
+
+Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l'arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où à été rangé ce fichier qu'on aimerai bien modifié.
+
+On obtient un Nagios configuré et pret à superviser. On peut désormais se diriger vers l'interface web pour avoir enfin l'apperçu de notre système de supervision.
+_http://xthomasnagios2/nagios/_ (où xthomas2 est la résolution dns de l'adresse ip de mon serveur sur le réseau)
+
+.Services Nagios
+image::Images/nagios_3.png[Nagios]
+
+==== Synchronisation des nagios de l'unité
+
+==== SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.
 
 <<<
 

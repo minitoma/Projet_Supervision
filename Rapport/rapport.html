@@ -570,6 +570,8 @@ Département de Maine et Loire<br/>
 <ul class="sectlevel3">
 <li><a href="#_mise_à_niveau_technique">Mise à niveau technique</a></li>
 <li><a href="#_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</a></li>
+<li><a href="#_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</a></li>
+<li><a href="#_saeir_installation_des_baies_de_stockage_et_de_serveurs_déplacement_dans_les_salles_et_installation_du_nagios">SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</a></li>
 </ul>
 </li>
 </ul>
@@ -637,8 +639,11 @@ Qu&#8217;est ce que c&#8217;est ? Qu&#8217;est ce qu&#8217;il fait , Organisatio
 - Missions/compétences
 - Organisation</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="Images/Organigramme-CG.JPG" alt="Organigramme CG"/></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="Images/Organigramme-CG.JPG" alt="Organigramme CG"/>
+</div>
+<div class="title">Image 1. Organigramme du Conseil Départemental</div>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="ulist">
@@ -654,8 +659,11 @@ Qu&#8217;est ce que c&#8217;est ? Qu&#8217;est ce qu&#8217;il fait , Organisatio
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="Images/Organigramme-DLSI.jpg" alt="Organigramme DLSI"/></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="Images/Organigramme-DLSI.jpg" alt="Organigramme DLSI"/>
+</div>
+<div class="title">Image 2. Organigramme de la DLSI</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -677,8 +685,17 @@ Windows.</p>
 &#8594; Gestion des profils/boite mail
 &#8594; SUPERVISION</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="Images/Organigramme-SPISP.jpg" alt="Organigramme SPISP"/></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="Images/Organigramme-SPISP.jpg" alt="Organigramme SPISP"/>
+</div>
+<div class="title">Image 3. Organigramme du Service Poste Informatique et Système de Production</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Images/Organigramme-Sysprod.jpg" alt="Organigramme Sysprod"/>
+</div>
+<div class="title">Image 4. Organigramme de l&#8217;unité Système de Production</div>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
@@ -833,7 +850,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <p>Stockage NAS (NFS et CIFS) répliqué sur deux salles</p>
 </li>
 <li>
-<p>14 To consommés pour les VMs</p>
+<p>18 To consommés pour les VMs</p>
 </li>
 <li>
 <p>15 To consommés pour la bureautique</p>
@@ -876,6 +893,12 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="paragraph">
 <p>J&#8217;ai ensuite découvert l&#8217;outil Ovirt que notre unité utilise pour l&#8217;installation et la gestion de machines virtuelles, pour installer et configurer une machine virtuelle Windows.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="Images/ovirt.png" alt="Ovirt"/>
+</div>
+<div class="title">Image 5. Ovirt</div>
+</div>
 <div class="sect4">
 <h5 id="_monter_un_disque_virtuel">Monter un disque virtuel</h5>
 <div class="paragraph">
@@ -902,47 +925,32 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="sect4">
 <h5 id="_script_d_alertes_mail_inotify">Script d&#8217;alertes mail, inotify</h5>
 <div class="paragraph">
-<p>Il m&#8217;a ensuite été proposé, d&#8217;écrire un script permettant de transmettre un fichier par mail lorsqu&#8217;il apparaît dans un répertoire donnée, puis le supprimer. Il s&#8217;aggit donc de surveiller un répertoire et lorsqu&#8217;un fichier est écrit et est disponible à l&#8217;intérieur de ce dossier pour ensuite le supprimer.</p>
+<p>Il m&#8217;a ensuite été proposé, d&#8217;écrire un script permettant de transmettre un fichier par mail lorsqu&#8217;il apparaît dans un répertoire donnée, puis le supprimer. Il s&#8217;aggit donc d&#8217;éffectuer la surveillance d&#8217;un répertoire et de rapporté par mail tout ce qu&#8217;il s&#8217;y est passé.</p>
 </div>
 <div class="paragraph">
-<p>Dans un premier temps j&#8217;ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre, si ce fichier est dans le dossier surveillé et le supprime une fois qu&#8217;il a été envoyé.</p>
+<p>Dans un premier temps j&#8217;ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s&#8217;il est dans le répertoire surveillé et il le supprime une fois qu&#8217;il a été envoyé.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai ensuite écrit une deuxième version, amélioré, utilisant le système inotify.</p>
+<p>J&#8217;ai ensuite écrit une deuxième version, amélioré, utilisant le mécanisme inotify qui fournit des notification concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associés à l&#8217;évolution de l&#8217;état du système de fichiers. Les principaux événements qui peuvent être suviis sont :</p>
 </div>
-<div id="app-listing" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">#!/bin/sh
-
-inotifywait -mqr -e close_write &quot;/home/tcalatayud/sendMailInotify/dossier&quot; | while read FILE <i class="conum" data-value="1"></i><b>(1)</b>
-
-do
-echo $FILE
-BEGIN=$(echo $FILE | cut -d' ' -f 1)
-END=$(echo $FILE | cut -d' ' -f 3)
-echo $BEGIN
-echo $END
-
-PATHFILE=$BEGIN$END
-
-echo $PATHFILE
-
-echo &quot;Message&quot; | mailx -a $PATHFILE -S from=&quot;t.calatayud@maine-et-loire.fr&quot; -S smtp=smtp://smtp.cg49.fr -s &quot;Object du message&quot; t.calatayud@maine-et-loire.fr
-rm $PATHFILE
-done</code></pre>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>IN_ACCESS</strong> : Le fichier est accédé en lecture</p>
+</li>
+<li>
+<p><strong>IN_MODIFY</strong> : Le fichier est modifié</p>
+</li>
+<li>
+<p><strong>IN_CLOSE_WRITE</strong> : Le fichier est fermé après avoir été ouvert en écriture</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>cette deuxième version utilise donc la commande inotifywait qui permet de surveiller un répertoire.</td>
-</tr>
-</table>
-</div>
-<div style="page-break-after: always;"></div>
 <div class="paragraph">
-<p>Et enfin, j&#8217;ai écrit une dernière version en Python qui s&#8217;éxecute en tant que daemon, c&#8217;est à dire que le script s&#8217;éxecute en tâche de fond par le système, sans le contrôle de l&#8217;utilisateur.</p>
+<p>Et enfin, j&#8217;ai écrit une dernière version en Python3 qui s&#8217;éxecute en tant que daemon, c&#8217;est à dire que le programme s&#8217;éxecute en tâche de fond par le système, sans le contrôle de l&#8217;utilisateur.</p>
 </div>
 <div class="paragraph">
 <p>J&#8217;y ai inclus la gestion de logs pour qu&#8217;on puisse avoir un rapport, si nécéssaire, des actions que le script a éffectué et pour permettre d&#8217;avoir un apperçu du bon fonctionnement et de la bonne éxecution du programme.</p>
@@ -959,41 +967,212 @@ server = smtp.cg49.fr <i class="conum" data-value="3"></i><b>(3)</b>
 port = 25
 
 [config_inotify]
-watchFolder = /home/tcalatayud/sendMailPython/dossier
+watchFolder = /home/tcalatayud/sendMailPython/dossier <i class="conum" data-value="4"></i><b>(4)</b>
 
 [config_daemon]
-pidfile = /home/tcalatayud/sendMailPython/daemon.pid
-logfile = /var/log/MyLog/MyScriptDaemon.log</code></pre>
+pidfile = /home/tcalatayud/sendMailPython/daemon.pid <i class="conum" data-value="5"></i><b>(5)</b>
+logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i><b>(6)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Adresse mail de l&#8217;expéditeur</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Adresse mail du destinataire</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Serveur smtp</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Chemin du répertoire surveillé</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Chemin du fichier où on retrouve l&#8217;id du processus</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Chemin du fichier de log</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour l&#8217;éxécuté, il suffit de lancer le programme avec l&#8217;argument "start". On l&#8217;arrête avec l&#8217;argument "stop". Il est possible d&#8217;obtenir les informations concernant le statut du programme avec l&#8217;argument "status".</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</h4>
 <div class="paragraph">
-<p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à regarder l&#8217;outil nagios, à voir comment il fonctionne, comment l&#8217;installer, comment le configurer, comment l&#8217;utiliser.</p>
+<p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à jeter un oeil sur l&#8217;outil nagios, à voir comment il fonctionne, comment l&#8217;installer, comment le configurer, comment l&#8217;utiliser.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"><img src="Images/nagios4.jpg" alt="nagios4"/></a>
 </div>
+<div class="title">Image 6. How to install nagios4</div>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai donc décider, pour prendre en main cet outil complexe et puissant, d&#8217;installer et de configurer ma propre version de Nagios.</p>
+<p>J&#8217;ai donc décidé, pour prendre en main cet outil complexe et puissant, d&#8217;installer et de configurer ma propre version de Nagios.</p>
 </div>
 <div class="paragraph">
-<p>Il m&#8217;a donc été nécéssaire d&#8217;abord de configurer un serveur pour pouvoir le déployer. J&#8217;ai donc installé et configuré une nouvelle machine virtuelle sous CentOS. Puis je me suis lancé dans l&#8217;installation du Nagios sur lequel j&#8217;ai configuré quelques sondes pour comprendre leurs fonctionnement.</p>
+<p>Il m&#8217;a donc été nécéssaire d&#8217;abord, de configurer un serveur pour pouvoir le déployer. J&#8217;ai donc installé et configuré une nouvelle machine virtuelle sous CentOS grâce à l&#8217;outil Ovirt. Puis je me suis lancé dans l&#8217;installation du Nagios en suivant la documentation, sur lequel j&#8217;ai configuré quelques sondes pour comprendre leurs fonctionnement.</p>
+</div>
+<div class="paragraph">
+<p>Pour fonctionner, Nagios est basé sur un système de fichiers de configuration. Ces fichiers de configuration sont situés dans le dossier <em>/usr/local/nagios/etc/</em> et classés sous forme de contact, d&#8217;hôtes, de services et de commandes.</p>
+</div>
+<div class="paragraph">
+<p>Les contacts sont les différents utilisateurs de l&#8217;outils. On peut leur attribuer différents degrés de droit d&#8217;accès, définir une adresse mail, les périodes de notifications, &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Les hôtes sont les différents serveurs, équipements en réseaux que l&#8217;on supervise. Il est impératif de lui définir l&#8217;adresse IP à laquelle l&#8217;hôte est affecté sur le réseau.</p>
+</div>
+<div class="paragraph">
+<p>Pour chaque hôtes on définit les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments si nécéssaire. Ils remontent via les commandes et les checks l&#8217;état dans lequel ils sont. Classiquement, on reconnait trois types d&#8217;états pour les services :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Script de synchronisation</p>
+<p><strong>OK</strong></p>
 </li>
 <li>
-<p>SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</p>
+<p><strong>WARNING</strong></p>
+</li>
+<li>
+<p><strong>CRITICAL</strong></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Les checks sont les scripts éxécutées par les commandes des différents services qui vont permettre de récupérer les données nécéssaires pour indiquer et mettre à jours l&#8217;état de ces services.</p>
+</div>
+<div class="paragraph">
+<p>Dans un premier temps il a fallut que je configure un contact pour y déclarer principalement l&#8217;adresse mail sur laquelle je compte recevoir les alertes.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="title">contacts.cfg</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cfg">define contact{
+        contact_name                    nagiosadmin             ; Short name of user
+        use                             generic-contact         ; Inherit default values from generic-contact template (defined above)
+        alias                           Nagios Admin            ; Full name of user
+
+        email                           t.calatayud@maine-et-loire.fr   ; &lt;&lt;***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+        service_notification_period             24x7
+        service_notification_options            w,u,c,r,f,s
+        service_notification_commands           notify-service-by-email
+        host_notification_period                24x7
+        host_notification_options               d,u,r,f,s
+        host_notification_commands              notify-host-by-email
+        }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans un second temps, j&#8217;ai rajouté les différents hôtes que je souhaite superviser.
+Voici un éxemple d&#8217;hôtes que j&#8217;ai configurer. C&#8217;est le serveur hébergeant le site web interne prévu pour les agents du département.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="title">hosts/melinfo.cfg</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cfg">define host {
+        use                     generic-host                    ; Inherit default values from a template
+        host_name               melinfo                         ; The name we're giving to this host
+        alias                   Melinfo                 ; A longer name associated with the host
+        address                 10.100.49.110                   ; IP address of the host
+        hostgroups              linux-servers
+        check_interval          5
+        retry_interval          1
+        check_command           check-host-alive
+        max_check_attempts      10
+        contact_groups          admins
+        register                1
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ensuite, il faut configurer les services liés à chaque hôte, les données que je souhaite superviser.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="title">services/melinfo_service.cfg</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cfg">define service {
+        use                     generic-service
+        host_name               melinfo
+        service_description     HTTP
+        check_command           check_http
+        notifications_enabled   0
+} <i class="conum" data-value="1"></i><b>(1)</b>
+
+define service {
+        use                     generic-service
+        host_name               melinfo
+        service_description     PING
+        check_command           check_ping!100.0,20%!400.0,90%
+} <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Ce service va utiliser un check, une commande qui va envoyé une requête http dans le but de savoir si oui ou non le serveur web répond.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Ce service va utiliser un check qui va remonter le temps de réponse, le ping. Cette commande est configuré de sorte à ce que si le temps de réponse dépasse 100 ms il se placera dans l&#8217;état WARNING. Si le temps de réponse dépasse 400 ms il se placera dans l&#8217;état CRITICAL.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Voici quelques éxemples de commandes utilisant des checks définit par Nagios.</p>
+</div>
+<div id="app-listing" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cfg">define command{
+        command_name    check_http
+        command_line    $USER1$/check_http -I $HOSTADDRESS$ $ARG1$
+        }
+
+define command{
+        command_name    check_ping
+        command_line    $USER1$/check_ping -H $HOSTADDRESS$ -w $ARG1$ -c $ARG2$ -p 5
+        }
+
+define command {
+       command_name     check_local_disk
+       command_line     $USER1$/check_disk -w $ARG1$ -c $ARG2$ -p $ARG3$
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permette d&#8217;uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.</p>
+</div>
+<div class="paragraph">
+<p>Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l&#8217;arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où à été rangé ce fichier qu&#8217;on aimerai bien modifié.</p>
+</div>
+<div class="paragraph">
+<p>On obtient un Nagios configuré et pret à superviser. On peut désormais se diriger vers l&#8217;interface web pour avoir enfin l&#8217;apperçu de notre système de supervision.
+<em><a href="http://xthomasnagios2/nagios/" class="bare">http://xthomasnagios2/nagios/</a></em> (où xthomas2 est la résolution dns de l&#8217;adresse ip de mon serveur sur le réseau)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Images/nagios_3.png" alt="Nagios"/>
+</div>
+<div class="title">Image 7. Services Nagios</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_saeir_installation_des_baies_de_stockage_et_de_serveurs_déplacement_dans_les_salles_et_installation_du_nagios">SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</h4>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -1130,7 +1309,7 @@ Mon ressenti ce que j&#8217;ai apporté, ce qu&#8217;on m&#8217;a apporté</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-18 16:29:17 CEST
+Last updated 2017-05-19 15:54:47 CEST
 </div>
 </div>
 </body>
