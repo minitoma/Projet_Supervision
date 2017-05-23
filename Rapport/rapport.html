@@ -571,7 +571,7 @@ Département de Maine et Loire<br/>
 <li><a href="#_mise_à_niveau_technique">Mise à niveau technique</a></li>
 <li><a href="#_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</a></li>
 <li><a href="#_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</a></li>
-<li><a href="#_saeir_installation_des_baies_de_stockage_et_de_serveurs_déplacement_dans_les_salles_et_installation_du_nagios">SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</a></li>
+<li><a href="#_mise_en_place_de_la_nouvelle_salle_serveur_et_installation_de_baies_de_stockage">Mise en place de la nouvelle salle serveur et installation de baies de stockage.</a></li>
 </ul>
 </li>
 </ul>
@@ -704,7 +704,7 @@ Windows.</p>
 <p>La supervision est une fonction permettant d&#8217;indiquer, controler, commander l&#8217;état d&#8217;un système ou d&#8217;un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d&#8217;information. Le tout dans un but de détection et de traitement le plus automatique possible.</p>
 </div>
 <div class="paragraph">
-<p>L&#8217;informatique est intégrée et est devenue un outil indispensable d&#8217;une entreprise, quel que soit son secteur d&#8217;activité, le système d&#8217;information est placé désormais au centre de l&#8217;activité de différentes entités métiers et doit fonctionner plainement et en permanence pour garantir l&#8217;efficacité de l&#8217;entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d&#8217;applications et les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l&#8217;entreprise.</p>
+<p>L&#8217;informatique est intégrée et est devenue un outil indispensable dans une entreprise, quel que soit son secteur d&#8217;activité, le système d&#8217;information est placé désormais au centre de l&#8217;activité de différentes entités métiers et doit fonctionner pleinement et en permanence pour garantir l&#8217;efficacité de l&#8217;entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d&#8217;applications et toutes les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l&#8217;entreprise.</p>
 </div>
 <div class="paragraph">
 <p>Il existe deux enjeux majeurs pour les directions informatiques. Le premier est de garantir la disponibilité et les niveaux de service du système en cas de panne ou de dégradation des performances. Le second est de tenter de prévenir en cas de problème et, le cas échéant, garantir une remontée d&#8217;information rapide et une durée d&#8217;intervention minimale. Ces enjeux sont donc assurés par la supervision.</p>
@@ -722,6 +722,9 @@ Windows.</p>
 </li>
 <li>
 <p>Analyser</p>
+</li>
+<li>
+<p>Prévenir</p>
 </li>
 <li>
 <p>Piloter</p>
@@ -850,10 +853,10 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <p>Stockage NAS (NFS et CIFS) répliqué sur deux salles</p>
 </li>
 <li>
-<p>18 To consommés pour les VMs</p>
+<p>18 To consommés pour les VMs sur un total de 40 To disponibles</p>
 </li>
 <li>
-<p>15 To consommés pour la bureautique</p>
+<p>21 To consommés pour la bureautique</p>
 </li>
 <li>
 <p>Supervision avec Nagios</p>
@@ -920,7 +923,6 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 </tr>
 </table>
 </div>
-<div style="page-break-after: always;"></div>
 </div>
 <div class="sect4">
 <h5 id="_script_d_alertes_mail_inotify">Script d&#8217;alertes mail, inotify</h5>
@@ -928,7 +930,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <p>Il m&#8217;a ensuite été proposé, d&#8217;écrire un script permettant de transmettre un fichier par mail lorsqu&#8217;il apparaît dans un répertoire donnée, puis le supprimer. Il s&#8217;aggit donc d&#8217;éffectuer la surveillance d&#8217;un répertoire et de rapporté par mail tout ce qu&#8217;il s&#8217;y est passé.</p>
 </div>
 <div class="paragraph">
-<p>Dans un premier temps j&#8217;ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s&#8217;il est dans le répertoire surveillé et il le supprime une fois qu&#8217;il a été envoyé.</p>
+<p>Dans un premier temps j&#8217;ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s&#8217;il est dans le répertoire surveillé puis il le supprime une fois qu&#8217;il a été envoyé.</p>
 </div>
 <div class="paragraph">
 <p>J&#8217;ai ensuite écrit une deuxième version, amélioré, utilisant le mécanisme inotify qui fournit des notification concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associés à l&#8217;évolution de l&#8217;état du système de fichiers. Les principaux événements qui peuvent être suviis sont :</p>
@@ -959,6 +961,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <p>J&#8217;ai notamment utilisé un fichier de configuration .ini qui permet de définir à l&#8217;utilisateur et de rassembler des variables dans un même endroit pour pouvoir les utiliser ensuite dans le programme.</p>
 </div>
 <div id="app-listing" class="listingblock">
+<div class="title">script.ini</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="ini">[config_mail]
 fromaddr = t.calatayud@maine-et-loire.fr <i class="conum" data-value="1"></i><b>(1)</b>
@@ -1012,12 +1015,6 @@ logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i>
 <div class="paragraph">
 <p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à jeter un oeil sur l&#8217;outil nagios, à voir comment il fonctionne, comment l&#8217;installer, comment le configurer, comment l&#8217;utiliser.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<a class="image" href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"><img src="Images/nagios4.jpg" alt="nagios4"/></a>
-</div>
-<div class="title">Image 6. How to install nagios4</div>
-</div>
 <div class="paragraph">
 <p>J&#8217;ai donc décidé, pour prendre en main cet outil complexe et puissant, d&#8217;installer et de configurer ma propre version de Nagios.</p>
 </div>
@@ -1059,17 +1056,17 @@ logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i>
 <div class="title">contacts.cfg</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cfg">define contact{
-        contact_name                    nagiosadmin             ; Short name of user
-        use                             generic-contact         ; Inherit default values from generic-contact template (defined above)
-        alias                           Nagios Admin            ; Full name of user
+        contact_name                        nagiosadmin             ; Short name of user
+        use                                 generic-contact         ; Inherit default values from generic-contact template (defined above)
+        alias                               Nagios Admin            ; Full name of user
 
-        email                           t.calatayud@maine-et-loire.fr   ; &lt;&lt;***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
-        service_notification_period             24x7
-        service_notification_options            w,u,c,r,f,s
-        service_notification_commands           notify-service-by-email
-        host_notification_period                24x7
-        host_notification_options               d,u,r,f,s
-        host_notification_commands              notify-host-by-email
+        email                               t.calatayud@maine-et-loire.fr   ; &lt;&lt;***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+        service_notification_period         24x7
+        service_notification_options        w,u,c,r,f,s
+        service_notification_commands       notify-service-by-email
+        host_notification_period            24x7
+        host_notification_options           d,u,r,f,s
+        host_notification_commands          notify-host-by-email
         }</code></pre>
 </div>
 </div>
@@ -1154,7 +1151,7 @@ define command {
 <p>Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permette d&#8217;uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.</p>
 </div>
 <div class="paragraph">
-<p>Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l&#8217;arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où à été rangé ce fichier qu&#8217;on aimerai bien modifié.</p>
+<p>Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l&#8217;arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où ont été rangé les fichiers pour pouvoir les modifier si nécéssaire.</p>
 </div>
 <div class="paragraph">
 <p>On obtient un Nagios configuré et pret à superviser. On peut désormais se diriger vers l&#8217;interface web pour avoir enfin l&#8217;apperçu de notre système de supervision.
@@ -1164,15 +1161,32 @@ define command {
 <div class="content">
 <img src="Images/nagios_3.png" alt="Nagios"/>
 </div>
-<div class="title">Image 7. Services Nagios</div>
+<div class="title">Image 6. Services Nagios</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</h4>
-
+<div class="paragraph">
+<p>Pour l&#8217;unité, deux serveurs Nagios sont installés, un serveur principal et un deuxième Nagios secondaire. On m&#8217;a demandé dans le cas d&#8217;une panne du serveur principal de pouvoir synchroniser sa configuration sur le Nagios secondaire.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai donc écrit un programme s&#8217;éxécutant en tant que service système, c&#8217;est à dire un démon système géré par le protocole systemd. Utilisable via la commande systemctl, ce petit programme utilise, dans la même optique que le script d&#8217;envois de mail que j&#8217;ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu&#8217;il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d&#8217;avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second nagios. Il ne restera plus qu&#8217;à extraire l&#8217;archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_saeir_installation_des_baies_de_stockage_et_de_serveurs_déplacement_dans_les_salles_et_installation_du_nagios">SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.</h4>
+<h4 id="_mise_en_place_de_la_nouvelle_salle_serveur_et_installation_de_baies_de_stockage">Mise en place de la nouvelle salle serveur et installation de baies de stockage.</h4>
+<div class="paragraph">
+<p>Pour répondre aux besoins grandissant du conseil départemental, l&#8217;ouverture d&#8217;une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. J&#8217;ai donc assisté aux travaux et à son installation.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai notamment assisté à l&#8217;installation de l&#8217;outil Ovirt pour ce nouveau réseau et j&#8217;ai moi même mis en place le Nagios.</p>
+</div>
+<div class="paragraph">
+<p>En parallèle à cette installation, j&#8217;ai aussi pu aider à mettre en place sur le site de Lavoisier de nouvelles baies de stockages.</p>
+</div>
+<div class="paragraph">
+<p>Grâce à ces interventions, j&#8217;ai pu constater qu&#8217;un administrateur système n&#8217;est pas seulement un informaticien qui règle les problèmes derrière son bureau, mais c&#8217;est aussi un technicien qui doit répondre à des questions techniques concernant le matériel et qui doit s&#8217;assurer le bon déploiement et le bon fonctionnement du matériel qu&#8217;il utilise.</p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -1181,60 +1195,152 @@ define command {
 <div class="sect1">
 <h2 id="_identification_des_solutions_libres_open_sources_de_supervision">Identification des solutions libres/open-sources de supervision</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Problématique :</p>
-</li>
-<li>
-<p>Solution vieillisante</p>
-</li>
-<li>
-<p>Problème de maintenance</p>
-</li>
-<li>
-<p>mise à jour ardue (BSD, versions, &#8230;&#8203;)</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Comme décrit dans l&#8217;intitulé de mon projet d&#8217;apprentissage, notre service utilise donc l&#8217;outil Nagios pour la supervision.</p>
 </div>
 <div class="paragraph">
-<p>Vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, de nombreux outils similaire à Nagios ont été créer. S&#8217;ouvre donc l&#8217;éventualité de voir et découvrir ces nouvelles solutions.</p>
+<p>Malgrès son énorme catalogue de possibilité, cette solution qui a déjà plus de 20 ans devient vieillissante. Son système de configuration rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.</p>
+</div>
+<div class="paragraph">
+<p>De plus, vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, des tas d&#8217;outils plus ou moins similaire à Nagios ont émergé.</p>
+</div>
+<div class="paragraph">
+<p>S&#8217;ouvre donc l&#8217;éventualité et la curiosité de voir et découvrir ces nouvelles solutions.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est de cette volonté, que mon équipe a souhaité m&#8217;engager pour éffectuer cette mission.</p>
 </div>
 <div class="sect2">
 <h3 id="_instantanné_des_solutions_libres_open_sources">Instantanné des solutions libres/open-sources.</h3>
 <div class="paragraph">
-<p>Premier critère : Libre/Open-source</p>
+<p>Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu&#8217;elles proposent. J&#8217;ai donc décidé dans ma démarche, de commencer mes recherches sans faire l&#8217;état de la solution éxistante, sans identifier les réels besoins de l&#8217;unité.</p>
+</div>
+<div class="paragraph">
+<p>J&#8217;ai donc décidé de faire un inventaire le plus exhaustif possible, faire la recherche et l&#8217;exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L&#8217;idée était que grâce à ce regard neuf, je pourrai être capable d&#8217;identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d&#8217;autres utilités tout aussi intéréssantes voir même plus intéréssantes.</p>
+</div>
+<div class="paragraph">
+<p>Le seul critère de recherche que je me suis réellement imposé lors de cet inventaire est le fait que la solution soit open-source ou plus généralement gratuite.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est donc dans cette optique, que j&#8217;ai pu commencer mes recherches.</p>
+</div>
+<div class="paragraph">
+<p>Durant cette profonde exploration, j&#8217;ai pu inventorier une énorme quantité de solution. En effet, pas moins de 72 solutions sont ressorties, toutes plus ou moins intéréssantes.</p>
+</div>
+<div class="paragraph">
+<p>Par le biai de ces recherche j&#8217;ai pu distinguer différents types de supervision :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Inventaire exhaustif</p>
+<p><strong>La supervision technique</strong> : Elle se sépare en deux sous catégorie.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>La supervision réseau</strong> : On entend ici l&#8217;aspect communication entre les machines. Elle va consister à s&#8217;assurer le bon fonctionnement des comminications et de la performance des liens (débit, latence, taux d&#8217;erreurs). C&#8217;est dans ce cadre que l&#8217;on va vérifier par exemple si une adresse IP est toujours joignable, ou si tel port est ouvert sur telle machine, ou faire des statistiques sur la latence du lien réseau.</p>
 </li>
 <li>
-<p>Donner les différents types de solutions</p>
+<p><strong>La supervision système</strong> : Elle va consister à surveiller les machines elles-mêmes et en particulier ses ressources. Si l&#8217;on souhaite par exemple contrôler la mémoire utilisée ou la charge processeur sur le serveur, voir analyser les fichiers de logs système.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
-<p>Les protocoles utilisés</p>
-</li>
-<li>
-<p>Les types de configuration</p>
-</li>
-<li>
-<p>Remontée des alertes</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
+<p><strong>La supervision applicative ou métier</strong> : Plus subtile, Elle va consister à surveiller les applications et les processus métiers des agents au sein de l&#8217;entreprise.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Pour trouver une nouvelle solution de supervision adapté au besoin de l&#8217;unité, il est nécéssaire de connâitre les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu&#8217;elles proposent.</p>
+<p>Pour résumer, la supervision va dépendre principalement de l&#8217;activité de l&#8217;entreprise mais aussi et surtout de son besoin. On trouve rarement un même type de supervision d&#8217;une entreprise à l&#8217;autre. Mais cela reste abstrait. Concrètement et généralement, on supervise les serveurs, les switchs, les routeurs, les téléphones en réseau, les caméras en réseau, les badgeuses, les sondes, la bande passante, le CPU, la mémoire, les disques, les processus, les services, les bases de données, le bon déroulement des actions (backups, transferts, &#8230;&#8203;). Tout est supervisable tant que l&#8217;on peut récupérer et analyser des informations provenant des différents équipements que l&#8217;on souhaite superviser.</p>
 </div>
 <div class="paragraph">
-<p>Inventaire le plus exhaustif possible, recherche et exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. En explicant pourquoi je fais ça. Pourquoi je n&#8217;utilise pas de cahier des charges.</p>
+<p>Un système de supervision est basé généralement sur un serveur centrale. On y retrouvera assez souvent les fonctions suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interroger un agent installé directement sur l&#8217;équipement à surveiller, pour avoir une vue de l&#8217;intérieur du système.</p>
+</li>
+<li>
+<p>Interroger chaque service ou équipement directement depuis la base centrale, pour avoir une vue de l&#8217;extérieur du système.</p>
+</li>
+<li>
+<p>recevoir les alertes émises par les équipements et les retransmettre.</p>
+</li>
+<li>
+<p>Notifier les administrateurs.</p>
+</li>
+<li>
+<p>Agir pour remettre en service</p>
+</li>
+<li>
+<p>Archiver les données récoltées et produire des rapports statistiques ou graphiques.</p>
+</li>
+<li>
+<p>Permettre de visualiser l&#8217;état du système d&#8217;information.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>&#8594; apparitions des premiers critères évidents ( snmp, plugins, alertes, &#8230;&#8203; ), éliminations des solutions qui sont vraiment pas adaptés, premier filtrage.</p>
+<p>Le tout est que ces tâches soit éffectuées le plus automatiquement possible.</p>
+</div>
+<div class="paragraph">
+<p>Il est possible d&#8217;accéder à de nombreuses informations localement sur une machine en utilisant des outils "bas niveau". En quelques lignes de script shell par éxemple, on peut construire un rapport d&#8217;état de la machine. On rajoute une entrée dans la crontab et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide apperçu de l&#8217;état d&#8217;un système. La commande ping, par éxemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>En parallèle, il y a l&#8217;IPMI, Intelligent Platform Management Interface. IPMI est une spécification commune à la plupart des constructeurs, permettant de superviser une machine, indépendamment de son sytème d&#8217;exploitation, y compris si elle est éteinte mais connectée à une prise électrique.</p>
+</div>
+<div class="paragraph">
+<p>Le coeur d&#8217;IPMI est un contrôleur appelé BMC (Baseboard Management Controller). Il surveille les différents capteurs intégrés à la carte mère, comme la température, la vitesse de rotation des ventilateurs, l&#8217;état du système d&#8217;exploitation, &#8230;&#8203; et permet certaines actions sur la machine comme l&#8217;extinction ou le démarrage.</p>
+</div>
+<div class="paragraph">
+<p>ICMP est un protocole de couche réseau qui vient palier à l&#8217;absence de message d&#8217;erreur du protocole IP. En effet, s&#8217;il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l&#8217;erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C&#8217;est un protocole très simple, qui n&#8217;a pas pour fonction directe la supervision d&#8217;un réseau mais qui est utilisé comme source d&#8217;information sur la qualité du réseau ou sur la présence d&#8217;une machine.</p>
+</div>
+<div class="paragraph">
+<p>Un autre protocole très utilisé, voir indispensable dans la supervision, le SNMP, Simple Network Management Protocol, est principalement utilisé pour superviser des équipements réseaux, des serveurs ou même des périphériques tels que des baies de stockages de disques, des sondes météorologique, des onduleurs, &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Le protocole SNMP est basé sur trois éléments :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un équipement à superviser qui contient des objets à gérer, des informations de configuration, des données techniques, des statistiques, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Il exécute un agent, un programme qui agrège les données locales.</p>
+</li>
+<li>
+<p>Une console de supervision qui permet d&#8217;interroger les agents accessibles par le réseau ou de recevoir des alertes émises par les agents via des ports UDP (User Datagram Protocol).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Le protocole Syslog est aussi un outil très utile pour la supervision. C&#8217;est un protocole de transmission d&#8217;événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d&#8217;analyse statistique, d&#8217;archivage ou production d&#8217;alertes. Retrouvé dans les journaux, logs, chaque événement système est accompagné de son type de service, sa gravité, la date et l&#8217;heure à laquelle l&#8217;événement est survenu, et l&#8217;hôte sur lequel l&#8217;événement s&#8217;est produit.</p>
+</div>
+<div class="paragraph">
+<p>De nombreux autres protocoles sont utilisés, comme JMX, CIM, ITIL, SBLIM, WBEM, &#8230;&#8203; mais tous les citer et les expliquer serait beaucoup trop long. C&#8217;est pour cela que je ne présente que les plus importants, ceux qui sont les plus utilisés sur les différentes solutions de supervision.</p>
+</div>
+<div class="paragraph">
+<p>En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d&#8217;outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéréssant de les visualiser. Généralement, la meilleure façon de visualiser ces données, c&#8217;est de les représenter sur des graphiques. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, &#8230;&#8203; utilisent dans la majeure partie du temps, une suite d&#8217;utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C&#8217;est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d&#8217;un processeur.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="Images/Rrd_week.png" alt="Rrd week"/>
+</div>
+<div class="title">Image 7. Graphique RRDtool</div>
+</div>
+<div class="paragraph">
+<p>Mais il éxiste d&#8217;autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d&#8217;utilisation et entièrement configurables permettant de rendre un visuel ésthétique et lisible sur une large variété de données.</p>
+</div>
+<div class="paragraph">
+<p>TABLEAUX DE BORD/INTERFACES</p>
+</div>
+<div class="paragraph">
+<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécéssité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>Par cet inventaire et cette constatation j&#8217;ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1309,7 +1415,7 @@ Mon ressenti ce que j&#8217;ai apporté, ce qu&#8217;on m&#8217;a apporté</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-19 15:54:47 CEST
+Last updated 2017-05-23 16:23:14 CEST
 </div>
 </div>
 </body>

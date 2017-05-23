@@ -120,7 +120,7 @@ image::Images/Organigramme-Sysprod.jpg[]
 
 La supervision est une fonction permettant d'indiquer, controler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le tout dans un but de détection et de traitement le plus automatique possible.
 
-L'informatique est intégrée et est devenue un outil indispensable d'une entreprise, quel que soit son secteur d'activité, le système d'information est placé désormais au centre de l'activité de différentes entités métiers et doit fonctionner plainement et en permanence pour garantir l'efficacité de l'entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d'applications et les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l'entreprise.
+L'informatique est intégrée et est devenue un outil indispensable dans une entreprise, quel que soit son secteur d'activité, le système d'information est placé désormais au centre de l'activité de différentes entités métiers et doit fonctionner pleinement et en permanence pour garantir l'efficacité de l'entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d'applications et toutes les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l'entreprise.
 
 Il existe deux enjeux majeurs pour les directions informatiques. Le premier est de garantir la disponibilité et les niveaux de service du système en cas de panne ou de dégradation des performances. Le second est de tenter de prévenir en cas de problème et, le cas échéant, garantir une remontée d'information rapide et une durée d'intervention minimale. Ces enjeux sont donc assurés par la supervision.
 
@@ -129,6 +129,7 @@ Ainsi, la supervision inclut plusieurs activités :
 - Surveiller
 - Visualiser
 - Analyser
+- Prévenir
 - Piloter
 - Agir
 - Alerter
@@ -188,9 +189,9 @@ Virtualisation sur oVirt (Linux/KVM)
 
 * Stockage NAS (NFS et CIFS) répliqué sur deux salles
 
-* 18 To consommés pour les VMs
+* 18 To consommés pour les VMs sur un total de 40 To disponibles
 
-* 15 To consommés pour la bureautique
+* 21 To consommés pour la bureautique
 
 * Supervision avec Nagios
 ====
@@ -229,13 +230,11 @@ tcalatayud@tcalatayud-CD49:~$ df -lh
 ----
 <1> J'obtiens donc un disque d'une taille de 15 To sur lequel je peux écrire et lire des fichiers. Cependant, il est bien entendu évident qu'avant de pouvoir le remplir complètement je risque d'avoir quelques problèmes étant limité par la taille du disque dur physique.
 
-<<<
-
 ===== Script d'alertes mail, inotify
 
 Il m'a ensuite été proposé, d'écrire un script permettant de transmettre un fichier par mail lorsqu'il apparaît dans un répertoire donnée, puis le supprimer. Il s'aggit donc d'éffectuer la surveillance d'un répertoire et de rapporté par mail tout ce qu'il s'y est passé.
 
-Dans un premier temps j'ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s'il est dans le répertoire surveillé et il le supprime une fois qu'il a été envoyé.
+Dans un premier temps j'ai écrit un premier petit script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s'il est dans le répertoire surveillé puis il le supprime une fois qu'il a été envoyé.
 
 J'ai ensuite écrit une deuxième version, amélioré, utilisant le mécanisme inotify qui fournit des notification concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associés à l'évolution de l'état du système de fichiers. Les principaux événements qui peuvent être suviis sont :
 
@@ -252,6 +251,7 @@ J'ai notamment utilisé un fichier de configuration .ini qui permet de définir 
 
 [[app-listing]]
 [source,ini]
+.script.ini
 ----
 [config_mail]
 fromaddr = t.calatayud@maine-et-loire.fr # <1>
@@ -279,8 +279,10 @@ Pour l'éxécuté, il suffit de lancer le programme avec l'argument "start". On 
 
 Dans la continuité de cette mise à niveau, j'ai commencé à jeter un oeil sur l'outil nagios, à voir comment il fonctionne, comment l'installer, comment le configurer, comment l'utiliser.
 
+////
 .How to install nagios4
 image::Images/nagios4.jpg[link="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04"]
+////
 
 J'ai donc décidé, pour prendre en main cet outil complexe et puissant, d'installer et de configurer ma propre version de Nagios.
 
@@ -306,17 +308,17 @@ Dans un premier temps il a fallut que je configure un contact pour y déclarer p
 .contacts.cfg
 ----
 define contact{
-        contact_name                    nagiosadmin             ; Short name of user
-        use                             generic-contact         ; Inherit default values from generic-contact template (defined above)
-        alias                           Nagios Admin            ; Full name of user
+        contact_name                        nagiosadmin             ; Short name of user
+        use                                 generic-contact         ; Inherit default values from generic-contact template (defined above)
+        alias                               Nagios Admin            ; Full name of user
 
-        email                           t.calatayud@maine-et-loire.fr   ; <<***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
-        service_notification_period             24x7
-        service_notification_options            w,u,c,r,f,s
-        service_notification_commands           notify-service-by-email
-        host_notification_period                24x7
-        host_notification_options               d,u,r,f,s
-        host_notification_commands              notify-host-by-email
+        email                               t.calatayud@maine-et-loire.fr   ; <<***** CHANGE THIS TO YOUR EMAIL ADDRESS ******
+        service_notification_period         24x7
+        service_notification_options        w,u,c,r,f,s
+        service_notification_commands       notify-service-by-email
+        host_notification_period            24x7
+        host_notification_options           d,u,r,f,s
+        host_notification_commands          notify-host-by-email
         }
 ----
 
@@ -386,7 +388,7 @@ define command {
 
 Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permette d'uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.
 
-Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l'arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où à été rangé ce fichier qu'on aimerai bien modifié.
+Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l'arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où ont été rangé les fichiers pour pouvoir les modifier si nécéssaire.
 
 On obtient un Nagios configuré et pret à superviser. On peut désormais se diriger vers l'interface web pour avoir enfin l'apperçu de notre système de supervision.
 _http://xthomasnagios2/nagios/_ (où xthomas2 est la résolution dns de l'adresse ip de mon serveur sur le réseau)
@@ -396,40 +398,110 @@ image::Images/nagios_3.png[Nagios]
 
 ==== Synchronisation des nagios de l'unité
 
-==== SAEIR, installation des baies de stockage et de serveurs. Déplacement dans les salles. Et installation du nagios.
+Pour l'unité, deux serveurs Nagios sont installés, un serveur principal et un deuxième Nagios secondaire. On m'a demandé dans le cas d'une panne du serveur principal de pouvoir synchroniser sa configuration sur le Nagios secondaire.
+
+J'ai donc écrit un programme s'éxécutant en tant que service système, c'est à dire un démon système géré par le protocole systemd. Utilisable via la commande systemctl, ce petit programme utilise, dans la même optique que le script d'envois de mail que j'ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu'il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d'avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second nagios. Il ne restera plus qu'à extraire l'archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.
+
+==== Mise en place de la nouvelle salle serveur et installation de baies de stockage.
+
+Pour répondre aux besoins grandissant du conseil départemental, l'ouverture d'une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. J'ai donc assisté aux travaux et à son installation.
+
+J'ai notamment assisté à l'installation de l'outil Ovirt pour ce nouveau réseau et j'ai moi même mis en place le Nagios.
+
+En parallèle à cette installation, j'ai aussi pu aider à mettre en place sur le site de Lavoisier de nouvelles baies de stockages.
+
+Grâce à ces interventions, j'ai pu constater qu'un administrateur système n'est pas seulement un informaticien qui règle les problèmes derrière son bureau, mais c'est aussi un technicien qui doit répondre à des questions techniques concernant le matériel et qui doit s'assurer le bon déploiement et le bon fonctionnement du matériel qu'il utilise.
 
 <<<
 
 == Identification des solutions libres/open-sources de supervision
 
-- Problématique :
-    - Solution vieillisante
-    - Problème de maintenance
-    - mise à jour ardue (BSD, versions, ...)
+Comme décrit dans l'intitulé de mon projet d'apprentissage, notre service utilise donc l'outil Nagios pour la supervision.
 
-Vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, de nombreux outils similaire à Nagios ont été créer. S'ouvre donc l'éventualité de voir et découvrir ces nouvelles solutions.
+Malgrès son énorme catalogue de possibilité, cette solution qui a déjà plus de 20 ans devient vieillissante. Son système de configuration rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.
+
+De plus, vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, des tas d'outils plus ou moins similaire à Nagios ont émergé.
+
+S'ouvre donc l'éventualité et la curiosité de voir et découvrir ces nouvelles solutions.
+
+C'est de cette volonté, que mon équipe a souhaité m'engager pour éffectuer cette mission.
 
 === Instantanné des solutions libres/open-sources.
 
+////
 Premier critère : Libre/Open-source
 
 - Inventaire exhaustif
-
 - Donner les différents types de solutions
-
 - Les protocoles utilisés
-
 - Les types de configuration
-
 - Remontée des alertes
-
 - ...
+////
 
-Pour trouver une nouvelle solution de supervision adapté au besoin de l'unité, il est nécéssaire de connâitre les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu'elles proposent.
+Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu'elles proposent. J'ai donc décidé dans ma démarche, de commencer mes recherches sans faire l'état de la solution éxistante, sans identifier les réels besoins de l'unité.
 
-Inventaire le plus exhaustif possible, recherche et exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. En explicant pourquoi je fais ça. Pourquoi je n'utilise pas de cahier des charges.
+J'ai donc décidé de faire un inventaire le plus exhaustif possible, faire la recherche et l'exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L'idée était que grâce à ce regard neuf, je pourrai être capable d'identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d'autres utilités tout aussi intéréssantes voir même plus intéréssantes.
 
--> apparitions des premiers critères évidents ( snmp, plugins, alertes, ... ), éliminations des solutions qui sont vraiment pas adaptés, premier filtrage.
+Le seul critère de recherche que je me suis réellement imposé lors de cet inventaire est le fait que la solution soit open-source ou plus généralement gratuite.
+
+C'est donc dans cette optique, que j'ai pu commencer mes recherches.
+
+Durant cette profonde exploration, j'ai pu inventorier une énorme quantité de solution. En effet, pas moins de 72 solutions sont ressorties, toutes plus ou moins intéréssantes.
+
+Par le biai de ces recherche j'ai pu distinguer différents types de supervision :
+
+- *La supervision technique* : Elle se sépare en deux sous catégorie.
+..  *La supervision réseau* : On entend ici l'aspect communication entre les machines. Elle va consister à s'assurer le bon fonctionnement des comminications et de la performance des liens (débit, latence, taux d'erreurs). C'est dans ce cadre que l'on va vérifier par exemple si une adresse IP est toujours joignable, ou si tel port est ouvert sur telle machine, ou faire des statistiques sur la latence du lien réseau.
+..  *La supervision système* : Elle va consister à surveiller les machines elles-mêmes et en particulier ses ressources. Si l'on souhaite par exemple contrôler la mémoire utilisée ou la charge processeur sur le serveur, voir analyser les fichiers de logs système.
+- *La supervision applicative ou métier* : Plus subtile, Elle va consister à surveiller les applications et les processus métiers des agents au sein de l'entreprise.
+
+Pour résumer, la supervision va dépendre principalement de l'activité de l'entreprise mais aussi et surtout de son besoin. On trouve rarement un même type de supervision d'une entreprise à l'autre. Mais cela reste abstrait. Concrètement et généralement, on supervise les serveurs, les switchs, les routeurs, les téléphones en réseau, les caméras en réseau, les badgeuses, les sondes, la bande passante, le CPU, la mémoire, les disques, les processus, les services, les bases de données, le bon déroulement des actions (backups, transferts, ...). Tout est supervisable tant que l'on peut récupérer et analyser des informations provenant des différents équipements que l'on souhaite superviser.
+
+Un système de supervision est basé généralement sur un serveur centrale. On y retrouvera assez souvent les fonctions suivantes :
+
+- Interroger un agent installé directement sur l'équipement à surveiller, pour avoir une vue de l'intérieur du système.
+- Interroger chaque service ou équipement directement depuis la base centrale, pour avoir une vue de l'extérieur du système.
+- recevoir les alertes émises par les équipements et les retransmettre.
+- Notifier les administrateurs.
+- Agir pour remettre en service
+- Archiver les données récoltées et produire des rapports statistiques ou graphiques.
+- Permettre de visualiser l'état du système d'information.
+
+Le tout est que ces tâches soit éffectuées le plus automatiquement possible.
+
+Il est possible d'accéder à de nombreuses informations localement sur une machine en utilisant des outils "bas niveau". En quelques lignes de script shell par éxemple, on peut construire un rapport d'état de la machine. On rajoute une entrée dans la crontab et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide apperçu de l'état d'un système. La commande ping, par éxemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, ...
+
+En parallèle, il y a l'IPMI, Intelligent Platform Management Interface. IPMI est une spécification commune à la plupart des constructeurs, permettant de superviser une machine, indépendamment de son sytème d'exploitation, y compris si elle est éteinte mais connectée à une prise électrique.
+
+Le coeur d'IPMI est un contrôleur appelé BMC (Baseboard Management Controller). Il surveille les différents capteurs intégrés à la carte mère, comme la température, la vitesse de rotation des ventilateurs, l'état du système d'exploitation, ... et permet certaines actions sur la machine comme l'extinction ou le démarrage.
+
+ICMP est un protocole de couche réseau qui vient palier à l'absence de message d'erreur du protocole IP. En effet, s'il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l'erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C'est un protocole très simple, qui n'a pas pour fonction directe la supervision d'un réseau mais qui est utilisé comme source d'information sur la qualité du réseau ou sur la présence d'une machine.
+
+Un autre protocole très utilisé, voir indispensable dans la supervision, le SNMP, Simple Network Management Protocol, est principalement utilisé pour superviser des équipements réseaux, des serveurs ou même des périphériques tels que des baies de stockages de disques, des sondes météorologique, des onduleurs, ...
+
+Le protocole SNMP est basé sur trois éléments :
+
+- Un équipement à superviser qui contient des objets à gérer, des informations de configuration, des données techniques, des statistiques, ...
+- Il exécute un agent, un programme qui agrège les données locales.
+- Une console de supervision qui permet d'interroger les agents accessibles par le réseau ou de recevoir des alertes émises par les agents via des ports UDP (User Datagram Protocol).
+
+Le protocole Syslog est aussi un outil très utile pour la supervision. C'est un protocole de transmission d'événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d'analyse statistique, d'archivage ou production d'alertes. Retrouvé dans les journaux, logs, chaque événement système est accompagné de son type de service, sa gravité, la date et l'heure à laquelle l'événement est survenu, et l'hôte sur lequel l'événement s'est produit.
+
+De nombreux autres protocoles sont utilisés, comme JMX, CIM, ITIL, SBLIM, WBEM, ... mais tous les citer et les expliquer serait beaucoup trop long. C'est pour cela que je ne présente que les plus importants, ceux qui sont les plus utilisés sur les différentes solutions de supervision.
+
+En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d'outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéréssant de les visualiser. Généralement, la meilleure façon de visualiser ces données, c'est de les représenter sur des graphiques. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, ... utilisent dans la majeure partie du temps, une suite d'utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C'est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d'un processeur.
+
+.Graphique RRDtool
+image::Images/Rrd_week.png[]
+
+Mais il éxiste d'autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d'utilisation et entièrement configurables permettant de rendre un visuel ésthétique et lisible sur une large variété de données.
+
+TABLEAUX DE BORD/INTERFACES
+
+De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l'on pourrait qualifiées d'indispensables pour la supervision semble former des critères important dans le choix d'une bonne solution de supervision, comme la nécéssité d'un protocole SNMP, d'alertes, d'interface web, ...
+
+Par cet inventaire et cette constatation j'ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.
 
 <<<
 
