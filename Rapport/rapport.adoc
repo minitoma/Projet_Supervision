@@ -439,9 +439,9 @@ Premier critère : Libre/Open-source
 - ...
 ////
 
-Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu'elles proposent. J'ai donc décidé dans ma démarche, de commencer mes recherches sans faire l'état de la solution éxistante, sans identifier les réels besoins de l'unité.
+Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existantes sur le marché et ce qu'elles proposent. J'ai donc décidé dans ma démarche, de commencer mes recherches sans faire l'état de la solution éxistante, sans identifier les réels besoins de l'unité.
 
-J'ai donc décidé de faire un inventaire le plus exhaustif possible, faire la recherche et l'exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L'idée était que grâce à ce regard neuf, je pourrai être capable d'identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d'autres utilités tout aussi intéréssantes voir même plus intéréssantes.
+J'ai en effet choisi de faire un inventaire le plus exhaustif possible, faire la recherche et l'exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L'idée était que grâce à ce regard neuf, je pourrai être capable d'identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d'autres utilités tout aussi intéréssantes voir même plus intéréssantes.
 
 Le seul critère de recherche que je me suis réellement imposé lors de cet inventaire est le fait que la solution soit open-source ou plus généralement gratuite.
 
@@ -468,7 +468,7 @@ Un système de supervision est basé généralement sur un serveur centrale. On 
 - Archiver les données récoltées et produire des rapports statistiques ou graphiques.
 - Permettre de visualiser l'état du système d'information.
 
-Le tout est que ces tâches soit éffectuées le plus automatiquement possible.
+Le tout est que ces tâches soit éffectuées le plus automatiquement possible pour libérer cette charge de travail à l'administrateur.
 
 Il est possible d'accéder à de nombreuses informations localement sur une machine en utilisant des outils "bas niveau". En quelques lignes de script shell par éxemple, on peut construire un rapport d'état de la machine. On rajoute une entrée dans la crontab et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide apperçu de l'état d'un système. La commande ping, par éxemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, ...
 
@@ -499,13 +499,21 @@ Mais il éxiste d'autres outils permettant de stocker et transformer les donnée
 
 TABLEAUX DE BORD/INTERFACES
 
-De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l'on pourrait qualifiées d'indispensables pour la supervision semble former des critères important dans le choix d'une bonne solution de supervision, comme la nécéssité d'un protocole SNMP, d'alertes, d'interface web, ...
+Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'on doit superviser un grand nombre d'hôtes et de services. Il devient nécéssaire, voir indispensable d'avoir un apperçu global de l'état de ces hôtes et de ces services. En effet, pouvoir voir d'un rapide coup d'oeil les données supervisées le plus synthétiquement et globalement possible, semble être un enjeu important.
 
-Par cet inventaire et cette constatation j'ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.
+Beaucoup de solution mise d'ailleurs sur ce point. Certaines proposent des interfaces généralement web, sophistiquées, permettant justement cet apperçu global de l'état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.
+
+D'autres solutions préfèrent se concentrer sur le moteur de la supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu'ils partagent ensuite à la communauté. Ainsi, par éxemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus ésthétiques développées et mises à disposition par la communauté.
+
+De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l'on pourrait qualifiées parfois d'indispensables pour la supervision semble former des critères important dans le choix d'une bonne solution de supervision, comme la nécéssité d'un protocole SNMP, d'alertes, d'interface web, ...
 
 <<<
 
 === Etablir les critères de sélection
+
+.à rédiger
+
+Par cet inventaire j'ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.
 
 - Identifier le domaine à superviser (sur le nagios)
 

@@ -1213,10 +1213,10 @@ define command {
 <div class="sect2">
 <h3 id="_instantanné_des_solutions_libres_open_sources">Instantanné des solutions libres/open-sources.</h3>
 <div class="paragraph">
-<p>Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existante sur le marché et ce qu&#8217;elles proposent. J&#8217;ai donc décidé dans ma démarche, de commencer mes recherches sans faire l&#8217;état de la solution éxistante, sans identifier les réels besoins de l&#8217;unité.</p>
+<p>Pour trouver une nouvelle solution de supervision, il était nécéssaire de connaître les enjeux de la supervision, de connaître les solutions existantes sur le marché et ce qu&#8217;elles proposent. J&#8217;ai donc décidé dans ma démarche, de commencer mes recherches sans faire l&#8217;état de la solution éxistante, sans identifier les réels besoins de l&#8217;unité.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai donc décidé de faire un inventaire le plus exhaustif possible, faire la recherche et l&#8217;exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L&#8217;idée était que grâce à ce regard neuf, je pourrai être capable d&#8217;identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d&#8217;autres utilités tout aussi intéréssantes voir même plus intéréssantes.</p>
+<p>J&#8217;ai en effet choisi de faire un inventaire le plus exhaustif possible, faire la recherche et l&#8217;exploration la plus complète possible et la plus "naïve" possible, avec un regard neuf sur la supervision. L&#8217;idée était que grâce à ce regard neuf, je pourrai être capable d&#8217;identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur une solution, certe remplissant nos besoins, mais aussi trouver d&#8217;autres utilités tout aussi intéréssantes voir même plus intéréssantes.</p>
 </div>
 <div class="paragraph">
 <p>Le seul critère de recherche que je me suis réellement imposé lors de cet inventaire est le fait que la solution soit open-source ou plus généralement gratuite.</p>
@@ -1282,7 +1282,7 @@ define command {
 </ul>
 </div>
 <div class="paragraph">
-<p>Le tout est que ces tâches soit éffectuées le plus automatiquement possible.</p>
+<p>Le tout est que ces tâches soit éffectuées le plus automatiquement possible pour libérer cette charge de travail à l&#8217;administrateur.</p>
 </div>
 <div class="paragraph">
 <p>Il est possible d&#8217;accéder à de nombreuses informations localement sur une machine en utilisant des outils "bas niveau". En quelques lignes de script shell par éxemple, on peut construire un rapport d&#8217;état de la machine. On rajoute une entrée dans la crontab et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide apperçu de l&#8217;état d&#8217;un système. La commande ping, par éxemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, &#8230;&#8203;</p>
@@ -1337,15 +1337,25 @@ define command {
 <p>TABLEAUX DE BORD/INTERFACES</p>
 </div>
 <div class="paragraph">
-<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécéssité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
+<p>Lorsque le système d&#8217;information s&#8217;élargit, lorsqu&#8217;il commence à prendre de l&#8217;ampleur et qu&#8217;on doit superviser un grand nombre d&#8217;hôtes et de services. Il devient nécéssaire, voir indispensable d&#8217;avoir un apperçu global de l&#8217;état de ces hôtes et de ces services. En effet, pouvoir voir d&#8217;un rapide coup d&#8217;oeil les données supervisées le plus synthétiquement et globalement possible, semble être un enjeu important.</p>
 </div>
 <div class="paragraph">
-<p>Par cet inventaire et cette constatation j&#8217;ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.</p>
+<p>Beaucoup de solution mise d&#8217;ailleurs sur ce point. Certaines proposent des interfaces généralement web, sophistiquées, permettant justement cet apperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.</p>
+</div>
+<div class="paragraph">
+<p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de la supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par éxemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus ésthétiques développées et mises à disposition par la communauté.</p>
+</div>
+<div class="paragraph">
+<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécéssité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
 <h3 id="_etablir_les_critères_de_sélection">Etablir les critères de sélection</h3>
+<div class="paragraph">
+<div class="title">à rédiger</div>
+<p>Par cet inventaire j&#8217;ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -1415,7 +1425,7 @@ Mon ressenti ce que j&#8217;ai apporté, ce qu&#8217;on m&#8217;a apporté</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-23 16:23:14 CEST
+Last updated 2017-05-24 15:40:25 CEST
 </div>
 </div>
 </body>
