@@ -1,3 +1,4 @@
+////
 = Critères de séléctions
 v3.0
 :icons: font
@@ -9,6 +10,11 @@ v3.0
 ****
 
 ---
+////
+{check} : Possible (intégré directement,...) +
+{uncheck} : Impossible +
+{almost} : Possible sous conditions (via plugins,...) +
+{question} : Pas d'informations
 
 [horizontal]
 .Impératif
@@ -21,19 +27,19 @@ Développement (Dernière update et date)::
     _Actif/Inactif - Date et version de la dernière update_
 
 Communauté::
-    La communauté est active ? +
+    La communauté est active ? Documentation ? +
     _Active/Inactive_
 
 Web API::
     Interface personnalisable ? Configuration depuis l'interface ? ... +
-    {check}/{uncheck} _- Personnalisable/Non personnalisable_
+    {check}/{almost}/{uncheck} _- Personnalisable/Non personnalisable_
 
 OS supportés::
     _Windows/Linux_
 
 Triggers/Alerts::
     Remonter des alertes quand il le faut et déclencher des évènements pour réagir en fonction. +
-    {check}/{uncheck} _- sms/mail/jabber/slack/IRC/..._
+    {check}/{uncheck} _- sms/mail/jabber/slack/IRC/Customs alertscripts,..._
 
 Agentless::
     Est-il possible de superviser une plateforme sans installer l'agent ? Si oui par quels moyens ? (SSH, Telnet, NRPE, TCP, ICMP,...) +

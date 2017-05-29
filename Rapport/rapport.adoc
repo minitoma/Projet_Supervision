@@ -9,6 +9,10 @@ Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
 :toc-title: Table des matières
 :toclevels: 3
 :figure-caption: Image
+:check: icon:check[role="green"]
+:almost: icon:check[role="yellow"]
+:uncheck: icon:times[role="red"]
+:question: icon:question[role="blue"]
 ////
 Pour enlever le toc en pdf
 ifdef::backend-pdf[]
@@ -404,7 +408,7 @@ J'ai donc écrit un programme s'éxécutant en tant que service système, c'est 
 
 ==== Mise en place de la nouvelle salle serveur et installation de baies de stockage.
 
-Pour répondre aux besoins grandissant du conseil départemental, l'ouverture d'une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. J'ai donc assisté aux travaux et à son installation.
+Pour répondre aux besoins grandissant du conseil départemental, l'ouverture d'une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place en collaboration avec le département de la Sarthe et notamment la ville du Mans. J'ai donc assisté aux travaux et à son installation.
 
 J'ai notamment assisté à l'installation de l'outil Ovirt pour ce nouveau réseau et j'ai moi même mis en place le Nagios.
 
@@ -497,11 +501,9 @@ image::Images/Rrd_week.png[]
 
 Mais il éxiste d'autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d'utilisation et entièrement configurables permettant de rendre un visuel ésthétique et lisible sur une large variété de données.
 
-TABLEAUX DE BORD/INTERFACES
-
 Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'on doit superviser un grand nombre d'hôtes et de services. Il devient nécéssaire, voir indispensable d'avoir un apperçu global de l'état de ces hôtes et de ces services. En effet, pouvoir voir d'un rapide coup d'oeil les données supervisées le plus synthétiquement et globalement possible, semble être un enjeu important.
 
-Beaucoup de solution mise d'ailleurs sur ce point. Certaines proposent des interfaces généralement web, sophistiquées, permettant justement cet apperçu global de l'état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.
+Beaucoup de solution mise d'ailleurs sur ce point. Certaines proposent des interfaces généralement déstiné pour le web, sophistiquées, permettant justement cet apperçu global de l'état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.
 
 D'autres solutions préfèrent se concentrer sur le moteur de la supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu'ils partagent ensuite à la communauté. Ainsi, par éxemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus ésthétiques développées et mises à disposition par la communauté.
 
@@ -511,9 +513,19 @@ De cet inventaire, on constate des fonctionnalités ressortant sur la plupart de
 
 === Etablir les critères de sélection
 
-.à rédiger
+On peut donc s'apercevoir grâce à cet inventaire, qu'il existe des tonnes de solutions toutes aussi diverses les unes que les autres. Cependant, il semble bien évidemment impossible de tester ces 72 solutions en profondeur et dans leur intégralité et juger ainsi vraiment de leur potentiel. Il est donc nécéssaire de réduire cette liste. Et d'éffectuer un premier élagage.
 
-Par cet inventaire j'ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.
+J'ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d'une liste de 72 solutions à une liste d'une dizaine de solutions.
+
+Ces 10 solutions se sont démarqué principalement par mon analyse de nagios et des discussions avec les membres de l'équipe.
+
+Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester de fond en comble. Malgrès mon envie de vouloir tester le plus de solution possible, l'équipe et moi avons décider de n'en retenir que deux. Pour les identifier, il est nécéssaire d'identifier lesquels sont les plus intéréssantes selon nos besoins.
+
+C'est ainsi qu'est apparu la nécéssité d'établir un ensemble de critère définissant si telle ou telle solution est plus intéréssante qu'une autre. Ainsi, à l'image d'un tamis, les critères que j'aurai établi filtreront les solutions restantes en faisant ressortir les deux meilleures.
+
+C'est à partir de maintenant, qu'il a été indispensable de bien identifier les besoins de l'unité. En effet, pour construire ce filtre il a fallu dans un premier temps, bien cerner le domaine à superviser. J'ai donc parcouru les Nagios déjà installés pour bien identifier et lister les différentes sondes mises en place. Dans un second temps, j'ai repris les solutions restantes du premier filtrage pour les croiser entre elles et identifier dans l'ensemble ce qui les caractérise vraiment. En parallèle, de nombreuses discussions avec l'équipe m'ont permi d'établir cette liste de 20 critères que j'ai classé selon trois catégories : les critères impératifs, souhaitables ou bonus.
+
+include::../recherches/criteres.adoc[]
 
 - Identifier le domaine à superviser (sur le nagios)
 

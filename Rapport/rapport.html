@@ -1176,7 +1176,7 @@ define command {
 <div class="sect3">
 <h4 id="_mise_en_place_de_la_nouvelle_salle_serveur_et_installation_de_baies_de_stockage">Mise en place de la nouvelle salle serveur et installation de baies de stockage.</h4>
 <div class="paragraph">
-<p>Pour répondre aux besoins grandissant du conseil départemental, l&#8217;ouverture d&#8217;une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. J&#8217;ai donc assisté aux travaux et à son installation.</p>
+<p>Pour répondre aux besoins grandissant du conseil départemental, l&#8217;ouverture d&#8217;une nouvelle salle de serveurs a été nécéssaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place en collaboration avec le département de la Sarthe et notamment la ville du Mans. J&#8217;ai donc assisté aux travaux et à son installation.</p>
 </div>
 <div class="paragraph">
 <p>J&#8217;ai notamment assisté à l&#8217;installation de l&#8217;outil Ovirt pour ce nouveau réseau et j&#8217;ai moi même mis en place le Nagios.</p>
@@ -1334,28 +1334,281 @@ define command {
 <p>Mais il éxiste d&#8217;autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d&#8217;utilisation et entièrement configurables permettant de rendre un visuel ésthétique et lisible sur une large variété de données.</p>
 </div>
 <div class="paragraph">
-<p>TABLEAUX DE BORD/INTERFACES</p>
-</div>
-<div class="paragraph">
 <p>Lorsque le système d&#8217;information s&#8217;élargit, lorsqu&#8217;il commence à prendre de l&#8217;ampleur et qu&#8217;on doit superviser un grand nombre d&#8217;hôtes et de services. Il devient nécéssaire, voir indispensable d&#8217;avoir un apperçu global de l&#8217;état de ces hôtes et de ces services. En effet, pouvoir voir d&#8217;un rapide coup d&#8217;oeil les données supervisées le plus synthétiquement et globalement possible, semble être un enjeu important.</p>
 </div>
 <div class="paragraph">
-<p>Beaucoup de solution mise d&#8217;ailleurs sur ce point. Certaines proposent des interfaces généralement web, sophistiquées, permettant justement cet apperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.</p>
+<p>Beaucoup de solution mise d&#8217;ailleurs sur ce point. Certaines proposent des interfaces généralement déstiné pour le web, sophistiquées, permettant justement cet apperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable à souhait, nous offrant la possibilité de choisir les vues qui nous importent les plus, souvent accompagnées par les graphiques adéquats.</p>
 </div>
 <div class="paragraph">
 <p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de la supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par éxemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus ésthétiques développées et mises à disposition par la communauté.</p>
 </div>
 <div class="paragraph">
-<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécéssité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
+<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées parfois d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécéssité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
 <h3 id="_etablir_les_critères_de_sélection">Etablir les critères de sélection</h3>
 <div class="paragraph">
-<div class="title">à rédiger</div>
-<p>Par cet inventaire j&#8217;ai pu déjà commencer à faire un premier filtrage et à réduire drastiquement la liste des solutions établies.</p>
+<p>On peut donc s&#8217;apercevoir grâce à cet inventaire, qu&#8217;il existe des tonnes de solutions toutes aussi diverses les unes que les autres. Cependant, il semble bien évidemment impossible de tester ces 72 solutions en profondeur et dans leur intégralité et juger ainsi vraiment de leur potentiel. Il est donc nécéssaire de réduire cette liste. Et d&#8217;éffectuer un premier élagage.</p>
 </div>
+<div class="paragraph">
+<p>J&#8217;ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d&#8217;une liste de 72 solutions à une liste d&#8217;une dizaine de solutions.</p>
+</div>
+<div class="paragraph">
+<p>Ces 10 solutions se sont démarqué principalement par mon analyse de nagios et des discussions avec les membres de l&#8217;équipe.</p>
+</div>
+<div class="paragraph">
+<p>Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester de fond en comble. Malgrès mon envie de vouloir tester le plus de solution possible, l&#8217;équipe et moi avons décider de n&#8217;en retenir que deux. Pour les identifier, il est nécéssaire d&#8217;identifier lesquels sont les plus intéréssantes selon nos besoins.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est ainsi qu&#8217;est apparu la nécéssité d&#8217;établir un ensemble de critère définissant si telle ou telle solution est plus intéréssante qu&#8217;une autre. Ainsi, à l&#8217;image d&#8217;un tamis, les critères que j&#8217;aurai établi filtreront les solutions restantes en faisant ressortir les deux meilleures.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est à partir de maintenant, qu&#8217;il a été indispensable de bien identifier les besoins de l&#8217;unité. En effet, pour construire ce filtre il a fallu dans un premier temps, bien cerner le domaine à superviser. J&#8217;ai donc parcouru les Nagios déjà installés pour bien identifier et lister les différentes sondes mises en place. Dans un second temps, j&#8217;ai repris les solutions restantes du premier filtrage pour les croiser entre elles et identifier dans l&#8217;ensemble ce qui les caractérise vraiment. En parallèle, de nombreuses discussions avec l&#8217;équipe m&#8217;ont permi d&#8217;établir cette liste de 20 critères que j&#8217;ai classé selon trois catégories : les critères impératifs, souhaitables ou bonus.</p>
+</div>
+<div class="paragraph">
+<p><span class="icon green"><i class="fa fa-check"></i></span> : Possible (intégré directement,&#8230;&#8203;)<br/>
+<span class="icon red"><i class="fa fa-times"></i></span> : Impossible<br/>
+<span class="icon yellow"><i class="fa fa-check"></i></span> : Possible sous conditions (via plugins,&#8230;&#8203;)+
+<span class="icon blue"><i class="fa fa-question"></i></span> : Pas d&#8217;informations</p>
+</div>
+<div class="hdlist">
+<div class="title">Impératif</div>
+<table>
+<tr>
+<td class="hdlist1">
+Licences
+</td>
+<td class="hdlist2">
+<p>Avons nous accès à la version complète du produit ou une version réduite d&#8217;un produit commercial ? Accès aux dernières sources ?<br/>
+<em>Libre (type de Licence)/Limité/Commerciale - Sources accessible/Non accessible</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Développement (Dernière update et date)
+</td>
+<td class="hdlist2">
+<p>Est-ce que le développement est actif ?<br/>
+<em>Actif/Inactif - Date et version de la dernière update</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Communauté
+</td>
+<td class="hdlist2">
+<p>La communauté est active ?<br/>
+<em>Active/Inactive</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Web API
+</td>
+<td class="hdlist2">
+<p>Interface personnalisable ? Configuration depuis l&#8217;interface ? &#8230;&#8203;<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span> <em>- Personnalisable/Non personnalisable</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+OS supportés
+</td>
+<td class="hdlist2">
+<p><em>Windows/Linux</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Triggers/Alerts
+</td>
+<td class="hdlist2">
+<p>Remonter des alertes quand il le faut et déclencher des évènements pour réagir en fonction.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span> <em>- sms/mail/jabber/slack/IRC/&#8230;&#8203;</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Agentless
+</td>
+<td class="hdlist2">
+<p>Est-il possible de superviser une plateforme sans installer l&#8217;agent ? Si oui par quels moyens ? (SSH, Telnet, NRPE, TCP, ICMP,&#8230;&#8203;)<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span> <em>- SSH/Telnet/NRPE/TCP/ICMP/&#8230;&#8203;</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+SNMP ( Simple Network Management Protocol )
+</td>
+<td class="hdlist2">
+<p>Supervision de la plupart des équipements : switch, firewall, routeurs, UPS,&#8230;&#8203;<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+</table>
+</div>
+<hr/>
+<div class="hdlist">
+<div class="title">Souhaitable</div>
+<table>
+<tr>
+<td class="hdlist1">
+Supervision distribuée (scalability)
+</td>
+<td class="hdlist2">
+<p>Autoriser l&#8217;environement à s&#8217;élargir et à superviser des infrastructures plus larges. Superviser plusieurs sites avec une seule installation.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Configuration
+</td>
+<td class="hdlist2">
+<p>Méthode de configuration, depuis la console via des fichier de configuration ? Depuis une API ? Configuration simple, rapide ?<br/>
+<em>Fichiers(type de fichiers) - CLI/API</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Plugins
+</td>
+<td class="hdlist2">
+<p>Possibilité de rajouter des plugins existants ou de creer les siens ?<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span> <em>- nagios/personnels/autres</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Compatibilité nagios
+</td>
+<td class="hdlist2">
+<p>Peut-on rapidement remettre en place le système déjà présent ou faut-il repartir de zéro ?<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Gestion des utilisateurs
+</td>
+<td class="hdlist2">
+<p>Permet de créer et de gérer des utilisateurs. Donner certains droits à certains utilisateurs.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+</table>
+</div>
+<hr/>
+<div class="hdlist">
+<div class="title">Bonus</div>
+<table>
+<tr>
+<td class="hdlist1">
+Graphiques et visualisation
+</td>
+<td class="hdlist2">
+<p>Rendu des données récoltés pour avoir un apperçu global de ce que l&#8217;on supervise.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span> <em>- Intégrés/Importés</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Installation
+</td>
+<td class="hdlist2">
+<p>Installation simple ? Rapide ? Plusieurs modules à installer ?<br/>
+<em>Simple/Laborieuse/Rapide/Longue/AIO/Modulable</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Application Mobile
+</td>
+<td class="hdlist2">
+<p>Recevoir les alertes sur son téléphone.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Support
+</td>
+<td class="hdlist2">
+<p>Support des développeurs ?<br/>
+<em>Actif/Inactif - Payant/Gratuit</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Trend prediction
+</td>
+<td class="hdlist2">
+<p>Regarde comment l&#8217;infrastructure s&#8217;est comportée au fil du temps et essais de prédire comment elle risque de se comporter dans le futur. Pour prédire et éventuellement résoudre les problèmes avant qu&#8217;ils ne soient réellement des problèmes.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Découverte automatique (Auto Discovery)
+</td>
+<td class="hdlist2">
+<p>Rajoute automatiquement dans le système les nouveaux équipements qui ont été ajouté au réseau.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Syslog
+</td>
+<td class="hdlist2">
+<p>Gestion des logs ?<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Isolement/Détection des problèmes
+</td>
+<td class="hdlist2">
+<p>Identifier la réelle source du problème.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Desktop API
+</td>
+<td class="hdlist2">
+<p>Eviter de passer par un explorateur internet.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Langages utilisés
+</td>
+<td class="hdlist2">
+<p>Quel langage est utilisé ?<br/>
+<em>Python/C/java/&#8230;&#8203;</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Methode de stockage des données
+</td>
+<td class="hdlist2">
+<p><em>MySQL/PostgreSQL/RRDTool/Oracle/&#8230;&#8203;</em></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Map du réseau
+</td>
+<td class="hdlist2">
+<p>Aperçu du réseau.<br/>
+<span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
 <div class="ulist">
 <ul>
 <li>
@@ -1371,6 +1624,10 @@ define command {
 <p>Drésser la liste des critères</p>
 </li>
 </ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Comment je les ai établi (recherche plus poussée sur les solutions les plus intéressantes, études des sondes sur le nagios actuel), pourquoi ils sont nécéssaires, à quoi ils servent, catégorisation, listes avec explication et appréciations, &#8230;&#8203;</p>
@@ -1425,7 +1682,7 @@ Mon ressenti ce que j&#8217;ai apporté, ce qu&#8217;on m&#8217;a apporté</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-24 15:40:25 CEST
+Last updated 2017-05-29 16:11:52 CEST
 </div>
 </div>
 </body>
