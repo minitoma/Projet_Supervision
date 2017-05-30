@@ -168,7 +168,7 @@ Cet outil offre de nombreuse possibilités :
 - Superviser les Bases de données
 - Superviser l'environnement (température, luminosité, humidité, climatisation, ...)
 - Interface via le protocole SNMP
-- Supervision à distance via SSH, tunnel SSL ou agent NRPE.
+- Supervision à distance via SSH, agent NRPE.
 - Remonter des alertes par mails, sms via un système de notification.
 - Gestions d'utilisateurs (accèes liimité à certains utilisateurs)
 - Les plugins sont écrits dans des langages de programmation les plus adaptés à leur tâche : scripts shell (bash, ksh, ...), C++, perl, Python, Ruby, PHP, C#, ... et il est possible de créer les siens.
@@ -513,29 +513,43 @@ De cet inventaire, on constate des fonctionnalités ressortant sur la plupart de
 
 === Etablir les critères de sélection
 
-On peut donc s'apercevoir grâce à cet inventaire, qu'il existe des tonnes de solutions toutes aussi diverses les unes que les autres. Cependant, il semble bien évidemment impossible de tester ces 72 solutions en profondeur et dans leur intégralité et juger ainsi vraiment de leur potentiel. Il est donc nécéssaire de réduire cette liste. Et d'éffectuer un premier élagage.
+On peut donc s'apercevoir grâce à cet inventaire, qu'il existe énorméement de solutions toutes aussi diverses les unes que les autres. Cependant, il semble bien évidemment impossible de tester ces 72 solutions en profondeur et juger de leur véritable potentiel même si elles ne sont pas toutes intéréssantes compte tenu de nos besoins. Il est donc nécéssaire de réduire cette liste.
 
-J'ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d'une liste de 72 solutions à une liste d'une dizaine de solutions.
+J'ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d'une liste de 72 solutions à une liste d'une dizaine de solutions. Ces 10 solutions se sont démarquées principalement par mon analyse personnelle de nagios et des discussions avec les membres de l'équipe.
 
-Ces 10 solutions se sont démarqué principalement par mon analyse de nagios et des discussions avec les membres de l'équipe.
+Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester de fond en comble. Malgrès mon envie de vouloir tester le plus de solution possible, l'équipe et moi avons décidé de n'en retenir que deux. Pour les identifier, il est nécéssaire de savoir lesquels sont les plus intéréssantes selon nos besoins.
 
-Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester de fond en comble. Malgrès mon envie de vouloir tester le plus de solution possible, l'équipe et moi avons décider de n'en retenir que deux. Pour les identifier, il est nécéssaire d'identifier lesquels sont les plus intéréssantes selon nos besoins.
+C'est ainsi qu'est apparu la nécéssité d'établir un ensemble de critère définissant si telle ou telle solution est plus intéréssante qu'une autre. Ainsi, à l'image d'un tamis, les critères que j'aurai établi pourront filtrer les solutions restantes en faisant ressortir les deux meilleures.
 
-C'est ainsi qu'est apparu la nécéssité d'établir un ensemble de critère définissant si telle ou telle solution est plus intéréssante qu'une autre. Ainsi, à l'image d'un tamis, les critères que j'aurai établi filtreront les solutions restantes en faisant ressortir les deux meilleures.
-
-C'est à partir de maintenant, qu'il a été indispensable de bien identifier les besoins de l'unité. En effet, pour construire ce filtre il a fallu dans un premier temps, bien cerner le domaine à superviser. J'ai donc parcouru les Nagios déjà installés pour bien identifier et lister les différentes sondes mises en place. Dans un second temps, j'ai repris les solutions restantes du premier filtrage pour les croiser entre elles et identifier dans l'ensemble ce qui les caractérise vraiment. En parallèle, de nombreuses discussions avec l'équipe m'ont permi d'établir cette liste de 20 critères que j'ai classé selon trois catégories : les critères impératifs, souhaitables ou bonus.
+C'est à partir de maintenant, qu'il a été indispensable de bien identifier les besoins de l'unité. En effet, pour construire ce filtre il a fallu dans un premier temps, bien cerner le domaine à superviser. J'ai donc parcouru les Nagios déjà installés pour bien identifier et lister les différentes sondes mises en place. Dans un second temps, j'ai repris les solutions restantes du premier filtrage pour les croiser entre elles et identifier dans l'ensemble ce qui les caractérise vraiment. En parallèle, de nombreuses discussions avec l'équipe m'ont permi d'établir une liste de 25 critères que j'ai classé selon trois catégories : les critères impératifs, souhaitables ou bonus.
 
 include::../recherches/criteres.adoc[]
 
-- Identifier le domaine à superviser (sur le nagios)
+Une fois validé par l'équipe, j'ai pu utiliser ces critères et les croiser avec les solutions envisageables dans un tableau. C'est donc ce tableau qui me sert de filtre pour identifier par lui même et de manière naturelle les meilleures solutions. Ils va donc les classer et faire ressortir visuellement les solutions que je vais pouvoir tester.
 
-- Lister les sondes
+.Tableau comparatif des solutions en fonction des critères
+image::Images/Comparatif.png[]
 
-- Croiser les éléments ressorti lors de l'inventaire
+{check} : Possible +
+{uncheck} : Impossible +
+{question} : Pas d'informations
 
-- Drésser la liste des critères
+On peut donc rapidement juger quelles sont les solutions les plus intéréssantes par un code couleur intuitif : vert indique que le critère est respecté, jaune indique que le critère est respecté sous certaines conditions (par éxemple via un plugin) et rouge indique que le critère n'est pas respecté.
 
-Comment je les ai établi (recherche plus poussée sur les solutions les plus intéressantes, études des sondes sur le nagios actuel), pourquoi ils sont nécéssaires, à quoi ils servent, catégorisation, listes avec explication et appréciations, ...
+J'ai aussi généré deux graphiques permettant de mieux comparer de façon plus quantifié.
+
+.Graphique représentant les solutions en fonction des critères
+image::Images/diagram.png[]
+
+Plus la solution présente de vert, plus elle aura de critères validés et totalement intégrés. +
+Plus la solution présente de jaune, plus elle aura besoin de module/plugins supplémentaires à installer. +
+Plus la solution présente de rouge, plus elle aura de critère non validés. +
+Les solutions présentant du bleu sont des solutions où je n'ai pas trouvé d'information concernant certains critères.
+
+.Graphique représentant les solutions en fonction des critères classés selon leur importance.
+image::Images/diagram2.png[]
+
+Ce second graphique reprend le principe du premier graphique, en précisant les différentes catégories de critères (Imépratif, souhaitable, bonus). Ainsi, on peut voir d'un rapide coup d'oeil quelle solution rempli les critères les plus important. Ce graphique permet de faciliter l'identification des deux meilleures solutions.
 
 <<<
 
@@ -550,8 +564,10 @@ Présentation des 2 solutions : carte d'identité des solutions
 == Bilan
 
 Synthèse et ouverture
-Dire ce que j'ai fais durant cette première année, le déroulement. (Missions annexes)
+Dire ce que j'ai fais durant cette première année
 Mon ressenti ce que j'ai apporté, ce qu'on m'a apporté
+
+
 
 <<<
 
