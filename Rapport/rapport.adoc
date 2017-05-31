@@ -44,9 +44,15 @@ d.pithon@maine-et-loire.fr
 
 == Remerciements
 
-////
-à rédiger
-////
+Je tiens, avant tout, à remercier mon tuteur en entreprise, M. Denis PITHON pour son expérience, son soutien et ses conseils avisés, ainsi que Arnaud, Styve et Stéphane. Ils ont été, pendant toute cette première année, mes principaux interlocuteurs, toujours présents pour me conseiller et m'accompagner en cas de problème. Ce sont aussi des personnes présentant d'importantes qualités humaines. C'est un plaisir de travailler toujours dans la bonne humeur avec eux. Je suis heureux d'avoir passé cette première année d'apprentissage avec eux et je suis très content d'avoir l'opportunité de continuer l'année prochaine à leur côté.
+
+Je tiens de plus à exprimer toute ma reconnaissance à M. Gérard PHILIPPE, responsable du service Postes Informatiques et Systèmes de Production au sein du Conseil Départemental, pour m'avoir accueilli dans son équipe.
+
+Je souhaite remercier Cécile qui a toujours été présente pour m'aider administrativement, pour son soutien, sa gentillesse et sa bonne humeur. Merci aussi à tous les membres de la Direction Logistique et Système d'Information pour tout ce qu'ils m'ont apportée tout au long de cette première année.
+
+J'aimerai remercier M. Frédéric Lardeux, Enseignant à l'université d'Angers et chercheur au Laboratoire d'Etude et de Recherche en Informatique d'Angers, de m'avoir conseillé, accompagné tout au long de cette première année d'apprentissage. C'est son enthousiasme qui m'a donnée l'envie et l'opportunité d'obtenir ce poste d'apprenti.
+
+Pour finir, j'aimerai aussi remercier mon ami et collègue Alexis Leblond pour sa présence et sa bonne humeur à la fois à l'université et au Conseil Départemental.
 
 <<<
 
@@ -555,6 +561,8 @@ Ce second graphique reprend le principe du premier graphique, en précisant les 
 
 === Présentation des solutions sélectionnées
 
+Transition critère et choix des solutions.
+
 Présentation des 2 solutions : carte d'identité des solutions
 
 ==== Solution 1
@@ -564,10 +572,17 @@ Présentation des 2 solutions : carte d'identité des solutions
 == Bilan
 
 Synthèse et ouverture
-Dire ce que j'ai fais durant cette première année
 Mon ressenti ce que j'ai apporté, ce qu'on m'a apporté
 
+Cette première année d'apprentissage au Conseil départemental a dans un premier temps été l'occasion pour moi d'avoir une première expérience de travail dans un contexte qui me plait vraiment : l'informatique. En effet les jobs étudiants que j'ai pu avoir dans le passé notamment dans la restauration n'ont pas été sans intêret et m'ont beaucoup appris. Mais ce n'est rien comparé à une expérience de travail dans le domaine qui m'intéresse et dans lequel j'aimerai vraiment travailler.
 
+De plus, j'ai pu découvrir un domaine de l'informatique que je ne connaissais pas : l'administration système. En effet, mon apprentissage m'a permis de découvrir un nouveau sujet de l'informatique et m'a permi d'acquérir des connaissances complémentaires à celles acquises à l'université. Ma nature très curieuse fait en sorte que j'aime énormément apprendre et découvrir de nouveaux sujets, ce qui a été possible grâce au poste que l'on m'a proposé au Conseil Départemental.
+
+J'ai pu non seulement découvrir en profondeur un sujet précis de l'administration système : la supervision, mon projet d'apprentissage, mais aussi, en cottoyant et en travaillant avec les autres membres de mon unité, j'ai pu découvrir d'autres problématiques de l'administration système, comme la virtualisation, le stockage et la sauvegarde. J'ai aussi pu ajouter quelques notions de réseau et de sécurité. Toutes ces nouvelles connaissances acquises me permettront ainsi de m'ouvrir au domaine de l'administration système et de ne plus me restreindre au monde du développement largement étudié à l'université.
+
+J'ai rencontré quelques difficultés techniques au début de mon apprentissage, jsutement dues au fait que je n'avais jamais vraiment travaillé sur le domaine de l'administration système auparavent. Mais j'ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j'ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.
+
+Concernant mon projet de supervision, une première étape, a été franchise.
 
 <<<
 
