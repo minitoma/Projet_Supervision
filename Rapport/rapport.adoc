@@ -582,7 +582,9 @@ J'ai pu non seulement découvrir en profondeur un sujet précis de l'administrat
 
 J'ai rencontré quelques difficultés techniques au début de mon apprentissage, jsutement dues au fait que je n'avais jamais vraiment travaillé sur le domaine de l'administration système auparavent. Mais j'ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j'ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.
 
-Concernant mon projet de supervision, une première étape, a été franchise.
+Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéréssantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite réperer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe.
+
+Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il me reste à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, s'il y en a une qui est vraiment intéréssante, l'installer définitivement sur les serveurs de productions.
 
 <<<
 
