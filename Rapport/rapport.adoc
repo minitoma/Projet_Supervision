@@ -86,6 +86,20 @@ Qu'est ce que c'est ? Qu'est ce qu'il fait , Organisation ? (élus, administrati
 - Missions/compétences
 - Organisation
 
+Le Conseil Départemental est une institution publique au service du territoire et des habitants de Maine-et-Loire. Il prend des décisions intéressant la vie quotidienne et décide de grands projets pour l'avenir du département. Les conseils départementaux sont les instances politiques des départements. Ils sont composés d'élus, les conseillers départementaux qui se réunissent au moins une fois par trimestre en Assemblée départementale.
+En Maine-et-Loire, l'assemblée siège à L'Hôtel du Département, dans l'ancienne Abbaye Saint-Aubin en plein coeur du centre-ville d'Angers. Elle est présidée par Christian Gillet depuis 2014.
+
+Les conseillers départementaux sont élus par les citoyens du département pour une durée de six ans au suffrage universel direct à deux tours. Ils sont élus par binôme, composé d'une femme et d'un homme dans chaque canton. On compte 21 cantons en Maine-et-Loire dont sont issus 42 conseillers. Les cantons correspondent à un découpage territorial du département. Lors des Assemblées, l'ensemble des élus définit les orientations stratégiques et adopte les schémas directeurs, décide des plans d'actions dans les domaines de compétences du Département, débat et vote le budget du Département.
+
+Environ 2800 agents territoriaux, techniciens ou administratifs, aussrent les missions de service public pour le Département de Maine-et-Loire. Ils oeuvrent chaque jour à la mise en place de la politique décidée par les conseillers départementaux.
+Les services administratifs sont organisés en deux grande directions :
+- La direction adjointe du développement social et des solidarités exerce les missions principales du Département et regroupe les services sociaux et solidaires. Elle gère les problématiques liées aux personnes âgées, aux personnes handicapées, à l'enfance, à la famille et aux insertions.
+- La direction générale adjointe du territoire regroupe les services concernant les routes, l'éducation, la jeunesse et le sport, les transports et la mobilité, le patrimoine immobilier, l'environnement et le cadre de vie, l'ingénierie et l'accompagnement des territoires, la culture et le partimoine, les archives départementales.
+Certains de ces domaines, le tourisme, la culture et le sport, sont travaillés en colaboration avec d'autres collectivités (La Région et les intercommunalités).
+
+Pour assurer le bon fonctionnement de ces deux grandes directions, un pôle ressources est établis. Il intègre plusieurs sous directions. La direction de l'Assemblée et de l'administration générale est garante de la bonne organisation des instances délibérantes que sont la Commission Permanente et le Conseil Départemental. Elle est le lien entre les élus et les différentes directions et services.
+La direction santé et prévention des risques professionnels a pour mission de prévenir des risques professionnels (santé, psychologique et social) tout en améliorant les conditions de travail. Elle assure l'intégration et l'accompagnement des personnes en situation de handicap. La direction des ressources humaines s'occupe de l'administration, la paie, la comptabilité et des contrats administratif. Elle gère les formations, le recrutement et l'accompagnement professionnel, la communication interne, le dialogue social et syndical. La direction logistique et systèmes d'information gère la logistique, l'informatique et les systèmes d'information.
+
 .Organigramme du Conseil Départemental
 image::Images/Organigramme-CG.JPG[]
 
@@ -95,29 +109,30 @@ image::Images/Organigramme-CG.JPG[]
     - Les différents services
     - L'unité système de production
 
+Internet, télécommunication, ordinateurs, smartphone, logiciels, reprographie, partage de documents, collaboration en ligne, services numériques,... Les agents du Conseil Départemental utilisent tous des outils numériques dans leurs activités quotidiennes. L'accueil, les courriers, le parc automobile, les fournitures, la reprographie et les petits matériels sont des missions liées à la logistique présentes dans notre quotidien à la DLSI. En effet, la Direction Logistique et systèmes d'information dirigé par son directeur M. Christian LECOMTE , veille à la cohérence et au bon fonctionnement de ces différents moyens de logistique, de traitement de l'information et de communication pour que tous les agents de la collectivité puisse travailler dans de bonnes conditions.
+
+La DLSI se découpe en 6 services :
+- Le service usages numériques et internet.
+- Le service projets et intégration logiciels.
+- Le service réseau et sécurité.
+- Le service logistique accueil.
+- Le service relation citoyens usagers.
+- *Le service postes informatiques et systèmes de production.* : C'est dans ce dernier service que j'ai été intégré
+
 .Organigramme de la DLSI
 image::Images/Organigramme-DLSI.jpg[]
+
+Chaque service se décompose généralement en une ou plusieurs unités qui vont s'occuper d'une ou plusieurs tâches plus spécifiques. Mon service SPISP, géré par son chef de service M. Gérard PHILIPPE, se présente en deux unités distinctes, l'unité administration des postes informatiques et l'unité système de production dans laquelle je travaille sous la responsabilité du responsable d'unité et mon tuteur d'apprentissage M. Denis PITHON.
+
+.Organigramme du Service Poste Informatique et Système de Production
+image::Images/Organigramme-SPISP.jpg[]
 
 <<<
 
 === L'unité Système de Production et ses missions
 
 L'unité système de production travaille au sein de la DLSI du Conseil
-Départemental de Maine-et-Loire sur les problématiques liées au stockage, à la
-sauvegarde, à la virtualisation et à la supervision des matériels et
-applications cotés serveurs, ainsi qu'a l'administration des systèmes Linux et
-Windows.
-
-Quoi ? missions ? chiffres ?
--> Stockage
--> Sauvegarde/restauration
--> Virtualisation
--> Administration système et bases de données
--> Gestion des profils/boite mail
--> SUPERVISION
-
-.Organigramme du Service Poste Informatique et Système de Production
-image::Images/Organigramme-SPISP.jpg[]
+Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l'administration des systèmes Linux et Windows, à l'administration des bases de données, à la gestion des profils et des boites mails, ainsi qu'à la supervision des matériels et applications cotés serveurs.
 
 .Organigramme de l'unité Système de Production
 image::Images/Organigramme-Sysprod.jpg[]
@@ -151,7 +166,6 @@ Elle permet de superviser l'ensemble du Système d'Information d'une entreprise 
 - Les périphériques
 - Les applications
 - Le workflow
-- ...
 
 <<<
 
@@ -226,6 +240,8 @@ J'ai ensuite découvert l'outil Ovirt que notre unité utilise pour l'installati
 .Ovirt
 image::Images/ovirt.png[Ovirt]
 
+J'ai d'ailleurs plus tard grâce à cet outils répondu aux besoins d'un utilisateur. En effet, nous recevons parfois des demandes d'installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C'est mon collègue lui aussi étudiant de l'université d'Angers et appranti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l'installation et la configuration d'un serveur et d'une base de donnée pour qu'il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m'a confié cette tâche pour prendre encore un peu plus en main l'installation et la configuration d'un serveur.
+
 ===== Monter un disque virtuel
 
 On m'a ensuite demandé de construire et monter un disque virtuel de 500 Po sur mon poste. Il a donc fallu que je trouve un moyen de créer un disque réellement utilisable de 500 Po. Il s'est avéré que désormais, le système d'exploitation empêche de manipuler des volumes aussi gros. J'ai donc pu monter un disque d'une taille seulement de 15 To, ce qui reste un disque conséquent.
@@ -235,6 +251,7 @@ On m'a ensuite demandé de construire et monter un disque virtuel de 500 Po sur 
 ----
 tcalatayud@tcalatayud-CD49:~$ df -lh
 ...
+/dev/sda1       451G  8,7G  420G   3% /
 /dev/loop0       15T  6,3M   15T   1% /media/tcalatayud/e9567653-9578-4332-b449-37eb63cabc7b # <1>
 ...
 ----
@@ -569,6 +586,8 @@ Présentation des 2 solutions : carte d'identité des solutions
 
 ==== Solution 2
 
+<<<
+
 == Bilan
 
 Cette première année d'apprentissage au Conseil départemental a dans un premier temps été l'occasion pour moi d'avoir une première expérience de travail dans un contexte qui me plait vraiment : l'informatique. En effet les jobs étudiants que j'ai pu avoir dans le passé notamment dans la restauration n'ont pas été sans intêret et m'ont beaucoup appris. Mais ce n'est rien comparé à une expérience de travail dans le domaine qui m'intéresse et dans lequel j'aimerai vraiment travailler.
@@ -577,13 +596,13 @@ De plus, j'ai pu découvrir un domaine de l'informatique que je ne connaissais p
 
 J'ai pu non seulement découvrir en profondeur un sujet précis de l'administration système : la supervision, mon projet d'apprentissage, mais aussi, en cottoyant et en travaillant avec les autres membres de mon unité, j'ai pu découvrir d'autres problématiques de l'administration système, comme la virtualisation, le stockage et la sauvegarde. J'ai aussi pu ajouter quelques notions de réseau et de sécurité. Toutes ces nouvelles connaissances acquises me permettront ainsi de m'ouvrir au domaine de l'administration système et de ne plus me restreindre au monde du développement largement étudié à l'université.
 
-J'ai rencontré quelques difficultés techniques au début de mon apprentissage, jsutement dues au fait que je n'avais jamais vraiment travaillé sur le domaine de l'administration système auparavent. Mais j'ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j'ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.
+J'ai rencontré quelques difficultés techniques au début de mon apprentissage, justement dues au fait que je n'avais jamais vraiment travaillé sur le domaine de l'administration système auparavent. Mais j'ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j'ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.
 
-Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéréssantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite réperer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe.
+Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéréssantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle justifiée. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite réperer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe tout au long de cette première année.
 
 Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu'à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, si une des solution nous conviens vraiment, l'installer définitivement sur les serveurs de productions.
 
-Je sais que l'équipe comtpe sur moi et mon travail, alors j'espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant la solution la plus adapté et qu'ils puissent l'utiliser pendant de nombreuses années.
+Je sais que l'équipe compte beaucoup sur moi et mon travail, alors j'espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant la solution la plus adapté pour qu'ils puissent l'utiliser pendant de nombreuses années.
 
 <<<
 
