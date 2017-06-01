@@ -571,9 +571,6 @@ Présentation des 2 solutions : carte d'identité des solutions
 
 == Bilan
 
-Synthèse et ouverture
-Mon ressenti ce que j'ai apporté, ce qu'on m'a apporté
-
 Cette première année d'apprentissage au Conseil départemental a dans un premier temps été l'occasion pour moi d'avoir une première expérience de travail dans un contexte qui me plait vraiment : l'informatique. En effet les jobs étudiants que j'ai pu avoir dans le passé notamment dans la restauration n'ont pas été sans intêret et m'ont beaucoup appris. Mais ce n'est rien comparé à une expérience de travail dans le domaine qui m'intéresse et dans lequel j'aimerai vraiment travailler.
 
 De plus, j'ai pu découvrir un domaine de l'informatique que je ne connaissais pas : l'administration système. En effet, mon apprentissage m'a permis de découvrir un nouveau sujet de l'informatique et m'a permi d'acquérir des connaissances complémentaires à celles acquises à l'université. Ma nature très curieuse fait en sorte que j'aime énormément apprendre et découvrir de nouveaux sujets, ce qui a été possible grâce au poste que l'on m'a proposé au Conseil Départemental.
@@ -584,7 +581,9 @@ J'ai rencontré quelques difficultés techniques au début de mon apprentissage,
 
 Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéréssantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite réperer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe.
 
-Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il me reste à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, s'il y en a une qui est vraiment intéréssante, l'installer définitivement sur les serveurs de productions.
+Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu'à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, si une des solution nous conviens vraiment, l'installer définitivement sur les serveurs de productions.
+
+Je sais que l'équipe comtpe sur moi et mon travail, alors j'espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant la solution la plus adapté et qu'ils puissent l'utiliser pendant de nombreuses années.
 
 <<<
 
