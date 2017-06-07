@@ -556,29 +556,34 @@ Département de Maine et Loire<br/>
 <ul class="sectlevel1">
 <li><a href="#_remerciements">Remerciements</a></li>
 <li><a href="#_introduction">Introduction</a></li>
-<li><a href="#_le_conseil_départemental_de_maine_et_loire">Le Conseil départemental de Maine-et-Loire</a>
+<li><a href="#_le_conseil_départemental_de_maine_et_loire">Le Conseil Départemental de Maine-et-Loire</a>
 <ul class="sectlevel2">
-<li><a href="#_présentation_du_conseil_départemental">Présentation du Conseil départemental</a></li>
+<li><a href="#_présentation_du_conseil_départemental">Présentation du Conseil Départemental</a></li>
 <li><a href="#_l_unité_système_de_production_et_ses_missions">L&#8217;unité Système de Production et ses missions</a>
 <ul class="sectlevel3">
 <li><a href="#_la_supervision">La Supervision</a></li>
 <li><a href="#_présentation_de_l_outil_nagios">Présentation de l&#8217;outil Nagios</a></li>
 </ul>
 </li>
-<li><a href="#_etude_et_mise_en_place_d_une_solution_libre_open_source_de_supervision">Etude et mise en place d&#8217;une solution libre/open-source de supervision</a></li>
+<li><a href="#_Étude_et_mise_en_place_d_une_solution_libre_open_source_de_supervision">Étude et mise en place d&#8217;une solution libre/open-source de supervision</a></li>
 <li><a href="#_mon_activité_au_sein_de_l_unité">Mon activité au sein de l&#8217;unité</a>
 <ul class="sectlevel3">
 <li><a href="#_mise_à_niveau_technique">Mise à niveau technique</a></li>
 <li><a href="#_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</a></li>
-<li><a href="#_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</a></li>
-<li><a href="#_mise_en_place_de_la_nouvelle_salle_serveur_et_installation_de_baies_de_stockage">Mise en place de la nouvelle salle serveur et installation de baies de stockage.</a></li>
+<li><a href="#_synchronisation_des_nagios_de_l_unité">Synchronisation des Nagios de l&#8217;unité</a></li>
+<li><a href="#_mise_en_place_d_un_nouveau_datacenter_et_installation_de_baies_de_stockage">Mise en place d&#8217;un nouveau datacenter et installation de baies de stockage.</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#_identification_des_solutions_libres_open_sources_de_supervision">Identification des solutions libres/open-sources de supervision</a>
 <ul class="sectlevel2">
-<li><a href="#_instantané_des_solutions_libres_open_sources">Instantané des solutions libres/open-sources.</a></li>
+<li><a href="#_instantané_des_solutions_libres_open_sources">Instantané des solutions libres/open-sources.</a>
+<ul class="sectlevel3">
+<li><a href="#_les_protocoles_utilisés_par_la_supervision">Les protocoles utilisés par la supervision</a></li>
+<li><a href="#_visualisation_de_la_supervision">Visualisation de la supervision</a></li>
+</ul>
+</li>
 <li><a href="#_Établir_les_critères_de_sélection">Établir les critères de sélection</a></li>
 <li><a href="#_présentation_des_solutions_sélectionnées">Présentation des solutions sélectionnées</a>
 <ul class="sectlevel3">
@@ -590,8 +595,7 @@ Département de Maine et Loire<br/>
 </li>
 <li><a href="#_bilan">Bilan</a></li>
 <li><a href="#_annexes">Annexes</a></li>
-<li><a href="#_table_des_illustrations">Table des illustrations</a></li>
-<li><a href="#_sources">Sources</a></li>
+<li><a href="#_webographie">Webographie</a></li>
 </ul>
 </div>
 </div>
@@ -622,7 +626,7 @@ Département de Maine et Loire<br/>
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>En sortant de ma Licence Informatique, je souhaitais continuer mon parcours vers un Master Informatique. Deux choix se sont offert à moi : continuer mes études dans un parcours orienté vers la recherche ou dans un parcours professionnalisant.</p>
+<p>Après avoir obtenu mon diplôme de Licence informatique, j&#8217;ai choisis de continuer mon parcours vers un Master Informatique. Deux choix se sont offerts à moi : continuer mes études dans un parcours orienté vers la recherche ou dans un parcours professionnalisant.</p>
 </div>
 <div class="paragraph">
 <p>Mon premier choix était particulièrement porté vers le parcours recherche. Je me suis donc inscrit en première année de Master Informatique qui est générale aux deux parcours, dans l&#8217;optique de poursuivre sur une deuxième année en Master Intelligence Décisionnelle.</p>
@@ -634,21 +638,21 @@ Département de Maine et Loire<br/>
 <p>Malgré ma passion pour les études, apprendre de nouvelles choses, la découverte et la recherche de nouveauté, l&#8217;idée d&#8217;effectuer ce Master en alternance m&#8217;a plutôt attiré, j&#8217;ai donc décidé de me lancer dans la recherche d&#8217;une entreprise, prête à m&#8217;accueillir et à m&#8217;offrir un sujet d&#8217;apprentissage qui puisse m&#8217;intéresser.</p>
 </div>
 <div class="paragraph">
-<p>C&#8217;est à ce moment, qu&#8217;on m&#8217;a proposé une offre au Conseil Départemental de Maine-et-Loire. J&#8217;ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d&#8217;Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m&#8217;a demandé d&#8217;identifier et de proposer une solution libre et open-source et éventuellement de la mettre en place.</p>
+<p>C&#8217;est ainsi, que j&#8217;ai découvert cette offre au Conseil Départemental de Maine-et-Loire. J&#8217;ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d&#8217;Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m&#8217;a demandé d&#8217;identifier les solutions libres ou open sources et de faire émerger les deux produits les plus à mêmes de répondre aux besoins de l&#8217;unité.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai finalement choisis l&#8217;apprentissage pour goûter à l&#8217;informatique dans un contexte professionnel. Cela me permet d&#8217;avoir un peu plus d&#8217;expérience professionnelle dans le domaine informatique. Et grâce à cette alternance je peux continuer d&#8217;étudier à l&#8217;université tout en apprenant de nouvelles chose au Conseil Départemental. Donc j&#8217;ai l&#8217;opportunité d&#8217;étudier et de travailler en ayant un salaire dans un domaine qui me plait. Et j&#8217;ai accepter ce sujet dans le but de découvrir l&#8217;administration système, un aspect de l&#8217;informatique que je ne connaissait pas beaucoup.</p>
+<p>Finalement, j&#8217;ai choisis l&#8217;apprentissage pour me permettre d&#8217;avoir un premier aperçu de l&#8217;informatique dans un contexte professionnel. Cela me permet d&#8217;avoir un peu plus d&#8217;expérience dans ce domaine. Et grâce à cette alternance je peux continuer d&#8217;étudier à l&#8217;université tout en apprenant de nouvelles choses au Conseil Départemental. J&#8217;ai l&#8217;opportunité d&#8217;étudier et de travailler dans un domaine qui me plait. J&#8217;ai accepté ce sujet dans le but de découvrir l&#8217;administration système, un aspect de l&#8217;informatique que je ne connaissait pas beaucoup.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_le_conseil_départemental_de_maine_et_loire">Le Conseil départemental de Maine-et-Loire</h2>
+<h2 id="_le_conseil_départemental_de_maine_et_loire">Le Conseil Départemental de Maine-et-Loire</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_présentation_du_conseil_départemental">Présentation du Conseil départemental</h3>
+<h3 id="_présentation_du_conseil_départemental">Présentation du Conseil Départemental</h3>
 <div class="paragraph">
-<p>Le Conseil départemental est une institution publique au service du territoire et des habitants de Maine-et-Loire. Il prend des décisions intéressant la vie quotidienne et décide de grands projets pour l&#8217;avenir du département. Les conseils départementaux sont les instances politiques des départements. Ils sont composés d&#8217;élus, les conseillers départementaux qui se réunissent au moins une fois par trimestre en Assemblée départementale.
+<p>Le Conseil Départemental est une institution publique au service du territoire et des habitants de Maine-et-Loire. Il prend des décisions intéressant la vie quotidienne et décide de grands projets pour l&#8217;avenir du département. Les conseils départementaux sont les instances politiques des départements. Ils sont composés d&#8217;élus, les conseillers départementaux qui se réunissent au moins une fois par trimestre en Assemblée départementale.
 En Maine-et-Loire, l&#8217;assemblée siège à L&#8217;Hôtel du Département, dans l&#8217;ancienne Abbaye Saint-Aubin en plein cœur du centre ville d&#8217;Angers. Elle est présidée par Christian Gillet depuis 2014.</p>
 </div>
 <div class="paragraph">
@@ -716,7 +720,7 @@ La direction logistique et systèmes d&#8217;information gère la logistique, l&
 <div class="title">Image 2. Organigramme de la DLSI</div>
 </div>
 <div class="paragraph">
-<p>Chaque service se décompose généralement en une ou plusieurs unités qui vont s&#8217;occuper d&#8217;une ou plusieurs tâches plus spécifiques. Mon service SPISP, géré par son chef de service M. Gérard PHILIPPE, se présente en deux unités distinctes, l&#8217;unité administration des postes informatiques et l&#8217;unité système de production dans laquelle je travaille sous la responsabilité du responsable d&#8217;unité et mon tuteur d&#8217;apprentissage M. Denis PITHON.</p>
+<p>Chaque service se décompose généralement en une ou plusieurs unités qui vont s&#8217;occuper d&#8217;une ou plusieurs tâches plus spécifiques. Mon service SPISP, géré par son chef de service M. Gérard PHILIPPE, se présente en deux unités distinctes, l&#8217;unité administration des postes informatiques et l&#8217;unité système de production dans laquelle je travaille sous la responsabilité du responsable d&#8217;unité et tuteur de mon apprentissage M. Denis PITHON.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -730,7 +734,7 @@ La direction logistique et systèmes d&#8217;information gère la logistique, l&
 <h3 id="_l_unité_système_de_production_et_ses_missions">L&#8217;unité Système de Production et ses missions</h3>
 <div class="paragraph">
 <p>L&#8217;unité système de production travaille au sein de la DLSI du Conseil
-Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l&#8217;administration des systèmes Linux et Windows, à l&#8217;administration des bases de données, à la gestion des profils et des boites mails, ainsi qu&#8217;à la supervision des matériels et applications cotés serveurs. L&#8217;unité s&#8217;engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil départemental pourraient rencontrer.</p>
+Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde, la restauration, à la virtualisation, à l&#8217;administration des systèmes Linux et Windows, à l&#8217;administration des bases de données, à la gestion des profils et des boites mails, ainsi qu&#8217;à la supervision des matériels et applications cotés serveurs. L&#8217;unité s&#8217;engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -741,7 +745,7 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 <td class="content">
 <div class="title">Quelques éléments d&#8217;information concernant le système d&#8217;information :</div>
 <div class="paragraph">
-<p>Virtualisation sur oVirt (Linux/KVM)</p>
+<p>Virtualisation sur oVirt (Linux/KVM) outil open source</p>
 </div>
 <div class="ulist">
 <ul>
@@ -769,17 +773,11 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 </tr>
 </table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="Images/Organigramme-Sysprod.jpg" alt="Organigramme Sysprod"/>
-</div>
-<div class="title">Image 4. Organigramme de l&#8217;unité Système de Production</div>
-</div>
 <div style="page-break-after: always;"></div>
 <div class="sect3">
 <h4 id="_la_supervision">La Supervision</h4>
 <div class="paragraph">
-<p>La supervision est une fonction permettant d&#8217;indiquer, contrôler, commander l&#8217;état d&#8217;un système ou d&#8217;un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d&#8217;information. Le tout dans un but de détection et de traitement le plus automatique possible.</p>
+<p>La supervision est une fonction permettant d&#8217;indiquer, contrôler, commander l&#8217;état d&#8217;un système ou d&#8217;un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d&#8217;information. Le tout dans un but de détection et de traitement des problèmes le plus automatique possible.</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;informatique est intégrée et est devenue un outil indispensable dans une entreprise, quel que soit son secteur d&#8217;activité, le système d&#8217;information est placé désormais au centre de l&#8217;activité de différentes entités métiers et doit fonctionner pleinement et en permanence pour garantir l&#8217;efficacité de l&#8217;entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d&#8217;applications et toutes les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l&#8217;entreprise.</p>
@@ -842,7 +840,7 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 <div class="sect3">
 <h4 id="_présentation_de_l_outil_nagios">Présentation de l&#8217;outil Nagios</h4>
 <div class="paragraph">
-<p>Nagios, qui s&#8217;appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s&#8217;architecture autour d&#8217;un moteur écrit en C. Il permet d&#8217;auditer en permanence des machines, des services sur ces machines, de recevoir des alertes en cas de problème et de disposer d&#8217;un tableau de bord de l&#8217;état du système à un moment donnée. C&#8217;est un programme modulaire qui se décompose en trois parties :</p>
+<p>Nagios, qui s&#8217;appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s&#8217;architecture autour d&#8217;un moteur écrit en C. Il permet d&#8217;auditer en permanence des machines, des services sur ces machines, de recevoir des alertes en cas de problème et de disposer d&#8217;un tableau de bord de l&#8217;état du système à un moment donné. C&#8217;est un programme modulaire qui se décompose en trois parties :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -853,7 +851,7 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 <p>L&#8217;interface web, qui permet d&#8217;avoir une vue d&#8217;ensemble du Système d&#8217;Information et des éventuelles anomalies.</p>
 </li>
 <li>
-<p>Les sondes (ou plugins), une centaine de mini programmes/scripts que l&#8217;on peut compléter, voir même créer, en fonction des besoins de chacun pour superviser chaque service ou ressource disponible sur l&#8217;ensemble des éléments du réseaux du Système d&#8217;Information.</p>
+<p>Les sondes (ou plugins), une centaine de mini programmes/scripts que l&#8217;on peut compléter, voire même créer, en fonction des besoins de chacun pour superviser les services ou ressources disponibles sur l&#8217;ensemble des éléments du réseaux du Système d&#8217;Information.</p>
 </li>
 </ul>
 </div>
@@ -863,31 +861,31 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 <div class="ulist">
 <ul>
 <li>
-<p>Superviser des services réseaux (SMTP, HTTP, &#8230;&#8203;)</p>
+<p>De superviser des services réseaux (SMTP, HTTP, &#8230;&#8203;)</p>
 </li>
 <li>
-<p>Superviser les ressources des serveurs (charge du processeur, occupation des disques durs, utilisation de la mémoire, &#8230;&#8203;) sur la majorité des systèmes d&#8217;exploitation.</p>
+<p>De superviser les ressources des serveurs (charge du processeur, occupation des systèmes de fichiers, utilisation de la mémoire, &#8230;&#8203;) sur la majorité des systèmes d&#8217;exploitation.</p>
 </li>
 <li>
-<p>Superviser les équipements réseau (CPU, ventilateurs, &#8230;&#8203;)</p>
+<p>De superviser les équipements réseau (CPU, ventilateurs, &#8230;&#8203;)</p>
 </li>
 <li>
-<p>Superviser les Bases de données</p>
+<p>De superviser les Bases de données</p>
 </li>
 <li>
-<p>Superviser l&#8217;environnement (température, luminosité, humidité, &#8230;&#8203;)</p>
+<p>De superviser l&#8217;environnement (température, luminosité, humidité, &#8230;&#8203;)</p>
 </li>
 <li>
 <p>Interface via le protocole SNMP</p>
 </li>
 <li>
-<p>Supervision à distance via SSH ou agent NRPE.</p>
+<p>De superviser à distance via SSH ou agent NRPE.</p>
 </li>
 <li>
-<p>Remonter des alertes par mails, SMS via un système de notification.</p>
+<p>De remonter des alertes par mails, SMS via un système de notification.</p>
 </li>
 <li>
-<p>Gestions d&#8217;utilisateurs (accès limité à certains utilisateurs)</p>
+<p>De gérer des utilisateurs (accès limité à certains utilisateurs)</p>
 </li>
 <li>
 <p>Les plugins sont écrits dans des langages de programmation les plus adaptés à leur tâche : scripts shell (bash, ksh, &#8230;&#8203;), C++, perl, Python, Ruby, PHP, C#, &#8230;&#8203; et il est possible de créer très facilement ses propres modules.</p>
@@ -898,9 +896,85 @@ Départemental de Maine-et-Loire sur les problématiques liées au serveurs, au 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_etude_et_mise_en_place_d_une_solution_libre_open_source_de_supervision">Etude et mise en place d&#8217;une solution libre/open-source de supervision</h3>
+<h3 id="_Étude_et_mise_en_place_d_une_solution_libre_open_source_de_supervision">Étude et mise en place d&#8217;une solution libre/open-source de supervision</h3>
 <div class="paragraph">
-<p>Actuellement, la supervision de l&#8217;ensemble du système d&#8217;information est opérée par Nagios. Cette solution,
+<p>Avant tout, il me semble important de clarifier le terme de solution libre et de solution open-source.</p>
+</div>
+<div class="paragraph">
+<div class="title">Un logiciel libre</div>
+<p>Pour qu&#8217;un logiciel soit considéré comme "libre", il doit garantir 4 libertés fondamentales à son utilisateur telles que définies par la Free Software Foundation :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Liberté 0 : la liberté d&#8217;exécuter le programme pour tous les usages.</p>
+</li>
+<li>
+<p>Liberté 1 : la liberté d&#8217;étudier le fonctionnement du programme, et de l&#8217;adapter à ses besoins.</p>
+</li>
+<li>
+<p>Liberté 2 : la liberté de redistribuer des copies du logiciel.</p>
+</li>
+<li>
+<p>Liberté 3 : la liberté d&#8217;améliorer le programme et de publier ses propres améliorations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les libertés 1 et 3 impliquent un accès total aux sources d&#8217;un programme, sinon le logiciel ne peut être considéré comme un logiciel libre.</p>
+</div>
+<div class="paragraph">
+<p>Il n&#8217;est pas fait mention ici de la gratuité, on peut donc tout à fait vendre un logiciel libre bien qu&#8217;on ne puisse empêcher un acheteur de redistribuer le logiciel à titre gratuit.</p>
+</div>
+<div class="paragraph">
+<div class="title">Un logiciel open-source</div>
+<p>Les licences open-source sont le fruit de l&#8217;Open Source Initiative, née à la suite de nombreuses divergences au sein de la communauté "libre".</p>
+</div>
+<div class="paragraph">
+<p>Plus pragmatique, l&#8217;OSI souhaitait proposer une licence plus lisible aux professionnels et entreprises qui avaient tendance à repousser les licences libres pour de nombreuses raison, parmi lesquelles le problème de compréhension entre "libre" et "gratuit"</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;OSI a donc crée une définition de l&#8217;open source qui décrit 10 conditions requises pour qu&#8217;une licence appliquée à un logiciel soit considérée open source :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Condition 1 : la libre distribution logicielle. La licence ne peut, par exemple faire l&#8217;objet d&#8217;une redevance supplémentaire.</p>
+</li>
+<li>
+<p>Condition 2 : le code source doit être fourni ou accessible. Un patch peut être fourni en tant que package indépendant, contrairement avec un logiciel libre ou il faut obligatoirement fournir tout le code.</p>
+</li>
+<li>
+<p>Condition 3 : les dérivés des oeuvres doivent être permises.</p>
+</li>
+<li>
+<p>Condition 4 : l&#8217;intégrité du code source doit être préservée. La licence ne peut restreindre l&#8217;accès au code source.</p>
+</li>
+<li>
+<p>Condition 5 : pas de discrimination entre les groupes et les personnes. Toute personne détentrice du logiciel bénéficie des termes de la licence tant qu&#8217;elle s&#8217;y conforme elle-même.</p>
+</li>
+<li>
+<p>Condition 6 : pas de discrimination entre les domaines d&#8217;application. la licence se limite à la propriété intellectuelle, elle ne peut en aucun cas réguler d&#8217;autres domaines.</p>
+</li>
+<li>
+<p>Condition 7 : la licence s&#8217;applique sans dépendre d&#8217;autres contrats. On ne peut par exemple ajouter d&#8217;accord de confidentialité lors de la cession du logiciel.</p>
+</li>
+<li>
+<p>Condition 8 : la licence ne doit pas être propre à un produit. Elle est attachée au code source et non à un logiciel particulier. Une brique logicielle peut donc être ré-utilisée dans un logiciel différent.</p>
+</li>
+<li>
+<p>Condition 9 : la licence d&#8217;un logiciel ne doit pas s&#8217;étendre à un autre.</p>
+</li>
+<li>
+<p>Condition 10 : la licence doit être neutre technologiquement. Elle ne concerne que le code et pas les technologies et applications qui en découlent.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n&#8217;est pas obligatoire d&#8217;être certifié par l&#8217;OSI pour appliquer être définie de licence open-source, mais il faut qu&#8217;elle respecte ces 10 conditions pour qu&#8217;elle soit considérée comme telle. Il est commun de vulgariser l&#8217;ensemble des logiciels open-source ou libre. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.</p>
+</div>
+<div class="paragraph">
+<p>Actuellement, la supervision de l&#8217;ensemble du système d&#8217;information est opérée par Nagios. Cette solution libre,
 en place depuis près de 10 ans, contrôle un peu plus de 2700 points de
 fonctionnement du SI (espaces disques, sites webs, bases de données,
 consommations CPU, RAM &#8230;&#8203;).</p>
@@ -926,7 +1000,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="sect3">
 <h4 id="_mise_à_niveau_technique">Mise à niveau technique</h4>
 <div class="paragraph">
-<p>À mon arrivé, j&#8217;ai souhaité commencer par me mettre à niveau, pour gagner en compétences techniques et monter en puissance sur le système. J&#8217;ai donc effectué une série de petits exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l&#8217;environnement Linux côté serveur et les outils qui lui sont habituellement associés et me familiariser avec l&#8217;administration système pour gagner en autonomie.</p>
+<p>À mon arrivée, j&#8217;ai souhaité monter en puissance sur le système pour gagner en compétences techniques. J&#8217;ai donc effectué une série de petits exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l&#8217;environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l&#8217;administration système pour gagner en autonomie.</p>
 </div>
 <div class="paragraph">
 <p>Avant tout, il a fallu que j&#8217;installe et je configure entièrement mon poste de travail sous Linux.</p>
@@ -938,30 +1012,18 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="content">
 <img src="Images/ovirt.png" alt="Ovirt"/>
 </div>
-<div class="title">Image 5. Ovirt</div>
+<div class="title">Image 4. Ovirt</div>
 </div>
 <div class="paragraph">
 <p>J&#8217;ai d&#8217;ailleurs plus tard grâce à cet outils répondu aux besoins d&#8217;un utilisateur. En effet, nous recevons parfois des demandes d&#8217;installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C&#8217;est mon collègue lui aussi étudiant de l&#8217;université d&#8217;Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l&#8217;installation et la configuration d&#8217;un serveur et d&#8217;une base de donnée pour qu&#8217;il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m&#8217;a confié cette tâche pour prendre encore un peu plus en main l&#8217;installation et la configuration d&#8217;un serveur.</p>
 </div>
 <div class="sect4">
-<h5 id="_monter_un_disque_virtuel">Monter un disque virtuel</h5>
+<h5 id="_monter_un_disque_sur_un_périphérique_fichier">Monter un disque sur un périphérique fichier</h5>
 <div class="paragraph">
-<p>Un des exercices était de construire et monter un disque virtuel d&#8217;une très grosse capacité sur un disque physique beaucoup plus petit sur mon poste. J&#8217;ai donc d&#8217;abord chercher à comprendre ce qu&#8217;est un disque virtuel et comment il fonctionne.</p>
+<p>Un autre exercice était de construire et monter un disque d&#8217;une très grosse capacité sur un disque physique beaucoup plus petit sur mon poste. Il a fallu que je trouve un moyen d&#8217;effectuer cette tâche.</p>
 </div>
 <div class="paragraph">
-<p>Un disque virtuel va utiliser une partie de la mémoire vive de l&#8217;ordinateur pour simuler une mémoire de masse, comme un disque dur par exemple. L&#8217;intérêt de ces disques virtuels est que les temps d&#8217;accès sont grandement améliorés. En effet, la mémoire vive a un temps d&#8217;accès de l&#8217;ordre de 10 à 100 ns, alors que pour un disque dur ce temps est de l&#8217;ordre de 10 ms et 100 µs pour un SSD, soit un rapport supérieur à 1000. La taille du disque virtuel est cependant bien entendu limitée par celle de la mémoire centrale. De plus, la mémoire vive étant en général volatile, les données stockées sur le disque virtuel sont perdues lorsque l&#8217;ordinateur est mis hors tension. Les disques virtuel sont donc utilisé seulement pour conserver des données pendant une courte période de temps.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Un disque virtuel ne doit pas être confondu avec la mémoire virtuelle qui est le principe inverse, à savoir utiliser la mémoire de masse (un disque dur ou SSD) pour simuler la mémoire vive.
-</td>
-</tr>
-</table>
+<p>Un des moyens d&#8217;éffectuer cette tâche était d&#8217;utiliser la commande dd qui permet de copier une partie d&#8217;un disque ou du système de fichiers par blocs d&#8217;octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d&#8217;une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu&#8217;à monter le fichier et changer son format pour obtenir un "disque virtuel".</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="content">
@@ -976,7 +1038,7 @@ Un disque virtuel ne doit pas être confondu avec la mémoire virtuelle qui est 
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>J&#8217;obtiens donc un disque d&#8217;une taille de 15 To sur lequel je peux écrire et lire des fichiers. Cependant, il est bien entendu évident qu&#8217;avant de pouvoir le remplir complètement je risque d&#8217;avoir quelques problèmes étant limité par la taille du disque dur physique.</td>
+<td>J&#8217;obtiens donc un disque d&#8217;une taille de 15 To sur lequel je peux écrire et lire des fichiers. Cependant, il est évident qu&#8217;avant de pouvoir le remplir complètement je risque d&#8217;avoir quelques problèmes étant limité par la taille du stockage sous jacent.</td>
 </tr>
 </table>
 </div>
@@ -984,13 +1046,13 @@ Un disque virtuel ne doit pas être confondu avec la mémoire virtuelle qui est 
 <div class="sect4">
 <h5 id="_script_d_alertes_mail_inotify">Script d&#8217;alertes mail, inotify</h5>
 <div class="paragraph">
-<p>Je me suis lancer sur un second exercice, écrire un script permettant de transmettre un fichier par mail lorsqu&#8217;il apparaît dans un répertoire donnée, puis le supprimer. Il s&#8217;agit donc d&#8217;effectuer la surveillance d&#8217;un répertoire et de rapporté par mail tout ce qu&#8217;il s&#8217;y est passé.</p>
+<p>Je me suis lancé sur un second exercice, écrire un script d&#8217;actions sur évènement de système de fichiers. Plus simplement, il s&#8217;agissait d&#8217;effectuer la surveillance d&#8217;un répertoire et de rapporter par mail tout les évènements qui s&#8217;y étaient produit.</p>
 </div>
 <div class="paragraph">
 <p>Dans un premier temps j&#8217;ai écrit un premier script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s&#8217;il est dans le répertoire surveillé puis il le supprime une fois qu&#8217;il a été envoyé.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai ensuite écrit une deuxième version améliorée, utilisant le mécanisme inotify qui fournit des notification concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associées à l&#8217;évolution de l&#8217;état du système de fichiers. Les principaux événements qui peuvent être suvis sont :</p>
+<p>J&#8217;ai ensuite écrit une deuxième version améliorée, utilisant le mécanisme inotify proposé par le noyau Linux qui fournit des notifications concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associées à l&#8217;évolution de l&#8217;état du système de fichiers. Les principaux événements qui peuvent être suvis sont :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1009,13 +1071,13 @@ Un disque virtuel ne doit pas être confondu avec la mémoire virtuelle qui est 
 </ul>
 </div>
 <div class="paragraph">
-<p>Et enfin, j&#8217;ai écrit une dernière version en Python3 qui s&#8217;exécute en tant que daemon. D&#8217;un côté strictement technique, sous un système UNIX, un daemon peut être n&#8217;importe quel processus ayant le processus init, le premier processus lancé au démarrage de la machine, comme parent. En d&#8217;autres termes, pour qu&#8217;un processus soit un daemon dans le sens stricte du terme, est qu&#8217;il soit complètement détaché du terminal et gérer entièrement par le système sans que l&#8217;utilisateur puisse reprendre la main dessus. Communément un deamon est simplifié par n&#8217;importe quel processus fonctionnant en arrière-plan, qu&#8217;il soit ou non un enfant du processus init, c&#8217;est à dire que le processus s&#8217;exécute en tâche de fond par le système, sans que l&#8217;utilisateur s&#8217;en aperçoive.</p>
+<p>Et enfin, j&#8217;ai écrit une dernière version en Python3 qui s&#8217;exécute en tant que daemon. D&#8217;un point de vue strictement technique, sous un système UNIX, un daemon peut être n&#8217;importe quel processus ayant le processus init (le premier processus lancé au démarrage de la machine) comme parent. En d&#8217;autres termes, pour qu&#8217;un processus soit un daemon dans le sens strict du terme, est qu&#8217;il soit complètement détaché du terminal et gérer entièrement par le système sans que l&#8217;utilisateur puisse reprendre le contrôle dessus. Communément un deamon est simplifié par n&#8217;importe quel processus fonctionnant en arrière-plan, qu&#8217;il soit ou non un enfant du processus init, c&#8217;est à dire que le processus s&#8217;exécute en tâche de fond par le système, sans que l&#8217;utilisateur s&#8217;en aperçoive.</p>
 </div>
 <div class="paragraph">
 <p>J&#8217;y ai inclus la gestion de logs pour qu&#8217;on puisse avoir un rapport, si nécessaire, des actions que le script a effectué et pour permettre d&#8217;avoir un aperçu du bon fonctionnement et de la bonne exécution du programme.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai notamment utilisé un fichier de configuration .ini qui permet de définir à l&#8217;utilisateur et de rassembler des variables dans un même endroit pour pouvoir les utiliser ensuite dans le programme.</p>
+<p>J&#8217;ai notamment utilisé un fichier de configuration de type "ini" qui permet de définir des paramètres à l&#8217;utilisateur et de les rassembler dans un même endroit pour pouvoir les utiliser ensuite dans le programme.</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="title">script.ini</div>
@@ -1063,32 +1125,35 @@ logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i>
 </table>
 </div>
 <div class="paragraph">
-<p>Pour l&#8217;exécuter, il suffit de lancer le programme avec l&#8217;argument "start". On l&#8217;arrête avec l&#8217;argument "stop". Il est possible d&#8217;obtenir les informations concernant le statut du programme avec l&#8217;argument "status".</p>
+<p>Pour l&#8217;exécuter, il suffit de lancer le programme avec l&#8217;argument "start". Il s&#8217;arrête avec l&#8217;argument "stop". Il est possible d&#8217;obtenir les informations concernant le statut du programme avec l&#8217;argument "status".</p>
+</div>
+<div class="paragraph">
+<p>Je n&#8217;ai pas poursuivi plus loin cet exercice. Mais il aurait été possible de l&#8217;intégrer à systemd (le système d&#8217;initialisation du noyau Linux) afin de l&#8217;intégrer plus finement au système de démarrage Linux.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_découverte_déploiement_installation_et_configuration_de_l_outil_nagios">Découverte, déploiement, installation et configuration de l&#8217;outil Nagios</h4>
 <div class="paragraph">
-<p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à regarder l&#8217;outil nagios, à voir comment il fonctionne, s&#8217;installe, se configure et s&#8217;utilise.</p>
+<p>Dans la continuité de cette mise à niveau, j&#8217;ai commencé à regarder l&#8217;outil Nagios, à voir comment il fonctionne, s&#8217;installe, se configure et s&#8217;utilise.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai donc décidé, pour prendre en main cet outil complexe et puissant, de mettre en place ma propre instance de Nagios.</p>
+<p>J&#8217;ai décidé, pour prendre en main cet outil complexe et puissant, de mettre en place ma propre instance de Nagios.</p>
 </div>
 <div class="paragraph">
-<p>Il m&#8217;a été nécessaire d&#8217;abord, de configurer un serveur pour pouvoir le déployer. J&#8217;ai donc installé et configuré, grâce à l&#8217;outil Ovirt, une nouvelle machine virtuelle sous CentOS, qui est une distribution Linux idéal pour les serveurs. Puis je me suis lancé dans l&#8217;installation du Nagios en suivant la documentation, sur lequel j&#8217;ai configuré quelques sondes pour comprendre leurs fonctionnement.</p>
+<p>Il m&#8217;a été nécessaire d&#8217;abord, de configurer un serveur pour pouvoir le déployer. J&#8217;ai donc installé et configuré, grâce à l&#8217;outil Ovirt, une nouvelle machine virtuelle sous CentOS, qui est une distribution Linux pour les serveurs. Puis je me suis lancé dans l&#8217;installation du Nagios en suivant la documentation, sur lequel j&#8217;ai configuré quelques sondes pour comprendre leur fonctionnement.</p>
 </div>
 <div class="paragraph">
-<p>Pour fonctionner, Nagios est basé sur un ensemble de fichiers de configuration. Ces fichiers de configuration sont situés par défaut dans le dossier <em>/usr/local/nagios/etc/</em> et généralement classés sous forme de contact, d&#8217;hôtes, de services et de commandes.</p>
+<p>Nagios est basé sur un ensemble de fichiers de configuration. Ces fichiers sont situés par défaut dans le dossier <em>/usr/local/nagios/etc/</em> et généralement classés sous forme de contact, d&#8217;hôtes, de services et de commandes.</p>
 </div>
 <div class="paragraph">
-<p>Les contacts sont les différents utilisateurs de l&#8217;outil. On peut leur attribuer différents degrés de droit d&#8217;accès, définir une adresse mail, les périodes de notifications, &#8230;&#8203;</p>
+<p>Les contacts représentent les personnes qui seront alerté en cas d&#8217;alertes. Il faut leur définir une adresse mail et des périodes de notifications.</p>
 </div>
 <div class="paragraph">
-<p>Les hôtes sont les différents serveurs, équipements en réseaux que l&#8217;on supervise. Il est impératif de lui définir l&#8217;adresse IP à laquelle l&#8217;hôte est affecté sur le réseau.</p>
+<p>Les hôtes sont les différents serveurs, équipements en réseaux que l&#8217;on supervise. Il est impératif de définir l&#8217;adresse IP à laquelle ils sont affectés sur le réseau.</p>
 </div>
 <div class="paragraph">
-<p>Pour chaque hôte on définit les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments si nécéssaire. Ils remontent via les commandes et les checks l&#8217;état dans lequel ils sont. Classiquement, on reconnait trois types d&#8217;états pour les services :</p>
+<p>Pour chaque hôte il faut définir les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments, si nécéssaire. Ils remontent via les commandes et les points de contrôle l&#8217;état des hôtes dans lequel ils sont. Classiquement, trois types d&#8217;états pour les services sont reconnus :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1104,20 +1169,19 @@ logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i>
 </ul>
 </div>
 <div class="paragraph">
-<p>Les checks sont les scripts éxecutées par les commandes des différents services qui vont permettre de récupérer les données nécessaires pour indiquer et mettre à jours l&#8217;état de ces services.</p>
+<p>Les points de contrôle sont les scripts éxecutés par les commandes des différents services qui vont permettre de récupérer les données nécessaires pour indiquer et mettre à jours l&#8217;état de ces services.</p>
 </div>
 <div class="paragraph">
-<p>Dans un premier temps il a fallut que je configure un contact pour y déclarer principalement l&#8217;adresse mail sur laquelle je compte recevoir les alertes.</p>
+<p>Dans un premier temps il a fallu que je configure un contact pour y déclarer principalement l&#8217;adresse mail sur laquelle je compte recevoir les alertes.</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="title">contacts.cfg</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cfg">define contact{
-        contact_name                        nagiosadmin             ; Short name of user
-        use                                 generic-contact         ; Inherit default values from generic-contact template (defined above)
-        alias                               Nagios Admin            ; Full name of user
-
-        email                               t.calatayud@maine-et-loire.fr   ;
+        contact_name                        nagiosadmin
+        use                                 generic-contact
+        alias                               Nagios Admin
+        email                               t.calatayud@maine-et-loire.fr
         service_notification_period         24x7
         service_notification_options        w,u,c,r,f,s
         service_notification_commands       notify-service-by-email
@@ -1128,17 +1192,17 @@ logfile = /var/log/MyLog/MyScriptDaemon.log <i class="conum" data-value="6"></i>
 </div>
 </div>
 <div class="paragraph">
-<p>Dans un second temps, j&#8217;ai rajouté les différents hôtes que je souhaite superviser.
-Voici un exemple d&#8217;hôtes que j&#8217;ai configurer. C&#8217;est le serveur hébergeant le site web interne prévu pour les agents du département.</p>
+<p>Dans un deuxième temps, j&#8217;ai rajouté les différents hôtes que je souhaite superviser.
+Voici un exemple d&#8217;hôtes que j&#8217;ai configuré. C&#8217;est le serveur hébergeant le site web interne prévu pour les agents du département.</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="title">hosts/melinfo.cfg</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="cfg">define host {
-        use                     generic-host                    ; Inherit default values from a template
-        host_name               melinfo                         ; The name we're giving to this host
-        alias                   Melinfo                 ; A longer name associated with the host
-        address                 10.100.49.110                   ; IP address of the host
+        use                     generic-host
+        host_name               melinfo
+        alias                   Melinfo
+        address                 10.100.49.110
         hostgroups              linux-servers
         check_interval          5
         retry_interval          1
@@ -1150,7 +1214,7 @@ Voici un exemple d&#8217;hôtes que j&#8217;ai configurer. C&#8217;est le serveu
 </div>
 </div>
 <div class="paragraph">
-<p>Ensuite, il faut configurer les services liés à chaque hôte, les données que je souhaite superviser.</p>
+<p>Enfin, il faut configurer les services liés à chaque hôte, les données que je souhaite superviser.</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="title">services/melinfo_service.cfg</div>
@@ -1175,16 +1239,16 @@ define service {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Ce service va utiliser un check, une commande qui va envoyé une requête http dans le but de savoir si oui ou non le serveur web répond.</td>
+<td>Ce service va utiliser un point de contrôle, une commande qui va envoyer une requête http dans le but de savoir si oui ou non le serveur web répond.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Ce service va utiliser un check qui va remonter le temps de réponse, le ping. Cette commande est configuré de sorte à ce que si le temps de réponse dépasse 100 ms il se placera dans l&#8217;état WARNING. Si le temps de réponse dépasse 400 ms il se placera dans l&#8217;état CRITICAL.</td>
+<td>Ce service va utiliser un point de contrôle qui va remonter le temps de réponse d&#8217;un ping. Cette commande est configurée de sorte que si le temps de réponse dépasse 100 ms il se placera dans l&#8217;état WARNING. Si le temps de réponse dépasse 400 ms il se placera dans l&#8217;état CRITICAL.</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Voici quelques exemples de commandes utilisant des checks définit par Nagios.</p>
+<p>Voici quelques exemples de commandes utilisant des points de contrôle définit par Nagios.</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="content">
@@ -1205,44 +1269,41 @@ define command {
 </div>
 </div>
 <div class="paragraph">
-<p>Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permette d&#8217;uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.</p>
+<p>Il est possible avec Nagios de créer des templates ou groupes pour les contacts, hôtes et services. Ces templates permettent d&#8217;uniformiser les configurations de contacts, hôtes et services qui se ressemblent pour pouvoir les déclarer plus simplement les prochaines fois.</p>
 </div>
 <div class="paragraph">
-<p>Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l&#8217;arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où ont été rangé les fichiers pour pouvoir les modifier si nécessaire.</p>
+<p>Avec cette méthode de configuration, sous forme de fichiers, il est important pour garder un environnement propre et pour permettre une maintenance plus simple, de bien gérer l&#8217;arborescence de tous ces fichiers de configurations. Dans le cas contraire on se retrouve rapidement perdu et on risque de ne plus savoir où ont été rangé les fichiers pour pouvoir les modifier.</p>
 </div>
 <div class="paragraph">
 <p>On obtient un Nagios configuré et prêt à superviser. On peut désormais se diriger vers l&#8217;interface web pour avoir enfin l&#8217;aperçu de notre système de supervision.
-<em><a href="http://xthomasnagios2/nagios/" class="bare">http://xthomasnagios2/nagios/</a></em> (où xthomas2 est la résolution DNS de l&#8217;adresse IP de mon serveur sur le réseau)</p>
+<em><a href="http://xthomasnagios2/" class="bare">http://xthomasnagios2/</a></em></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="Images/nagios_3.png" alt="Nagios"/>
+<img src="Images/xthomasnagios2.png" alt="Nagios"/>
 </div>
-<div class="title">Image 6. Services Nagios</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_synchronisation_des_nagios_de_l_unité">Synchronisation des nagios de l&#8217;unité</h4>
-<div class="paragraph">
-<p>Pour l&#8217;unité, deux serveurs Nagios sont installés, un serveur principal et un deuxième Nagios secondaire. On m&#8217;a demandé dans le cas d&#8217;une panne du serveur principal de pouvoir synchroniser sa configuration sur le Nagios secondaire.</p>
-</div>
-<div class="paragraph">
-<p>J&#8217;ai donc écrit un programme s&#8217;exécutant en tant que service système, c&#8217;est à dire un démon système géré par le protocole systemd. Utilisable via la commande systemctl, ce petit programme utilise, dans la même optique que le script d&#8217;envois de mail que j&#8217;ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu&#8217;il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d&#8217;avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second Nagios. Il ne restera plus qu&#8217;à extraire l&#8217;archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.</p>
+<div class="title">Image 5. Services Nagios</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mise_en_place_de_la_nouvelle_salle_serveur_et_installation_de_baies_de_stockage">Mise en place de la nouvelle salle serveur et installation de baies de stockage.</h4>
+<h4 id="_synchronisation_des_nagios_de_l_unité">Synchronisation des Nagios de l&#8217;unité</h4>
 <div class="paragraph">
-<p>Pour répondre aux besoins grandissant du conseil départemental, l&#8217;ouverture d&#8217;une nouvelle salle de serveurs a été nécessaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place en collaboration avec le département de la Sarthe et notamment la ville du Mans. J&#8217;ai donc assisté aux travaux et à son installation.</p>
+<p>Pour l&#8217;unité, deux serveurs Nagios sont installés qui servent à la supervision des sites web publiques du Conseil Départemental, un serveur principal et un deuxième Nagios secondaire. Dans le cas d&#8217;une panne du serveur principal, j&#8217;ai dû trouver un moyen de pouvoir synchroniser sa configuration sur le Nagios secondaire.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai notamment assisté à l&#8217;installation de l&#8217;outil Ovirt pour ce nouveau réseau et j&#8217;ai moi même mis en place le Nagios.</p>
+<p>J&#8217;ai donc écrit un programme s&#8217;exécutant en tant que service système, c&#8217;est à dire un daemon système géré par le protocole systemd. Utilisable via la commande systemctl, ce petit programme utilise, dans la même optique que le script d&#8217;envois de mail que j&#8217;ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu&#8217;il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d&#8217;avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second Nagios. Il ne restera plus qu&#8217;à extraire l&#8217;archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mise_en_place_d_un_nouveau_datacenter_et_installation_de_baies_de_stockage">Mise en place d&#8217;un nouveau datacenter et installation de baies de stockage.</h4>
+<div class="paragraph">
+<p>Pour répondre aux besoins grandissant du Conseil Départemental, l&#8217;ouverture d&#8217;une nouvelle salle de serveurs a été nécessaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. Elle est mutualisée avec 4 autres Conseils territoriaux et est consacrée au système d&#8217;archivage électronique inter-départemental et régional. J&#8217;ai donc assisté aux travaux et à son installation. J&#8217;ai notamment assisté au déploiement de l&#8217;outil Ovirt pour ce nouveau réseau et j&#8217;ai moi même mis en place le Nagios.</p>
 </div>
 <div class="paragraph">
 <p>En parallèle à cette installation, j&#8217;ai aussi pu aider à mettre en place sur le site de Lavoisier de nouvelles baies de stockages.</p>
 </div>
 <div class="paragraph">
-<p>Grâce à ces interventions, j&#8217;ai pu constater qu&#8217;un administrateur système n&#8217;est pas seulement un informaticien qui règle les problèmes derrière son bureau, mais c&#8217;est aussi un technicien qui doit répondre à des questions techniques concernant le matériel et qui doit s&#8217;assurer le bon déploiement et le bon fonctionnement du matériel qu&#8217;il utilise.</p>
+<p>Grâce à ces interventions, j&#8217;ai pu constater qu&#8217;un administrateur système n&#8217;est pas seulement un informaticien qui règle les problèmes derrière son bureau, mais c&#8217;est aussi un technicien qui doit répondre à des questions techniques concernant le matériel et qui doit s&#8217;assurer du bon déploiement et du bon fonctionnement du matériel qu&#8217;il utilise.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1256,7 +1317,7 @@ define command {
 <p>Comme décrit dans l&#8217;intitulé de mon projet d&#8217;apprentissage, notre service utilise l&#8217;outil Nagios pour la supervision.</p>
 </div>
 <div class="paragraph">
-<p>Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mis en place depuis plus 10 ans au Conseil départemental, n&#8217;a pas été très bien maintenue. L&#8217;état actuel de sa configuration, à force de rajouter des sondes hâtivement, est désormais difficile à nettoyer, au point de se demander s&#8217;il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de nagios.</p>
+<p>Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n&#8217;a pas été suffisamemnt maintenue. L&#8217;état actuel de sa configuration, à force de rajouter des sondes hâtivement, est désormais difficile à nettoyer, au point de se demander s&#8217;il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.</p>
 </div>
 <div class="paragraph">
 <p>Malgré son énorme catalogue de possibilité, Son système de configuration via un ensemble de fichier rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.</p>
@@ -1265,50 +1326,47 @@ define command {
 <p>De plus, vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, d&#8217;autres outils plus ou moins similaire à Nagios ont émergé.</p>
 </div>
 <div class="paragraph">
-<p>S&#8217;ouvre donc l&#8217;éventualité et la curiosité de voir et découvrir ces nouvelles solutions. C&#8217;est de cette volonté, que l&#8217;unité a souhaité m&#8217;engager pour dresser l&#8217;état des lieux des solutions existantes afin de refondre la supervision de son système d&#8217;information.</p>
+<p>S&#8217;ouvre donc l&#8217;opportunité de découvrir ces nouvelles solutions. C&#8217;est de cette occasion, que l&#8217;unité a souhaité m&#8217;engager pour dresser l&#8217;état des lieux des solutions existantes afin de refondre la supervision de son système d&#8217;information.</p>
 </div>
 <div class="sect2">
 <h3 id="_instantané_des_solutions_libres_open_sources">Instantané des solutions libres/open-sources.</h3>
 <div class="paragraph">
-<p>Pour trouver une nouvelle solution de supervision, il était nécessaire de connaître les enjeux de la supervision, les solutions existantes sur le marché et ce qu&#8217;elles proposent. J&#8217;ai décidé dans ma démarche, de commencer mes recherches sans faire l&#8217;état de la solution existante, sans identifier les réels besoins de l&#8217;unité.</p>
+<p>Pour trouver une nouvelle solution de supervision, il était nécessaire de connaître les enjeux de la supervision, les solutions existantes sur le marché et ce qu&#8217;elles proposent. J&#8217;ai commencé mes recherches sans connaissance de l&#8217;état de la solution existante.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai en effet choisi de faire un inventaire, effectuer l&#8217;exploration la plus exhaustive, complète possible et avec un regard "naïf" sur la supervision. L&#8217;idée était que grâce à ce regard neuf, je pourrai être capable d&#8217;identifier un maximum de solutions sans être influencé par nos besoins. De ce fait, je pourrais potentiellement tombé sur des solutions, certes remplissant nos besoins, mais aussi trouver d&#8217;autres utilités tout aussi intéressantes voir même plus intéressantes pour l&#8217;unité.</p>
+<p>J&#8217;ai en effet choisi de faire l&#8217;inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d&#8217;identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l&#8217;équipe à besoin. Le seul critère de recherche que l&#8217;équipe m&#8217;a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.</p>
 </div>
 <div class="paragraph">
-<p>Le seul critère de recherche que je me suis réellement imposé lors de cet inventaire est le fait que la solution soit open-source. C&#8217;est dans cette optique, que j&#8217;ai pu commencer mes recherches.</p>
+<p>Durant ce recensement, j&#8217;ai pu inventorier une énorme quantité de solutions. Pas moins de 72 solutions sont ressorties.</p>
 </div>
 <div class="paragraph">
-<p>Durant cette profonde exploration, j&#8217;ai pu inventorier une énorme quantité de solutions. En effet, pas moins de 72 solutions sont ressorties, toutes plus ou moins intéressantes.</p>
-</div>
-<div class="paragraph">
-<p>Par le biais de ces recherche j&#8217;ai pu distinguer différents types de supervision :</p>
+<p>Par le biais de ces recherches j&#8217;ai pu distinguer différents types de supervision :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>La supervision technique</strong> : Elle se sépare en deux sous catégorie.</p>
+<p><strong>La supervision technique</strong> : Elle se sépare en deux sous catégories.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><strong>La supervision réseau</strong> : On entend ici l&#8217;aspect communication entre les machines. Elle va consister à s&#8217;assurer du bon fonctionnement des communications et de la performance des liens (débit, latence, taux d&#8217;erreurs). C&#8217;est dans ce cadre que l&#8217;on va vérifier par exemple si une adresse IP est toujours joignable, ou si tel port est ouvert sur telle machine, ou faire des statistiques sur la latence du lien réseau.</p>
+<p><strong>La supervision réseau</strong> : Il s&#8217;agit ici de l&#8217;aspect communication entre les machines. Elle va consister à s&#8217;assurer du bon fonctionnement des communications et de la performance des liens (débit, latence, taux d&#8217;erreurs). C&#8217;est dans ce cadre qu&#8217;il est possible par exemple, de vérifier si une adresse IP est toujours joignable, ou si tel port est ouvert sur telle machine, ou de faire des statistiques sur la latence du lien réseau.</p>
 </li>
 <li>
-<p><strong>La supervision système</strong> : Elle va consister à surveiller les machines elles-mêmes et en particulier ses ressources. Si l&#8217;on souhaite par exemple contrôler la mémoire utilisée ou la charge processeur sur le serveur, voir analyser les fichiers de logs système.</p>
+<p><strong>La supervision système</strong> : Elle consiste à surveiller les machines elles-mêmes et en particulier ses ressources, par exemple, contrôler la mémoire utilisée ou la charge processeur sur le serveur, voir analyser les fichiers de logs système.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p><strong>La supervision applicative ou métier</strong> : Plus subtile, Elle va consister à surveiller les applications et les processus métiers des agents au sein de l&#8217;entreprise.</p>
+<p><strong>La supervision applicative ou métier</strong> : Plus subtile, elle consiste à surveiller les applications et les processus métiers des agents au sein de l&#8217;entreprise.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Pour résumer, la supervision va dépendre principalement de l&#8217;activité de l&#8217;entreprise mais aussi et surtout de son besoin. On trouve rarement un même type de supervision d&#8217;une entreprise à l&#8217;autre. Mais cela reste abstrait. Concrètement et généralement, on supervise les serveurs, les switchs, les routeurs, les téléphones en réseau, les caméras en réseau, les badgeuses, les sondes, la bande passante, le CPU, la mémoire, les disques, les processus, les services, les bases de données, le bon déroulement des actions (backups, transferts, &#8230;&#8203;). Tout est supervisable tant que l&#8217;on peut récupérer et analyser des informations provenant des différents équipements que l&#8217;on souhaite superviser.</p>
+<p>Pour résumer, la supervision va dépendre principalement de l&#8217;activité de l&#8217;entreprise mais aussi et surtout de son besoin. Il est rare de trouver un même type de supervision d&#8217;une entreprise à une autre. Mais cela reste abstrait. Concrètement et généralement, une entreprise supervise les serveurs, les switchs, les routeurs, les téléphones en réseau, les caméras en réseau, les badgeuses, les sondes, la bande passante, le CPU, la mémoire, les disques, les processus, les services, les bases de données, le bon déroulement des actions (backups, transferts, &#8230;&#8203;). Tout est supervisable tant qu&#8217;il est possible de récupérer et analyser des informations provenant des différents équipements que l&#8217;entreprise souhaite superviser.</p>
 </div>
 <div class="paragraph">
-<p>Un système de supervision est basé généralement sur un serveur central. On y retrouvera assez souvent les fonctions suivantes :</p>
+<p>Un système de supervision est basé généralement sur un serveur central. Il lui est souvent associé les fonctions suivantes :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1319,10 +1377,7 @@ define command {
 <p>Interroger chaque service ou équipement directement depuis la base centrale, pour avoir une vue de l&#8217;extérieur du système.</p>
 </li>
 <li>
-<p>recevoir les alertes émises par les équipements et les retransmettre.</p>
-</li>
-<li>
-<p>Notifier les administrateurs.</p>
+<p>recevoir les alertes émises par les équipements et les retransmettre. Notifier les administrateurs.</p>
 </li>
 <li>
 <p>Agir pour remettre en service</p>
@@ -1336,10 +1391,12 @@ define command {
 </ul>
 </div>
 <div class="paragraph">
-<p>L&#8217;important est que ces tâches soit effectuées le plus automatiquement possible pour libérer cette charge de travail à l&#8217;administrateur.</p>
+<p>Il est important que ces tâches soient effectuées le plus automatiquement possible pour libérer cette charge de travail à l&#8217;administrateur.</p>
 </div>
+<div class="sect3">
+<h4 id="_les_protocoles_utilisés_par_la_supervision">Les protocoles utilisés par la supervision</h4>
 <div class="paragraph">
-<p>Il est possible d&#8217;accéder à de nombreuses informations localement sur une machine en utilisant des outils "bas niveau". En quelques lignes de script shell par exemple, on peut construire un rapport d&#8217;état de la machine. On rajoute une entrée dans la crontab, la table de planification permettant aux utilisateurs des systèmes Unix d&#8217;exécuter automatiquement des scripts, des commandes ou des logiciels à une date et une heure spécifiées, ou selon un cycle défini à l&#8217;avance, et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide aperçu de l&#8217;état d&#8217;un système. La commande ping, par exemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, &#8230;&#8203;</p>
+<p>Il est possible d&#8217;accéder à de nombreuses informations localement sur une machine en utilisant des outils système. En quelques lignes de script shell par exemple, on peut construire un rapport d&#8217;état de la machine. On rajoute une entrée dans la crontab (la table de planification permettant aux utilisateurs des systèmes Unix d&#8217;exécuter automatiquement des scripts) des commandes ou des logiciels à une date et une heure spécifiées, ou selon un cycle défini à l&#8217;avance, et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide aperçu de l&#8217;état d&#8217;un système. La commande ping, par exemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, &#8230;&#8203;</p>
 </div>
 <div class="paragraph">
 <p>En parallèle, il y a l&#8217;IPMI, Intelligent Platform Management Interface. IPMI est une spécification commune à la plupart des constructeurs, permettant de superviser une machine, indépendamment de son système d&#8217;exploitation, y compris si elle est éteinte mais connectée à une prise électrique.</p>
@@ -1370,19 +1427,22 @@ define command {
 </ul>
 </div>
 <div class="paragraph">
-<p>Le protocole Syslog est aussi un outil très utile pour la supervision. C&#8217;est un protocole de transmission d&#8217;événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d&#8217;analyse statistique, d&#8217;archivage ou production d&#8217;alertes. Retrouvé dans les journaux, logs, chaque événement système est accompagné de son type de service, sa gravité, la date et l&#8217;heure à laquelle l&#8217;événement est survenu, et l&#8217;hôte sur lequel l&#8217;événement s&#8217;est produit.</p>
+<p>Le protocole Syslog est aussi un outil très utile pour la supervision. C&#8217;est un protocole de transmission d&#8217;événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d&#8217;analyse statistique, d&#8217;archivage ou production d&#8217;alertes. Retrouvé dans les journaux, chaque événement système est accompagné de son type de service, sa gravité, la date et l&#8217;heure à laquelle l&#8217;événement est survenu, et l&#8217;hôte sur lequel l&#8217;événement s&#8217;est produit.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_visualisation_de_la_supervision">Visualisation de la supervision</h4>
 <div class="paragraph">
 <p>De nombreux autres protocoles sont utilisés mais tous les citer et les expliquer serait beaucoup trop long. C&#8217;est pour cela que je ne présente que les plus importants, ceux qui sont les plus utilisés par les différentes solutions de supervision.</p>
 </div>
 <div class="paragraph">
-<p>En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d&#8217;outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéressant de les visualiser. Généralement, la meilleure façon de visualiser ces données, c&#8217;est de les représenter sur des graphiques. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, &#8230;&#8203; utilisent dans la majeure partie du temps, une suite d&#8217;utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C&#8217;est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d&#8217;un processeur.</p>
+<p>En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d&#8217;outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéressant de les visualiser. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, &#8230;&#8203; utilisent régulièrement, une suite d&#8217;utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C&#8217;est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d&#8217;un processeur.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="Images/Rrd_week.png" alt="Rrd week"/>
 </div>
-<div class="title">Image 7. Graphique RRDtool</div>
+<div class="title">Image 6. Graphique RRDtool</div>
 </div>
 <div class="paragraph">
 <p>Mais il existe d&#8217;autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d&#8217;utilisation et entièrement configurables permettant de rendre un visuel esthétique et lisible sur une large variété de données.</p>
@@ -1391,32 +1451,36 @@ define command {
 <p>Lorsque le système d&#8217;information s&#8217;élargit, lorsqu&#8217;il commence à prendre de l&#8217;ampleur et qu&#8217;on doit superviser un grand nombre d&#8217;hôtes et de services. Il indispensable d&#8217;avoir un aperçu global de l&#8217;état de ces hôtes et de ces services. En effet, voir d&#8217;un rapide coup d&#8217;œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.</p>
 </div>
 <div class="paragraph">
-<p>Beaucoup de solutions mise d&#8217;ailleurs sur ce point. Certaines proposent des interfaces généralement destiné pour le web, sophistiquées, permettant justement cet aperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurable, nous offrant la possibilité de choisir les vues importantes, souvent accompagnées par les graphiques adéquats.</p>
+<p>Beaucoup de solutions misent d&#8217;ailleurs sur ce point. Certaines proposent des interfaces sophistiquées, habituellement destinées pour le web, permettant justement cet aperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurables, nous offrant la possibilité de choisir les vues importantes, souvent accompagnées par les graphiques adéquats.</p>
 </div>
 <div class="paragraph">
-<p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de la supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté.</p>
+<p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté.</p>
 </div>
 <div class="paragraph">
-<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées parfois d&#8217;indispensables pour la supervision semble former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécessité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
+<p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées parfois d&#8217;indispensables pour la supervision semblent former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécessité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
 </div>
 <div style="page-break-after: always;"></div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_Établir_les_critères_de_sélection">Établir les critères de sélection</h3>
 <div class="paragraph">
-<p>On peut donc s&#8217;apercevoir grâce à cet inventaire, qu&#8217;il existe énormément de solutions toutes aussi diverses les unes que les autres. Cependant, il semble bien évidemment impossible de tester ces 72 solutions en profondeur et juger de leur véritable potentiel même si elles ne sont pas toutes intéressantes compte tenu de nos besoins. Il est donc nécessaire de réduire cette liste.</p>
+<p>On peut donc s&#8217;apercevoir grâce à cet inventaire, qu&#8217;il existe énormément de solutions. Cependant, il n&#8217;est pas pertinent de tester ces 72 solutions en profondeur. Il est donc nécessaire de réduire cette liste.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d&#8217;une liste de 72 solutions à une liste d&#8217;une dizaine de solutions. Ces 10 solutions se sont démarquées principalement par mon analyse personnelle de nagios et des discussions avec les membres de l&#8217;équipe.</p>
+<p>J&#8217;ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d&#8217;une liste de 72 solutions à une liste d&#8217;une dizaine de solutions. Ces 10 solutions se sont démarquées principalement par mon analyse personnelle de Nagios et des discussions avec les membres de l&#8217;équipe.</p>
 </div>
 <div class="paragraph">
-<p>Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester de fond en comble. Malgré mon envie de vouloir tester le plus de solution possible, l&#8217;équipe et moi avons décidé de n&#8217;en retenir que deux. Pour les identifier, il est nécessaire de savoir lesquels sont les plus intéressantes selon nos besoins.</p>
+<p>Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester. Malgré ma curiosité et mon envie de vouloir tester le plus de solution possible, l&#8217;équipe et moi avons décidé de n&#8217;en retenir que deux. Pour les identifier, il est nécessaire de savoir lesquels sont les plus intéressantes selon nos besoins.</p>
 </div>
 <div class="paragraph">
 <p>C&#8217;est ainsi qu&#8217;est apparu la nécessité d&#8217;établir un ensemble de critère définissant si telle ou telle solution est plus intéressante qu&#8217;une autre. Ainsi, à l&#8217;image d&#8217;un tamis, les critères que j&#8217;aurai établi pourront filtrer les solutions restantes en faisant ressortir les deux meilleures.</p>
 </div>
 <div class="paragraph">
-<p>C&#8217;est à partir de maintenant, qu&#8217;il a été indispensable de bien identifier les besoins de l&#8217;unité. En effet, pour construire ce filtre il a fallu dans un premier temps, bien cerner le domaine à superviser. J&#8217;ai donc parcouru les Nagios déjà installés pour bien identifier et lister les différentes sondes mises en place. Dans un second temps, j&#8217;ai repris les solutions restantes du premier filtrage pour les croiser entre elles et identifier dans l&#8217;ensemble ce qui les caractérise vraiment. En parallèle, de nombreuses discussions avec l&#8217;équipe m&#8217;ont permis d&#8217;établir une liste de 25 critères que j&#8217;ai classé selon trois catégories : les critères impératifs, souhaitables ou bonus.</p>
+<p>Est donc venu le moment de bien identifier les besoins de l&#8217;unité. En effet, pour construire ce filtre il a fallu dans un premier temps, cerner le domaine à superviser. J&#8217;ai parcouru les Nagios déjà installés pour identifier et lister les différentes sondes mises en place. Dans un deuxième temps, j&#8217;ai repris les solutions restantes du premier filtrage pour les comparer entre elles et identifier des fonctionnalités qui sont souvent utilisées. En parallèle, de nombreuses discussions avec l&#8217;équipe m&#8217;ont permis d&#8217;établir une liste de 25 critères que j&#8217;ai classé selon trois catégories : les critères impératifs, souhaitables ou facultatifs.</p>
+</div>
+<div class="paragraph">
+<p>Voici donc la liste classée des critères retenus avec une brève explication concernant le critère et <em>son appréciation.</em></p>
 </div>
 <div class="paragraph">
 <p><span class="icon green"><i class="fa fa-check"></i></span> : Possible (intégré directement,via plugins,&#8230;&#8203;)<br/>
@@ -1449,7 +1513,7 @@ Communauté
 </td>
 <td class="hdlist2">
 <p>La communauté est elle active ? La documentation est présente et complète ?<br/>
-<em>Active/Inactive</em></p>
+<em>Active/Inactive - Forum/Mailing list/Temps de réponse</em></p>
 </td>
 </tr>
 <tr>
@@ -1551,7 +1615,7 @@ Gestion des utilisateurs
 </div>
 <hr/>
 <div class="hdlist">
-<div class="title">Bonus</div>
+<div class="title">Facultatif</div>
 <table>
 <tr>
 <td class="hdlist1">
@@ -1568,7 +1632,7 @@ Installation
 </td>
 <td class="hdlist2">
 <p>L&#8217;installation est simple ? Rapide ? Plusieurs modules à installer ?<br/>
-<em>Simple/Laborieuse - Rapide/Longue - AIO/Modulable</em></p>
+<em>Simple/Laborieuse - Rapide/Longue - Tout en un/Modulable</em></p>
 </td>
 </tr>
 <tr>
@@ -1591,7 +1655,7 @@ Support
 </tr>
 <tr>
 <td class="hdlist1">
-Trend prediction
+Prédiction des tendances (Trend prediction)
 </td>
 <td class="hdlist2">
 <p>La trend prediction regarde comment l&#8217;infrastructure s&#8217;est comportée au fil du temps et essais de prédire comment elle risque de se comporter dans le futur, dans un but de prédiction et de prévention pour éventuellement résoudre les problèmes avant qu&#8217;ils ne soient détéctés et qu&#8217;ils ne deviennent réellement des problèmes.<br/>
@@ -1621,7 +1685,7 @@ Syslog
 Isolement/Détection des problèmes
 </td>
 <td class="hdlist2">
-<p>Cette feature permet d&#8217;identifier et d&#8217;isoler la réelle source du problème pour limiter les alertes et pour permettre une résolution simplifiée.<br/>
+<p>Cette fonctionnalité permet d&#8217;identifier et d&#8217;isoler la réelle source du problème pour limiter les alertes et pour permettre une résolution simplifiée.<br/>
 <span class="icon green"><i class="fa fa-check"></i></span>/<span class="icon red"><i class="fa fa-times"></i></span></p>
 </td>
 </tr>
@@ -1639,7 +1703,7 @@ Desktop API
 Langages utilisés
 </td>
 <td class="hdlist2">
-<p>Quels langages sont utilisés ?<br/>
+<p>Quels langages sont utilisés ? Il est parfois plus facile d&#8217;utiliser tel ou tel language dans certaines conditions.+
 <em>Python/C/java/&#8230;&#8203;</em></p>
 </td>
 </tr>
@@ -1664,13 +1728,13 @@ Map du réseau
 </table>
 </div>
 <div class="paragraph">
-<p>Une fois validé par l&#8217;équipe, j&#8217;ai pu utiliser ces critères et les croiser avec les solutions envisageables dans un tableau. C&#8217;est donc ce tableau qui me sert de filtre pour identifier par lui même et de manière naturelle les meilleures solutions. Ils va donc les classer et faire ressortir visuellement les solutions que je vais pouvoir tester.</p>
+<p>Une fois validés par l&#8217;équipe, j&#8217;ai pu utiliser ces critères et les croiser avec les solutions candidates dans un tableau à double entrée faisant ressortir les solutions que je vais pouvoir tester.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="Images/Comparatif.png" alt="Comparatif"/>
 </div>
-<div class="title">Image 8. Tableau comparatif des solutions en fonction des critères</div>
+<div class="title">Image 7. Tableau comparatif des solutions en fonction des critères</div>
 </div>
 <div class="paragraph">
 <p><span class="icon green"><i class="fa fa-check"></i></span> : Possible<br/>
@@ -1687,7 +1751,7 @@ Map du réseau
 <div class="content">
 <img src="Images/diagram.png" alt="diagram"/>
 </div>
-<div class="title">Image 9. Graphique représentant les solutions en fonction des critères</div>
+<div class="title">Image 8. Graphique représentant les solutions en fonction des critères</div>
 </div>
 <div class="paragraph">
 <p>Plus la solution présente de vert, plus elle aura de critères validés et totalement intégrés.<br/>
@@ -1699,10 +1763,10 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 <div class="content">
 <img src="Images/diagram2.png" alt="diagram2"/>
 </div>
-<div class="title">Image 10. Graphique représentant les solutions en fonction des critères classés selon leur importance.</div>
+<div class="title">Image 9. Graphique représentant les solutions en fonction des critères classés selon leur importance.</div>
 </div>
 <div class="paragraph">
-<p>Ce second graphique reprend le principe du premier graphique, en précisant les différentes catégories de critères (Impératif, souhaitable, bonus). Ainsi, on peut voir d&#8217;un rapide coup d&#8217;œil quelle solution rempli les critères les plus important. Ce graphique permet de faciliter l&#8217;identification des deux meilleures solutions.</p>
+<p>Ce second graphique reprend le principe du premier graphique, en précisant les différentes catégories de critères (Impératif, souhaitable, facultatif). Ainsi, on peut voir d&#8217;un rapide coup d&#8217;œil quelle solution rempli les critères les plus important. Ce graphique permet de faciliter l&#8217;identification des deux meilleures solutions.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1729,13 +1793,13 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 <h2 id="_bilan">Bilan</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Cette première année d&#8217;apprentissage au Conseil départemental a dans un premier temps été l&#8217;occasion pour moi d&#8217;avoir une première expérience de travail dans un contexte qui me plait vraiment : l&#8217;informatique. En effet les jobs étudiants que j&#8217;ai pu avoir dans le passé notamment dans la restauration n&#8217;ont pas été sans intérêt et m&#8217;ont beaucoup appris. Mais ce n&#8217;est rien comparé à une expérience de travail dans le domaine qui m&#8217;intéresse et dans lequel j&#8217;aimerai vraiment travailler.</p>
+<p>Cette première année d&#8217;apprentissage au Conseil Départemental a dans un premier temps été l&#8217;occasion pour moi d&#8217;avoir une première expérience de travail dans un contexte qui me plait vraiment : l&#8217;informatique.</p>
 </div>
 <div class="paragraph">
-<p>De plus, j&#8217;ai pu découvrir un domaine de l&#8217;informatique que je ne connaissais pas : l&#8217;administration système. En effet, mon apprentissage m&#8217;a permis de découvrir un nouveau sujet de l&#8217;informatique et m&#8217;a permis d&#8217;acquérir des connaissances complémentaires à celles acquises à l&#8217;université. Ma nature très curieuse fait en sorte que j&#8217;aime énormément apprendre et découvrir de nouveaux sujets, ce qui a été possible grâce au poste que l&#8217;on m&#8217;a proposé au Conseil Départemental.</p>
+<p>De plus, j&#8217;ai pu découvrir un domaine de l&#8217;informatique que je ne connaissais pas : l&#8217;administration système. Mon apprentissage m&#8217;a permis d&#8217;acquérir des connaissances complémentaires à celles acquises à l&#8217;université.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai pu non seulement découvrir en profondeur un sujet précis de l&#8217;administration système : la supervision, mon projet d&#8217;apprentissage, mais aussi, en côtoyant et en travaillant avec les autres membres de mon unité, j&#8217;ai pu découvrir d&#8217;autres problématiques de l&#8217;administration système, comme la virtualisation, le stockage et la sauvegarde. J&#8217;ai aussi pu ajouter quelques notions de réseau et de sécurité. Toutes ces nouvelles connaissances acquises me permettront ainsi de m&#8217;ouvrir au domaine de l&#8217;administration système et de ne plus me restreindre au monde du développement largement étudié à l&#8217;université.</p>
+<p>Grâce au poste que l&#8217;on m&#8217;a proposé au Conseil Départemental, j&#8217;ai pu non seulement découvrir en profondeur un sujet précis de l&#8217;administration système : la supervision, mon projet d&#8217;apprentissage, mais aussi, en côtoyant et en travaillant avec les autres membres de mon unité, d&#8217;autres problématiques de l&#8217;administration système, comme la virtualisation, le stockage et la sauvegarde. J&#8217;ai aussi pu approfondir quelques notions de réseau et de sécurité. Toutes ces nouvelles connaissances acquises me permettront ainsi de m&#8217;ouvrir au domaine de l&#8217;administration système et de ne plus me restreindre au monde du développement largement étudié à l&#8217;université.</p>
 </div>
 <div class="paragraph">
 <p>J&#8217;ai rencontré quelques difficultés techniques au début de mon apprentissage, justement dues au fait que je n&#8217;avais jamais vraiment travaillé sur le domaine de l&#8217;administration système auparavant. Mais j&#8217;ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j&#8217;ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.</p>
@@ -1747,7 +1811,7 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 <p>Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu&#8217;à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, si une des solution nous conviens vraiment, l&#8217;installer définitivement sur les serveurs de productions.</p>
 </div>
 <div class="paragraph">
-<p>Je sais que l&#8217;équipe compte beaucoup sur moi et mon travail, alors j&#8217;espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant la solution la plus adapté pour qu&#8217;ils puissent l&#8217;utiliser pendant de nombreuses années.</p>
+<p>L&#8217;équipe compte sur moi et mon travail. J&#8217;espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant une solution adaptée et pérenne.</p>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -1755,25 +1819,240 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 <div class="sect1">
 <h2 id="_annexes">Annexes</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tous les fichiers, rapports, scripts sur lesquels j&#8217;ai travaillé durant cette première période d&#8217;apprentissage sont disponibles sur ma page github</dt>
+<dd>
+<p><em><a href="https://github.com/minitoma/" class="bare">https://github.com/minitoma/</a></em></p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_table_des_illustrations">Table des illustrations</h2>
+<h2 id="_webographie">Webographie</h2>
 <div class="sectionbody">
-<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<div class="title">Général</div>
+<p><a href="http://www.debianhelp.co.uk/adminutilities.htm" class="bare">http://www.debianhelp.co.uk/adminutilities.htm</a><br/>
+<a href="http://www.linux-france.org/prj/edu/archinet/systeme/ch13s03.html" class="bare">http://www.linux-france.org/prj/edu/archinet/systeme/ch13s03.html</a><br/>
+<a href="https://doc.ubuntu-fr.org/ssh" class="bare">https://doc.ubuntu-fr.org/ssh</a><br/>
+<a href="http://www.techrepublic.com/article/how-to-disable-ipv6-on-linux/" class="bare">http://www.techrepublic.com/article/how-to-disable-ipv6-on-linux/</a><br/>
+<a href="https://technique.arscenic.org/commandes-linux-de-base/la-gestion-des-utilisateurs/article/ajout-et-suppression-d" class="bare">https://technique.arscenic.org/commandes-linux-de-base/la-gestion-des-utilisateurs/article/ajout-et-suppression-d</a><br/>
+<a href="http://www.mathieupeloquin.com/fr/2009/12/configurer-adresse-ip-statique-centos/" class="bare">http://www.mathieupeloquin.com/fr/2009/12/configurer-adresse-ip-statique-centos/</a><br/></p>
 </div>
+<div class="paragraph">
+<div class="title">Python</div>
+<p><a href="http://www.it-connect.fr/incron-executer-des-actions-selon-des-evenements/" class="bare">http://www.it-connect.fr/incron-executer-des-actions-selon-des-evenements/</a><br/>
+<a href="http://blog.terminal.com/using-daemon-to-daemonize-your-programs/" class="bare">http://blog.terminal.com/using-daemon-to-daemonize-your-programs/</a><br/>
+<a href="https://www.tutorialspoint.com/python/os_file_methods.htm" class="bare">https://www.tutorialspoint.com/python/os_file_methods.htm</a><br/>
+<a href="http://naelshiab.com/tutoriel-comment-envoyer-un-courriel-avec-python/" class="bare">http://naelshiab.com/tutoriel-comment-envoyer-un-courriel-avec-python/</a><br/>
+<a href="https://github.com/martinrusev/python-daemon/blob/master/daemonexample.py" class="bare">https://github.com/martinrusev/python-daemon/blob/master/daemonexample.py</a><br/>
+<a href="http://stackoverflow.com/questions/13721808/daemon-with-python-3" class="bare">http://stackoverflow.com/questions/13721808/daemon-with-python-3</a><br/>
+<a href="https://pymotw.com/2/signal/" class="bare">https://pymotw.com/2/signal/</a><br/>
+<a href="http://stackoverflow.com/questions/30408589/how-do-you-use-python-daemon-the-way-that-its-documentation-dictates" class="bare">http://stackoverflow.com/questions/30408589/how-do-you-use-python-daemon-the-way-that-its-documentation-dictates</a><br/>
+<a href="http://abregman.com/2016/09/04/python-run-daemon-process/" class="bare">http://abregman.com/2016/09/04/python-run-daemon-process/</a><br/>
+<a href="https://www.python.org/dev/peps/pep-3143/#example-usage" class="bare">https://www.python.org/dev/peps/pep-3143/#example-usage</a><br/>
+<a href="http://www.linuxtricks.fr/wiki/systemd-les-commandes-essentielles" class="bare">http://www.linuxtricks.fr/wiki/systemd-les-commandes-essentielles</a><br/>
+<a href="https://wiki.monitoring-fr.org/supervision/snmp" class="bare">https://wiki.monitoring-fr.org/supervision/snmp</a><br/></p>
 </div>
-<div class="sect1">
-<h2 id="_sources">Sources</h2>
-<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Nagios</div>
+<p><a href="http://nagios.manubulon.com/index_snmp.html" class="bare">http://nagios.manubulon.com/index_snmp.html</a><br/>
+<a href="https://wiki.monitoring-fr.org/nagios/mise-en-place-complete-nagios-sur-rhel-5.4/supervision-nagios-snmp" class="bare">https://wiki.monitoring-fr.org/nagios/mise-en-place-complete-nagios-sur-rhel-5.4/supervision-nagios-snmp</a><br/>
+<a href="https://www.nagios.com/solutions/snmp-monitoring/" class="bare">https://www.nagios.com/solutions/snmp-monitoring/</a><br/>
+<a href="https://exchange.nagios.org/directory/Plugins/Hardware/UPS/APC/check_apcupsd/details" class="bare">https://exchange.nagios.org/directory/Plugins/Hardware/UPS/APC/check_apcupsd/details</a><br/>
+<a href="http://artisan.karma-lab.net/supervision-nagios" class="bare">http://artisan.karma-lab.net/supervision-nagios</a><br/>
+<a href="http://djibril.developpez.com/tutoriels/linux/nagios-pour-debutant/" class="bare">http://djibril.developpez.com/tutoriels/linux/nagios-pour-debutant/</a><br/>
+<a href="https://blog.serverdensity.com/website-monitoring-nagios/" class="bare">https://blog.serverdensity.com/website-monitoring-nagios/</a><br/>
+<a href="http://www.tylerlesmann.com/2008/nov/24/crash-course-nagios-configuration/" class="bare">http://www.tylerlesmann.com/2008/nov/24/crash-course-nagios-configuration/</a><br/>
+<a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/monitoring-publicservices.html" class="bare">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/monitoring-publicservices.html</a><br/>
+<a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/startstop.html" class="bare">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/startstop.html</a><br/>
+<a href="http://nagios-plugins.org/doc/man/" class="bare">http://nagios-plugins.org/doc/man/</a><br/>
+<a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/toc.html" class="bare">https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/toc.html</a><br/>
+<a href="https://ittutorials.net/linux/nagios/setup-nagios/" class="bare">https://ittutorials.net/linux/nagios/setup-nagios/</a><br/>
+<a href="http://nagios.manubulon.com/traduction/docs14en/eventhandlers.html" class="bare">http://nagios.manubulon.com/traduction/docs14en/eventhandlers.html</a><br/>
+<a href="https://assets.nagios.com/downloads/nagioscore/docs/nrpe/NRPE.pdf" class="bare">https://assets.nagios.com/downloads/nagioscore/docs/nrpe/NRPE.pdf</a><br/>
+<a href="http://nagios.manubulon.com/traduction/docs14en/redundancy.html" class="bare">http://nagios.manubulon.com/traduction/docs14en/redundancy.html</a><br/>
+<a href="https://allmybase.com/2010/10/04/setting-up-fully-redundant-failover-nagios-servers/" class="bare">https://allmybase.com/2010/10/04/setting-up-fully-redundant-failover-nagios-servers/</a><br/>
+<a href="https://dmilltech.com/2011/04/04/backup-and-archive-nagios/" class="bare">https://dmilltech.com/2011/04/04/backup-and-archive-nagios/</a><br/>
+<a href="http://denisrosenkranz.com/tuto-nagios-superviser-un-hote-linux-avec-nrpe/" class="bare">http://denisrosenkranz.com/tuto-nagios-superviser-un-hote-linux-avec-nrpe/</a><br/>
+<a href="http://www.planet-libre.org/index.php?post_id=83" class="bare">http://www.planet-libre.org/index.php?post_id=83</a><br/></p>
+</div>
+<div class="paragraph">
+<div class="title">Replication du nagios</div>
+<p><a href="http://www.thegeekstuff.com/2011/07/cron-every-5-minutes/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+TheGeekStuff+(The+Geek+Stuff" class="bare">http://www.thegeekstuff.com/2011/07/cron-every-5-minutes/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+TheGeekStuff+(The+Geek+Stuff</a>)<br/>
+<a href="http://stackoverflow.com/questions/5063343/how-to-get-the-ip-address-of-the-server-in-linux" class="bare">http://stackoverflow.com/questions/5063343/how-to-get-the-ip-address-of-the-server-in-linux</a><br/>
+<a href="https://doc.ubuntu-fr.org/tutoriel/comment_transformer_un_programme_en_service" class="bare">https://doc.ubuntu-fr.org/tutoriel/comment_transformer_un_programme_en_service</a><br/>
+<a href="https://openclassrooms.com/courses/faire-un-demon-sous-linux" class="bare">https://openclassrooms.com/courses/faire-un-demon-sous-linux</a><br/>
+<a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/" class="bare">http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/</a><br/>
+<a href="http://unix.stackexchange.com/questions/236084/how-do-i-create-a-service-for-a-shell-script-so-i-can-start-and-stop-it-like-a-d" class="bare">http://unix.stackexchange.com/questions/236084/how-do-i-create-a-service-for-a-shell-script-so-i-can-start-and-stop-it-like-a-d</a><br/>
+<a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html" class="bare">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html</a><br/>
+<a href="https://doc.ubuntu-fr.org/creer_un_service_avec_systemd" class="bare">https://doc.ubuntu-fr.org/creer_un_service_avec_systemd</a><br/>
+<a href="https://techarena51.com/index.php/build-rpm-without-breaking-head/" class="bare">https://techarena51.com/index.php/build-rpm-without-breaking-head/</a><br/>
+<a href="http://tecadmin.net/create-rpm-of-your-own-script-in-centosredhat/" class="bare">http://tecadmin.net/create-rpm-of-your-own-script-in-centosredhat/</a><br/>
+<a href="http://www.thegeekstuff.com/2015/02/rpm-build-package-example" class="bare">http://www.thegeekstuff.com/2015/02/rpm-build-package-example</a><br/>
+<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-autotasks.html" class="bare">https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-autotasks.html</a><br/></p>
+</div>
+<div class="paragraph">
+<div class="title">Projet</div>
+<p><a href="https://www.ekino.com/panorama-solutions-monitoring/" class="bare">https://www.ekino.com/panorama-solutions-monitoring/</a><br/>
+<a href="http://www.o00o.org/monitoring/solutions.html" class="bare">http://www.o00o.org/monitoring/solutions.html</a><br/>
+<a href="http://www.memoireonline.com/04/12/5604/m_Monitoring-dune-infrastructure-informatique-sur-base-doutils-libres23.html" class="bare">http://www.memoireonline.com/04/12/5604/m_Monitoring-dune-infrastructure-informatique-sur-base-doutils-libres23.html</a><br/>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04" class="bare">https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04</a><br/>
+<a href="https://wiki.monitoring-fr.org/supervision/start" class="bare">https://wiki.monitoring-fr.org/supervision/start</a><br/>
+<a href="https://doc.ubuntu-fr.org/supervision" class="bare">https://doc.ubuntu-fr.org/supervision</a><br/>
+<a href="https://www.monitoring-fr.org/" class="bare">https://www.monitoring-fr.org/</a><br/>
+<a href="http://www.lolokai.com/blog/2014/05/06/la-supervision-open-source-pourquoi-jai-laisse-de-cote-nagios/" class="bare">http://www.lolokai.com/blog/2014/05/06/la-supervision-open-source-pourquoi-jai-laisse-de-cote-nagios/</a><br/>
+<a href="http://phillbarber.blogspot.fr/2015/03/nagios-vs-sensu-vs-icinga2.html" class="bare">http://phillbarber.blogspot.fr/2015/03/nagios-vs-sensu-vs-icinga2.html</a><br/>
+<a href="https://www.monitoring-fr.org/2014/03/supervision-un-avenir-sans-nagios/" class="bare">https://www.monitoring-fr.org/2014/03/supervision-un-avenir-sans-nagios/</a><br/>
+<a href="http://shinken.readthedocs.io/en/2.2/01_about/whatsnew.html" class="bare">http://shinken.readthedocs.io/en/2.2/01_about/whatsnew.html</a><br/>
+<a href="http://linuxfr.org/sections/supervision" class="bare">http://linuxfr.org/sections/supervision</a><br/>
+<a href="http://igm.univ-mlv.fr/~dr/XPOSE2010/supervision/" class="bare">http://igm.univ-mlv.fr/~dr/XPOSE2010/supervision/</a><br/>
+<a href="https://fr.wikipedia.org/wiki/Supervision_(informatique" class="bare">https://fr.wikipedia.org/wiki/Supervision_(informatique</a>)<br/>
+<a href="https://www.supinfo.com/articles/single/3124-comparaison-outils-supervison" class="bare">https://www.supinfo.com/articles/single/3124-comparaison-outils-supervison</a><br/>
+<a href="https://www.fr.paessler.com/how-to-choose-the-right-network-monitoring-solution" class="bare">https://www.fr.paessler.com/how-to-choose-the-right-network-monitoring-solution</a><br/>
+<a href="https://wiki.monitoring-fr.org/supervision/links" class="bare">https://wiki.monitoring-fr.org/supervision/links</a><br/>
+<a href="http://www.monitortools.com/" class="bare">http://www.monitortools.com/</a><br/>
+<a href="https://en.wikipedia.org/wiki/Comparison_of_network_monitoring_systems" class="bare">https://en.wikipedia.org/wiki/Comparison_of_network_monitoring_systems</a><br/>
+<a href="https://github.com/monitoringsucks/tool-repos" class="bare">https://github.com/monitoringsucks/tool-repos</a><br/>
+<a href="https://www.opsview.com/it-monitoring-sysadmins" class="bare">https://www.opsview.com/it-monitoring-sysadmins</a><br/>
+<a href="https://www.slideshare.net/Floriansalles/outils-de-supervision-opensource" class="bare">https://www.slideshare.net/Floriansalles/outils-de-supervision-opensource</a><br/>
+<a href="http://servicenav.coservit.fr/supervision-informatique-enjeux-dsi/" class="bare">http://servicenav.coservit.fr/supervision-informatique-enjeux-dsi/</a><br/>
+<a href="https://terrty.net/2016/shinken-vs-sensu-vs-icinga2-vs-zabbix/" class="bare">https://terrty.net/2016/shinken-vs-sensu-vs-icinga2-vs-zabbix/</a><br/>
+<a href="https://prezi.com/hg59kfkm-wka/solutions-de-monitoring/" class="bare">https://prezi.com/hg59kfkm-wka/solutions-de-monitoring/</a><br/>
+<a href="http://blog.capterra.com/top-open-source-free-network-monitoring-software/" class="bare">http://blog.capterra.com/top-open-source-free-network-monitoring-software/</a><br/>
+<a href="https://www.systemcodegeeks.com/monitoring/nagios/nagios-alternatives-centreon-icinga/" class="bare">https://www.systemcodegeeks.com/monitoring/nagios/nagios-alternatives-centreon-icinga/</a><br/>
+<a href="http://alternativeto.net/software/nagios/" class="bare">http://alternativeto.net/software/nagios/</a><br/>
+<a href="https://www.1and1.fr/digitalguide/serveur/outils/nagios-une-vue-densemble-des-systemes-et-reseaux/" class="bare">https://www.1and1.fr/digitalguide/serveur/outils/nagios-une-vue-densemble-des-systemes-et-reseaux/</a><br/>
+<a href="http://bestreviews2017.com/best-nagios-alternatives-2017/" class="bare">http://bestreviews2017.com/best-nagios-alternatives-2017/</a><br/>
+<a href="http://blog.unicsolution.com/2013/11/best-monitoring-solution-omd-nagios.html" class="bare">http://blog.unicsolution.com/2013/11/best-monitoring-solution-omd-nagios.html</a><br/>
+<a href="http://www.formation-it.com/2016/08/les-solutions-de-supervision-open-source.html" class="bare">http://www.formation-it.com/2016/08/les-solutions-de-supervision-open-source.html</a><br/></p>
+</div>
+<div class="paragraph">
+<div class="title">Solutions</div>
+<p><a href="http://www.ntop.org/" class="bare">http://www.ntop.org/</a><br/>
+<a href="http://ganglia.info/?page_id=67" class="bare">http://ganglia.info/?page_id=67</a><br/>
+<a href="https://www.elastic.co/products/x-pack" class="bare">https://www.elastic.co/products/x-pack</a><br/>
+<a href="http://www.rudder-project.org/site/about/what-is-rudder/" class="bare">http://www.rudder-project.org/site/about/what-is-rudder/</a><br/>
+<a href="http://www.normation.com/en/rudder/what-is-rudder/" class="bare">http://www.normation.com/en/rudder/what-is-rudder/</a><br/>
+<a href="http://linuxfr.org/news/meetup-rudder-le-jeudi-4-juin-2015-a-paris" class="bare">http://linuxfr.org/news/meetup-rudder-le-jeudi-4-juin-2015-a-paris</a><br/>
+<a href="http://linuxfr.org/news/l-ugap-accueille-son-premier-projet-open-source-de-gestion-de-configuration-rudder" class="bare">http://linuxfr.org/news/l-ugap-accueille-son-premier-projet-open-source-de-gestion-de-configuration-rudder</a><br/>
+<a href="https://mathias-kettner.de/check_mk.html" class="bare">https://mathias-kettner.de/check_mk.html</a><br/>
+<a href="https://wiki.monitoring-fr.org/nagios/addons/check_mk/start" class="bare">https://wiki.monitoring-fr.org/nagios/addons/check_mk/start</a><br/>
+<a href="https://en.wikipedia.org/wiki/Check_MK" class="bare">https://en.wikipedia.org/wiki/Check_MK</a><br/>
+<a href="https://www.youtube.com/watch?v=JLU4RwUnjQA" class="bare">https://www.youtube.com/watch?v=JLU4RwUnjQA</a><br/>
+<a href="https://demo.opennms.org/opennms/index.jsp" class="bare">https://demo.opennms.org/opennms/index.jsp</a><br/>
+<a href="https://www.opennms.org/en" class="bare">https://www.opennms.org/en</a><br/>
+<a href="http://www.networkmanagementsoftware.com/opennms-open-source-network-management-review/" class="bare">http://www.networkmanagementsoftware.com/opennms-open-source-network-management-review/</a><br/>
+<a href="https://www.paessler.com/prtg" class="bare">https://www.paessler.com/prtg</a><br/>
+<a href="https://www.monitoring-fr.org/solutions/zabbix/" class="bare">https://www.monitoring-fr.org/solutions/zabbix/</a><br/>
+<a href="http://www.zabbix.com/" class="bare">http://www.zabbix.com/</a><br/>
+<a href="https://wiki.monitoring-fr.org/zabbix/start" class="bare">https://wiki.monitoring-fr.org/zabbix/start</a><br/>
+<a href="http://raisin.u-bordeaux.fr/IMG/pdf/zabbix.pdf" class="bare">http://raisin.u-bordeaux.fr/IMG/pdf/zabbix.pdf</a><br/>
+<a href="http://www.zabbix.com/problem_detection" class="bare">http://www.zabbix.com/problem_detection</a><br/>
+<a href="https://kb.groundworkopensource.com/display/DOC71/About+GroundWork+Monitor" class="bare">https://kb.groundworkopensource.com/display/DOC71/About+GroundWork+Monitor</a><br/>
+<a href="https://www.gwos.com/" class="bare">https://www.gwos.com/</a><br/>
+<a href="https://www.gwos.com/features/what-we-monitor/" class="bare">https://www.gwos.com/features/what-we-monitor/</a><br/>
+<a href="http://network-management.softwareinsider.com/compare/60-96/ZABBIX-vs-NetXMS" class="bare">http://network-management.softwareinsider.com/compare/60-96/ZABBIX-vs-NetXMS</a><br/>
+<a href="https://www.netxms.org/" class="bare">https://www.netxms.org/</a><br/>
+<a href="https://mmonit.com/monit/" class="bare">https://mmonit.com/monit/</a><br/>
+<a href="https://blogs.oracle.com/pomah/entry/dimstat_by_examples" class="bare">https://blogs.oracle.com/pomah/entry/dimstat_by_examples</a><br/>
+<a href="https://openclassrooms.com/forum/sujet/web-bash-ez-server-monitor" class="bare">https://openclassrooms.com/forum/sujet/web-bash-ez-server-monitor</a><br/>
+<a href="http://ezservermonitor.com/esm-web/features" class="bare">http://ezservermonitor.com/esm-web/features</a><br/>
+<a href="http://www.alignak.net/" class="bare">http://www.alignak.net/</a><br/>
+<a href="https://github.com/Alignak-monitoring/alignak" class="bare">https://github.com/Alignak-monitoring/alignak</a><br/>
+<a href="http://www.lolokai.com/blog/2011/07/05/presentation-et-installation-deyes-of-network/" class="bare">http://www.lolokai.com/blog/2011/07/05/presentation-et-installation-deyes-of-network/</a><br/>
+<a href="https://www.eyesofnetwork.com/?lang=fr" class="bare">https://www.eyesofnetwork.com/?lang=fr</a><br/>
+<a href="https://memo-linux.com/eyes-of-network-solution-complete-de-supervision/" class="bare">https://memo-linux.com/eyes-of-network-solution-complete-de-supervision/</a><br/>
+<a href="http://linuxfr.org/news/eyesofnetwork-4-0-est-sorti" class="bare">http://linuxfr.org/news/eyesofnetwork-4-0-est-sorti</a><br/>
+<a href="https://newsit.shost.ca/informatique/supervision-sur-eyesofnetwork/" class="bare">https://newsit.shost.ca/informatique/supervision-sur-eyesofnetwork/</a><br/>
+<a href="http://fractio.nl/2014/02/12/data-driven-alerting-with-flapjack-puppet-hiera/" class="bare">http://fractio.nl/2014/02/12/data-driven-alerting-with-flapjack-puppet-hiera/</a><br/>
+<a href="http://flapjack.io/docs/1.0/usage/quickstart/" class="bare">http://flapjack.io/docs/1.0/usage/quickstart/</a><br/>
+<a href="https://github.com/ktrance/prometheus-demo" class="bare">https://github.com/ktrance/prometheus-demo</a><br/>
+<a href="https://www.infoq.com/fr/news/2015/01/service-discovery-consul" class="bare">https://www.infoq.com/fr/news/2015/01/service-discovery-consul</a><br/>
+<a href="http://www.supinfo.com/articles/single/1630-mise-place-une-solution-supervision-avec-nagios-centreon" class="bare">http://www.supinfo.com/articles/single/1630-mise-place-une-solution-supervision-avec-nagios-centreon</a><br/>
+<a href="https://www.monitoring-fr.org/solutions/centreon/" class="bare">https://www.monitoring-fr.org/solutions/centreon/</a><br/>
+<a href="https://demo.centreon.com/centreon/main.php?p=2" class="bare">https://demo.centreon.com/centreon/main.php?p=2</a><br/>
+<a href="https://www.supinfo.com/articles/single/2789-monitoring-supervision" class="bare">https://www.supinfo.com/articles/single/2789-monitoring-supervision</a><br/>
+<a href="https://www.karolak.fr/blog/2016/03/07/installation-et-configuration-de-centreon-de-a-a-z" class="bare">https://www.karolak.fr/blog/2016/03/07/installation-et-configuration-de-centreon-de-a-a-z</a><br/>
+<a href="https://static.centreon.com/wp-content/uploads/2016/03/factsheet-Centreon-fr.pdf" class="bare">https://static.centreon.com/wp-content/uploads/2016/03/factsheet-Centreon-fr.pdf</a><br/>
+<a href="https://sensuapp.org/features#compare" class="bare">https://sensuapp.org/features#compare</a><br/>
+<a href="https://buzut.fr/monitorer-serveurs-services-sensu/" class="bare">https://buzut.fr/monitorer-serveurs-services-sensu/</a><br/>
+<a href="https://buzut.fr/collecter-grapher-metriques-serveurs-grafana/" class="bare">https://buzut.fr/collecter-grapher-metriques-serveurs-grafana/</a><br/>
+<a href="http://www.supinfo.com/articles/single/2095-supervision-via-observium-installation-configuration" class="bare">http://www.supinfo.com/articles/single/2095-supervision-via-observium-installation-configuration</a><br/>
+<a href="http://www.observium.org/" class="bare">http://www.observium.org/</a><br/>
+<a href="https://www.linux.com/learn/zenoss-or-nagios-your-all-seeing-network-eye-sky" class="bare">https://www.linux.com/learn/zenoss-or-nagios-your-all-seeing-network-eye-sky</a><br/>
+<a href="https://www.zenoss.com/" class="bare">https://www.zenoss.com/</a><br/>
+<a href="https://wiki.monitoring-fr.org/zenoss/start" class="bare">https://wiki.monitoring-fr.org/zenoss/start</a><br/>
+<a href="http://wiki.pandorafms.com/index.php?title=Pandora:QuickGuides_EN:General_Quick_Guide" class="bare">http://wiki.pandorafms.com/index.php?title=Pandora:QuickGuides_EN:General_Quick_Guide</a><br/>
+<a href="https://pandorafms.org/en/features/monitoring-software/" class="bare">https://pandorafms.org/en/features/monitoring-software/</a><br/>
+<a href="https://pandorafms.org/en/features/features/" class="bare">https://pandorafms.org/en/features/features/</a><br/>
+<a href="https://blog.pandorafms.org/" class="bare">https://blog.pandorafms.org/</a><br/>
+<a href="https://pandorafms.com/fr/prix/" class="bare">https://pandorafms.com/fr/prix/</a><br/>
+<a href="https://github.com/nicolargo/glances" class="bare">https://github.com/nicolargo/glances</a><br/>
+<a href="https://nicolargo.github.io/glances/" class="bare">https://nicolargo.github.io/glances/</a><br/>
+<a href="https://www.icinga.com/" class="bare">https://www.icinga.com/</a><br/>
+<a href="https://blog.deimos.fr/2014/08/25/monitoring-switching-from-nagios-feedbacks/" class="bare">https://blog.deimos.fr/2014/08/25/monitoring-switching-from-nagios-feedbacks/</a><br/>
+<a href="https://fr.naemonbox.com/?page_id=219" class="bare">https://fr.naemonbox.com/?page_id=219</a><br/>
+<a href="https://www.supinfo.com/articles/single/2802-monitoring-principes-base" class="bare">https://www.supinfo.com/articles/single/2802-monitoring-principes-base</a><br/>
+<a href="https://www.naemonbox.com/fr/supervision-dentreprise-avec-naemonbox/" class="bare">https://www.naemonbox.com/fr/supervision-dentreprise-avec-naemonbox/</a><br/>
+<a href="https://www.monitoring-fr.org/2011/02/omd-open-monitoring-distribution/" class="bare">https://www.monitoring-fr.org/2011/02/omd-open-monitoring-distribution/</a><br/>
+<a href="https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=0ahUKEwiVoZrt4svSAhUIbBoKHegGADQQFggvMAM&amp;url=https%3A%2F%2Fconf-ng.jres.org%2F2015%2Fdocument_revision_1893.html%3Fdownload&amp;usg=AFQjCNHebihpB-9ClW98qf8hyxkM1qGqOQ&amp;sig2=gDTBULUORicX9qKZwBvWfQ&amp;bvm=bv.149093890,d.d2s&amp;cad=rja" class="bare">https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=0ahUKEwiVoZrt4svSAhUIbBoKHegGADQQFggvMAM&amp;url=https%3A%2F%2Fconf-ng.jres.org%2F2015%2Fdocument_revision_1893.html%3Fdownload&amp;usg=AFQjCNHebihpB-9ClW98qf8hyxkM1qGqOQ&amp;sig2=gDTBULUORicX9qKZwBvWfQ&amp;bvm=bv.149093890,d.d2s&amp;cad=rja</a><br/>
+<a href="https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=0ahUKEwiVoZrt4svSAhUIbBoKHegGADQQFgg1MAQ&amp;url=https%3A%2F%2Fconf-ng.jres.org%2F2015%2Fdocument_revision_2618.html%3Fdownload&amp;usg=AFQjCNEQhNlbvMadQMkOITHD_rdKlgyPUw&amp;sig2=oRAp-m-fHCdhvbnqwlSl5w&amp;bvm=bv.149093890,d.d2s&amp;cad=rja" class="bare">https://www.google.fr/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=5&amp;ved=0ahUKEwiVoZrt4svSAhUIbBoKHegGADQQFgg1MAQ&amp;url=https%3A%2F%2Fconf-ng.jres.org%2F2015%2Fdocument_revision_2618.html%3Fdownload&amp;usg=AFQjCNEQhNlbvMadQMkOITHD_rdKlgyPUw&amp;sig2=oRAp-m-fHCdhvbnqwlSl5w&amp;bvm=bv.149093890,d.d2s&amp;cad=rja</a><br/>
+<a href="https://github.com/ConSol/omd/blob/labs/Changelog" class="bare">https://github.com/ConSol/omd/blob/labs/Changelog</a><br/>
+<a href="http://www.vigilo-nms.com/home/produits/vigilo-nms/" class="bare">http://www.vigilo-nms.com/home/produits/vigilo-nms/</a><br/>
+<a href="https://www.vigilo-nms.com/en/home-page/" class="bare">https://www.vigilo-nms.com/en/home-page/</a><br/>
+<a href="https://en.wikipedia.org/wiki/Vigilo_NMS" class="bare">https://en.wikipedia.org/wiki/Vigilo_NMS</a><br/>
+<a href="http://shinken.readthedocs.io/en/latest/02_gettingstarted/installations/shinken-installation.html" class="bare">http://shinken.readthedocs.io/en/latest/02_gettingstarted/installations/shinken-installation.html</a><br/>
+<a href="http://algorys.github.io/tuto/shinken-installation/" class="bare">http://algorys.github.io/tuto/shinken-installation/</a><br/>
+<a href="https://www.monitoring-fr.org/solutions/shinken/" class="bare">https://www.monitoring-fr.org/solutions/shinken/</a><br/>
+<a href="http://rhq-project.github.io/rhq/" class="bare">http://rhq-project.github.io/rhq/</a><br/>
+<a href="https://docs.jboss.org/author/display/RHQ/Features" class="bare">https://docs.jboss.org/author/display/RHQ/Features</a><br/>
+<a href="https://docs.jboss.org/author/display/RHQ/Home" class="bare">https://docs.jboss.org/author/display/RHQ/Home</a><br/></p>
+</div>
+<div class="paragraph">
+<div class="title">Outils de supervision et autres</div>
+<p><a href="https://www.monitoring-fr.org/2013/06/adagios-nouvelle-console-administration-nagios/" class="bare">https://www.monitoring-fr.org/2013/06/adagios-nouvelle-console-administration-nagios/</a><br/>
+<a href="https://doc.ubuntu-fr.org/acgvision" class="bare">https://doc.ubuntu-fr.org/acgvision</a><br/>
+<a href="http://pcp.io/features.html" class="bare">http://pcp.io/features.html</a><br/>
+<a href="http://freecode.com/projects/openpom" class="bare">http://freecode.com/projects/openpom</a><br/>
+<a href="http://realopinsight.com/" class="bare">http://realopinsight.com/</a><br/>
+<a href="http://nagios.manubulon.com/traduction/docs14fr/distributed.html" class="bare">http://nagios.manubulon.com/traduction/docs14fr/distributed.html</a><br/>
+<a href="https://www.paessler.com/" class="bare">https://www.paessler.com/</a><br/>
+<a href="http://www.vmware.com/products/vrealize-hyperic.html" class="bare">http://www.vmware.com/products/vrealize-hyperic.html</a><br/>
+<a href="https://www.datadoghq.com/ts/grafana-alternative/?utm_source=Advertisement&amp;utm_medium=GoogleAdsNon1stTier&amp;utm_campaign=GoogleAdsNon1stTier-GrafanaNonENESTshirt&amp;utm_content=Grafana&amp;utm_keyword=%7Bkeyword%7D&amp;gclid=CjwKEAiAuc_FBRD7_JCM3NSY92wSJABbVoxBoQTB7R5vfISjNGNOwKpETZzTFB7snxXRzxf0AfHSVxoCyRzw_wcB" class="bare">https://www.datadoghq.com/ts/grafana-alternative/?utm_source=Advertisement&amp;utm_medium=GoogleAdsNon1stTier&amp;utm_campaign=GoogleAdsNon1stTier-GrafanaNonENESTshirt&amp;utm_content=Grafana&amp;utm_keyword=%7Bkeyword%7D&amp;gclid=CjwKEAiAuc_FBRD7_JCM3NSY92wSJABbVoxBoQTB7R5vfISjNGNOwKpETZzTFB7snxXRzxf0AfHSVxoCyRzw_wcB</a><br/>
+<a href="https://www.op5.com/" class="bare">https://www.op5.com/</a><br/>
+<a href="http://www.canopsis.org/" class="bare">http://www.canopsis.org/</a><br/>
+<a href="https://www.capensis.fr/solutions/hypervision/" class="bare">https://www.capensis.fr/solutions/hypervision/</a><br/>
+<a href="http://www.ovirt.org/develop/release-management/features/infra/nagios-integration/" class="bare">http://www.ovirt.org/develop/release-management/features/infra/nagios-integration/</a><br/>
+<a href="https://www.opsview.com/products/opsview-atom" class="bare">https://www.opsview.com/products/opsview-atom</a><br/>
+<a href="https://kb.op5.com/display/GUI/GUI+(Ninja)+Home" class="bare">https://kb.op5.com/display/GUI/GUI+(Ninja)+Home</a><br/>
+<a href="https://www.futurehosting.com/blog/open-source-server-monitoring-what-are-your-options/" class="bare">https://www.futurehosting.com/blog/open-source-server-monitoring-what-are-your-options/</a><br/>
+<a href="http://igm.univ-mlv.fr/~dr/XPOSE2007/dmichau_supervision/supervision.html" class="bare">http://igm.univ-mlv.fr/~dr/XPOSE2007/dmichau_supervision/supervision.html</a><br/>
+<a href="http://www.mathrice.fr/IMG/pdf_mathrice_2009_Protocoles.pdf" class="bare">http://www.mathrice.fr/IMG/pdf_mathrice_2009_Protocoles.pdf</a><br/>
+<a href="http://igm.univ-mlv.fr/~dr/XPOSE2010/supervision/index.html" class="bare">http://igm.univ-mlv.fr/~dr/XPOSE2010/supervision/index.html</a><br/>
+<a href="http://supervision.clever.fr/monitoring-protocoles-reseaux/" class="bare">http://supervision.clever.fr/monitoring-protocoles-reseaux/</a><br/></p>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-02 16:26:09 CEST
+Last updated 2017-06-07 16:39:49 CEST
 </div>
 </div>
 </body>

@@ -28,7 +28,7 @@ Développement (Dernière update et date)::
 
 Communauté::
     La communauté est elle active ? La documentation est présente et complète ? +
-    _Active/Inactive_
+    _Active/Inactive - Forum/Mailing list/Temps de réponse_
 
 Web API::
     Pouvons nous avoir accès à une interface web ? (Intégrée, détachée,...) Si oui est elle personnalisable ? (Tableaux de bords, choix des vues,... ) +
@@ -76,14 +76,14 @@ Gestion des utilisateurs::
 ---
 
 [horizontal]
-.Bonus
+.Facultatif
 Graphiques et visualisation::
     Est-il possible d'avoir un rendu des données récoltés pour avoir un visuel de ce que l'on supervise ? Est-ce directement intégré à la solution ? Faut-il installer des modules supplémentaires pour y avoir accès ? +
     {check}/{uncheck} _- Intégrés/Importés_
 
 Installation::
     L'installation est simple ? Rapide ? Plusieurs modules à installer ? +
-    _Simple/Laborieuse - Rapide/Longue - AIO/Modulable_
+    _Simple/Laborieuse - Rapide/Longue - Tout en un/Modulable_
 
 Application Mobile::
     Peut-on recevoir les alertes sur son téléphone ? +
@@ -93,7 +93,7 @@ Support::
     Les développeurs fournissent-ils un support ? Si oui, est-il gratuit ou payant ? +
     _Actif/Inactif - Payant/Gratuit_
 
-Trend prediction::
+Prédiction des tendances (Trend prediction)::
     La trend prediction regarde comment l'infrastructure s'est comportée au fil du temps et essais de prédire comment elle risque de se comporter dans le futur, dans un but de prédiction et de prévention pour éventuellement résoudre les problèmes avant qu'ils ne soient détéctés et qu'ils ne deviennent réellement des problèmes. +
     {check}/{uncheck}
 
@@ -106,7 +106,7 @@ Syslog::
     {check}/{uncheck}
 
 Isolement/Détection des problèmes::
-    Cette feature permet d'identifier et d'isoler la réelle source du problème pour limiter les alertes et pour permettre une résolution simplifiée. +
+    Cette fonctionnalité permet d'identifier et d'isoler la réelle source du problème pour limiter les alertes et pour permettre une résolution simplifiée. +
     {check}/{uncheck}
 
 Desktop API::
@@ -114,7 +114,7 @@ Desktop API::
     {check}/{uncheck}
 
 Langages utilisés::
-    Quels langages sont utilisés ? +
+    Quels langages sont utilisés ? Il est parfois plus facile d'utiliser tel ou tel language dans certaines conditions.+
     _Python/C/java/..._
 
 Methode de stockage des données::
