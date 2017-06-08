@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 1.5.4"/>
 <meta name="description" content="Projet d'alternance de Master réalisé par Thomas Calatayud"/>
 <meta name="author" content="Thomas Calatayud"/>
-<title>Rapport d&#8217;apprentissage Master 1 - Informatique: Supervision open-source d&#8217;un système d&#8217;information</title>
+<title>Rapport d&#8217;apprentissage                    Master 1 - Informatique: Supervision open-source d&#8217;un système d&#8217;information</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -513,7 +513,7 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article">
 <div id="header">
-<h1>Rapport d&#8217;apprentissage Master 1 - Informatique: Supervision open-source d&#8217;un système d&#8217;information</h1>
+<h1>Rapport d&#8217;apprentissage                    Master 1 - Informatique: Supervision open-source d&#8217;un système d&#8217;information</h1>
 <div class="details">
 <span id="author" class="author">Thomas Calatayud</span><br/>
 <span id="email" class="email"><a href="mailto:thomas.calatayud@etud.univ-angers.fr">thomas.calatayud@etud.univ-angers.fr</a></span><br/>
@@ -578,17 +578,17 @@ Département de Maine et Loire<br/>
 </li>
 <li><a href="#_identification_des_solutions_libres_open_sources_de_supervision">Identification des solutions libres/open-sources de supervision</a>
 <ul class="sectlevel2">
-<li><a href="#_instantané_des_solutions_libres_open_sources">Instantané des solutions libres/open-sources.</a>
+<li><a href="#_inventaire_des_solutions_libres_open_sources">Inventaire des solutions libres/open-sources.</a>
 <ul class="sectlevel3">
 <li><a href="#_les_protocoles_utilisés_par_la_supervision">Les protocoles utilisés par la supervision</a></li>
 <li><a href="#_visualisation_de_la_supervision">Visualisation de la supervision</a></li>
 </ul>
 </li>
 <li><a href="#_Établir_les_critères_de_sélection">Établir les critères de sélection</a></li>
-<li><a href="#_présentation_des_solutions_sélectionnées">Présentation des solutions sélectionnées</a>
+<li><a href="#_Évaluation_de_deux_solutions">Évaluation de deux solutions</a>
 <ul class="sectlevel3">
-<li><a href="#_solution_1">Solution 1</a></li>
-<li><a href="#_solution_2">Solution 2</a></li>
+<li><a href="#_nagios">Nagios</a></li>
+<li><a href="#_zabbix">Zabbix</a></li>
 </ul>
 </li>
 </ul>
@@ -686,7 +686,7 @@ La direction logistique et systèmes d&#8217;information gère la logistique, l&
 <div class="title">Image 1. Organigramme du Conseil Départemental</div>
 </div>
 <div class="paragraph">
-<p>Internet, télécommunication, ordinateurs, smartphone, logiciels, reprographie, partage de documents, collaboration en ligne, services numériques, &#8230;&#8203; Les agents du Conseil Départemental utilisent tous des outils numériques dans leurs activités quotidiennes. L&#8217;accueil, les courriers, le parc automobile, les fournitures, la reprographie et les petits matériels sont des missions liées à la logistique présentes dans notre quotidien de travail. En effet, la direction logistique et systèmes d&#8217;information dirigé par son directeur M. Christian LECOMTE , veille à la cohérence et au bon fonctionnement de ces différents moyens de logistique, de traitement de l&#8217;information et de communication pour que tous les agents de la collectivité puisse travailler dans de bonnes conditions.</p>
+<p>Internet, télécommunication, ordinateurs, smartphone, logiciels, reprographie, partage de documents, collaboration en ligne, services numériques, &#8230;&#8203; Les agents du Conseil Départemental utilisent tous des outils numériques dans leurs activités quotidiennes. L&#8217;accueil, les courriers, le parc automobile, les fournitures, la reprographie et les petits matériels sont des missions liées à la logistique présentes dans notre quotidien de travail. En effet, la direction logistique et systèmes d&#8217;information dirigée par son directeur M. Christian LECOMTE , veille à la cohérence et au bon fonctionnement de ces différents moyens de logistique, de traitement de l&#8217;information et de communication pour que tous les agents de la collectivité puisse travailler dans de bonnes conditions.</p>
 </div>
 <div class="paragraph">
 <p>La DLSI se découpe en 6 services :</p>
@@ -971,7 +971,7 @@ Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au
 </ul>
 </div>
 <div class="paragraph">
-<p>Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n&#8217;est pas obligatoire d&#8217;être certifié par l&#8217;OSI pour appliquer être définie de licence open-source, mais il faut qu&#8217;elle respecte ces 10 conditions pour qu&#8217;elle soit considérée comme telle. Il est commun de vulgariser l&#8217;ensemble des logiciels open-source ou libre. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.</p>
+<p>Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n&#8217;est pas obligatoire d&#8217;être certifié par l&#8217;OSI pour être définie comme licence open-source, mais il faut qu&#8217;elle respecte ces 10 conditions pour qu&#8217;elle soit considérée comme telle. Il est commun de vulgariser l&#8217;ensemble des logiciels open-source ou libre alors qu&#8217;ils ne le sont pas toujours réellement. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.</p>
 </div>
 <div class="paragraph">
 <p>Actuellement, la supervision de l&#8217;ensemble du système d&#8217;information est opérée par Nagios. Cette solution libre,
@@ -1015,7 +1015,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="title">Image 4. Ovirt</div>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai d&#8217;ailleurs plus tard grâce à cet outils répondu aux besoins d&#8217;un utilisateur. En effet, nous recevons parfois des demandes d&#8217;installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C&#8217;est mon collègue lui aussi étudiant de l&#8217;université d&#8217;Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l&#8217;installation et la configuration d&#8217;un serveur et d&#8217;une base de donnée pour qu&#8217;il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m&#8217;a confié cette tâche pour prendre encore un peu plus en main l&#8217;installation et la configuration d&#8217;un serveur.</p>
+<p>J&#8217;ai d&#8217;ailleurs plus tard grâce à cet outils répondu aux besoins d&#8217;un utilisateur. En effet, nous recevons parfois des demandes d&#8217;installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C&#8217;est mon collègue, lui aussi étudiant de l&#8217;université d&#8217;Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l&#8217;installation et la configuration d&#8217;un serveur et d&#8217;une base de donnée pour qu&#8217;il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m&#8217;a confié cette tâche pour prendre encore un peu plus en main l&#8217;installation et la configuration d&#8217;un serveur.</p>
 </div>
 <div class="sect4">
 <h5 id="_monter_un_disque_sur_un_périphérique_fichier">Monter un disque sur un périphérique fichier</h5>
@@ -1023,7 +1023,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <p>Un autre exercice était de construire et monter un disque d&#8217;une très grosse capacité sur un disque physique beaucoup plus petit sur mon poste. Il a fallu que je trouve un moyen d&#8217;effectuer cette tâche.</p>
 </div>
 <div class="paragraph">
-<p>Un des moyens d&#8217;éffectuer cette tâche était d&#8217;utiliser la commande dd qui permet de copier une partie d&#8217;un disque ou du système de fichiers par blocs d&#8217;octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d&#8217;une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu&#8217;à monter le fichier et changer son format pour obtenir un "disque virtuel".</p>
+<p>Un des moyens pour réaliser cette tâche était d&#8217;utiliser la commande dd qui permet de copier une partie d&#8217;un disque ou du système de fichiers par blocs d&#8217;octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d&#8217;une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu&#8217;à monter le fichier et changer son format pour obtenir un "disque virtuel".</p>
 </div>
 <div id="app-listing" class="listingblock">
 <div class="content">
@@ -1064,9 +1064,6 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 </li>
 <li>
 <p><strong>IN_CLOSE_WRITE</strong> : Le fichier est fermé après avoir été ouvert en écriture</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
 </li>
 </ul>
 </div>
@@ -1317,7 +1314,7 @@ define command {
 <p>Comme décrit dans l&#8217;intitulé de mon projet d&#8217;apprentissage, notre service utilise l&#8217;outil Nagios pour la supervision.</p>
 </div>
 <div class="paragraph">
-<p>Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n&#8217;a pas été suffisamemnt maintenue. L&#8217;état actuel de sa configuration, à force de rajouter des sondes hâtivement, est désormais difficile à nettoyer, au point de se demander s&#8217;il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.</p>
+<p>Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n&#8217;a pas été suffisamemnt maintenue. L&#8217;état actuel de sa configuration est désormais difficile à entretenir, au point de se demander s&#8217;il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.</p>
 </div>
 <div class="paragraph">
 <p>Malgré son énorme catalogue de possibilité, Son système de configuration via un ensemble de fichier rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.</p>
@@ -1329,12 +1326,12 @@ define command {
 <p>S&#8217;ouvre donc l&#8217;opportunité de découvrir ces nouvelles solutions. C&#8217;est de cette occasion, que l&#8217;unité a souhaité m&#8217;engager pour dresser l&#8217;état des lieux des solutions existantes afin de refondre la supervision de son système d&#8217;information.</p>
 </div>
 <div class="sect2">
-<h3 id="_instantané_des_solutions_libres_open_sources">Instantané des solutions libres/open-sources.</h3>
+<h3 id="_inventaire_des_solutions_libres_open_sources">Inventaire des solutions libres/open-sources.</h3>
 <div class="paragraph">
 <p>Pour trouver une nouvelle solution de supervision, il était nécessaire de connaître les enjeux de la supervision, les solutions existantes sur le marché et ce qu&#8217;elles proposent. J&#8217;ai commencé mes recherches sans connaissance de l&#8217;état de la solution existante.</p>
 </div>
 <div class="paragraph">
-<p>J&#8217;ai en effet choisi de faire l&#8217;inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d&#8217;identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l&#8217;équipe à besoin. Le seul critère de recherche que l&#8217;équipe m&#8217;a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.</p>
+<p>J&#8217;ai en effet choisi de faire l&#8217;inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d&#8217;identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l&#8217;équipe a besoin. Le seul critère de recherche que l&#8217;équipe m&#8217;a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.</p>
 </div>
 <div class="paragraph">
 <p>Durant ce recensement, j&#8217;ai pu inventorier une énorme quantité de solutions. Pas moins de 72 solutions sont ressorties.</p>
@@ -1405,7 +1402,7 @@ define command {
 <p>Le cœur d&#8217;IPMI est un contrôleur appelé BMC (Baseboard Management Controller). Il surveille les différents capteurs intégrés à la carte mère, comme la température, la vitesse de rotation des ventilateurs, l&#8217;état du système d&#8217;exploitation, &#8230;&#8203; et permet certaines actions sur la machine comme l&#8217;extinction ou le démarrage.</p>
 </div>
 <div class="paragraph">
-<p>ICMP est un protocole de couche réseau qui vient palier à l&#8217;absence de message d&#8217;erreur du protocole IP. En effet, s&#8217;il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l&#8217;erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C&#8217;est un protocole très simple, qui n&#8217;a pas pour fonction directe la supervision d&#8217;un réseau mais qui est utilisé comme source d&#8217;information sur la qualité du réseau ou sur la présence d&#8217;une machine.</p>
+<p>ICMP (Internet Control Message Protocol) est un protocole de couche réseau qui vient palier à l&#8217;absence de message d&#8217;erreur du protocole IP. En effet, s&#8217;il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l&#8217;erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C&#8217;est un protocole très simple, qui n&#8217;a pas pour fonction directe la supervision d&#8217;un réseau mais qui est utilisé comme source d&#8217;information sur la qualité du réseau ou sur la présence d&#8217;une machine.</p>
 </div>
 <div class="paragraph">
 <p>Un autre protocole très utilisé, voir indispensable dans la supervision, le SNMP, Simple Network Management Protocol, est principalement utilisé pour superviser des équipements réseaux, des serveurs ou même des périphériques tels que des baies de stockages de disques, des sondes météorologique, des onduleurs, &#8230;&#8203;</p>
@@ -1429,12 +1426,12 @@ define command {
 <div class="paragraph">
 <p>Le protocole Syslog est aussi un outil très utile pour la supervision. C&#8217;est un protocole de transmission d&#8217;événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d&#8217;analyse statistique, d&#8217;archivage ou production d&#8217;alertes. Retrouvé dans les journaux, chaque événement système est accompagné de son type de service, sa gravité, la date et l&#8217;heure à laquelle l&#8217;événement est survenu, et l&#8217;hôte sur lequel l&#8217;événement s&#8217;est produit.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_visualisation_de_la_supervision">Visualisation de la supervision</h4>
 <div class="paragraph">
 <p>De nombreux autres protocoles sont utilisés mais tous les citer et les expliquer serait beaucoup trop long. C&#8217;est pour cela que je ne présente que les plus importants, ceux qui sont les plus utilisés par les différentes solutions de supervision.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_visualisation_de_la_supervision">Visualisation de la supervision</h4>
 <div class="paragraph">
 <p>En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d&#8217;outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéressant de les visualiser. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, &#8230;&#8203; utilisent régulièrement, une suite d&#8217;utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C&#8217;est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d&#8217;un processeur.</p>
 </div>
@@ -1448,13 +1445,13 @@ define command {
 <p>Mais il existe d&#8217;autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d&#8217;utilisation et entièrement configurables permettant de rendre un visuel esthétique et lisible sur une large variété de données.</p>
 </div>
 <div class="paragraph">
-<p>Lorsque le système d&#8217;information s&#8217;élargit, lorsqu&#8217;il commence à prendre de l&#8217;ampleur et qu&#8217;on doit superviser un grand nombre d&#8217;hôtes et de services. Il indispensable d&#8217;avoir un aperçu global de l&#8217;état de ces hôtes et de ces services. En effet, voir d&#8217;un rapide coup d&#8217;œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.</p>
+<p>Lorsque le système d&#8217;information s&#8217;élargit, lorsqu&#8217;il commence à prendre de l&#8217;ampleur et qu&#8217;il faut superviser un grand nombre d&#8217;hôtes et de services. Il indispensable d&#8217;avoir un aperçu global de l&#8217;état de ces hôtes et de ces services. En effet, voir d&#8217;un rapide coup d&#8217;œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.</p>
 </div>
 <div class="paragraph">
 <p>Beaucoup de solutions misent d&#8217;ailleurs sur ce point. Certaines proposent des interfaces sophistiquées, habituellement destinées pour le web, permettant justement cet aperçu global de l&#8217;état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurables, nous offrant la possibilité de choisir les vues importantes, souvent accompagnées par les graphiques adéquats.</p>
 </div>
 <div class="paragraph">
-<p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté.</p>
+<p>D&#8217;autres solutions préfèrent se concentrer sur le moteur de supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu&#8217;ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté (Adagios, NConf, Thruk, &#8230;&#8203;).</p>
 </div>
 <div class="paragraph">
 <p>De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l&#8217;on pourrait qualifiées parfois d&#8217;indispensables pour la supervision semblent former des critères important dans le choix d&#8217;une bonne solution de supervision, comme la nécessité d&#8217;un protocole SNMP, d&#8217;alertes, d&#8217;interface web, &#8230;&#8203;</p>
@@ -1771,19 +1768,16 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 <div style="page-break-after: always;"></div>
 </div>
 <div class="sect2">
-<h3 id="_présentation_des_solutions_sélectionnées">Présentation des solutions sélectionnées</h3>
+<h3 id="_Évaluation_de_deux_solutions">Évaluation de deux solutions</h3>
 <div class="paragraph">
-<p>Transition critère et choix des solutions.</p>
-</div>
-<div class="paragraph">
-<p>Présentation des 2 solutions : carte d&#8217;identité des solutions</p>
+<p>Présentation de 2 solutions : application des critères sur deux solutions.</p>
 </div>
 <div class="sect3">
-<h4 id="_solution_1">Solution 1</h4>
+<h4 id="_nagios">Nagios</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_solution_2">Solution 2</h4>
+<h4 id="_zabbix">Zabbix</h4>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -2052,7 +2046,7 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-07 16:39:49 CEST
+Last updated 2017-06-08 15:26:26 CEST
 </div>
 </div>
 </body>

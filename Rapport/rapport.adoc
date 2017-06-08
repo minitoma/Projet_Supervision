@@ -1,4 +1,4 @@
-= Rapport d'apprentissage Master 1 - Informatique: Supervision open-source d'un système d'information
+= Rapport d'apprentissage                    Master 1 - Informatique: Supervision open-source d'un système d'information
 Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
 2016-2017
 :description: Projet d'alternance de Master réalisé par {author}
@@ -101,7 +101,7 @@ La direction logistique et systèmes d'information gère la logistique, l'inform
 .Organigramme du Conseil Départemental
 image::Images/Organigramme-CG.JPG[]
 
-Internet, télécommunication, ordinateurs, smartphone, logiciels, reprographie, partage de documents, collaboration en ligne, services numériques, ... Les agents du Conseil Départemental utilisent tous des outils numériques dans leurs activités quotidiennes. L'accueil, les courriers, le parc automobile, les fournitures, la reprographie et les petits matériels sont des missions liées à la logistique présentes dans notre quotidien de travail. En effet, la direction logistique et systèmes d'information dirigé par son directeur M. Christian LECOMTE , veille à la cohérence et au bon fonctionnement de ces différents moyens de logistique, de traitement de l'information et de communication pour que tous les agents de la collectivité puisse travailler dans de bonnes conditions.
+Internet, télécommunication, ordinateurs, smartphone, logiciels, reprographie, partage de documents, collaboration en ligne, services numériques, ... Les agents du Conseil Départemental utilisent tous des outils numériques dans leurs activités quotidiennes. L'accueil, les courriers, le parc automobile, les fournitures, la reprographie et les petits matériels sont des missions liées à la logistique présentes dans notre quotidien de travail. En effet, la direction logistique et systèmes d'information dirigée par son directeur M. Christian LECOMTE , veille à la cohérence et au bon fonctionnement de ces différents moyens de logistique, de traitement de l'information et de communication pour que tous les agents de la collectivité puisse travailler dans de bonnes conditions.
 
 La DLSI se découpe en 6 services :
 
@@ -239,7 +239,7 @@ L'OSI a donc crée une définition de l'open source qui décrit 10 conditions re
 - Condition 9 : la licence d'un logiciel ne doit pas s'étendre à un autre.
 - Condition 10 : la licence doit être neutre technologiquement. Elle ne concerne que le code et pas les technologies et applications qui en découlent.
 
-Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n'est pas obligatoire d'être certifié par l'OSI pour appliquer être définie de licence open-source, mais il faut qu'elle respecte ces 10 conditions pour qu'elle soit considérée comme telle. Il est commun de vulgariser l'ensemble des logiciels open-source ou libre. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.
+Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n'est pas obligatoire d'être certifié par l'OSI pour être définie comme licence open-source, mais il faut qu'elle respecte ces 10 conditions pour qu'elle soit considérée comme telle. Il est commun de vulgariser l'ensemble des logiciels open-source ou libre alors qu'ils ne le sont pas toujours réellement. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.
 
 Actuellement, la supervision de l'ensemble du système d'information est opérée par Nagios. Cette solution libre,
 en place depuis près de 10 ans, contrôle un peu plus de 2700 points de
@@ -266,13 +266,13 @@ J'ai ensuite découvert l'outil Ovirt que notre unité utilise pour l'installati
 .Ovirt
 image::Images/ovirt.png[Ovirt]
 
-J'ai d'ailleurs plus tard grâce à cet outils répondu aux besoins d'un utilisateur. En effet, nous recevons parfois des demandes d'installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C'est mon collègue lui aussi étudiant de l'université d'Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l'installation et la configuration d'un serveur et d'une base de donnée pour qu'il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m'a confié cette tâche pour prendre encore un peu plus en main l'installation et la configuration d'un serveur.
+J'ai d'ailleurs plus tard grâce à cet outils répondu aux besoins d'un utilisateur. En effet, nous recevons parfois des demandes d'installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C'est mon collègue, lui aussi étudiant de l'université d'Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l'installation et la configuration d'un serveur et d'une base de donnée pour qu'il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m'a confié cette tâche pour prendre encore un peu plus en main l'installation et la configuration d'un serveur.
 
 ===== Monter un disque sur un périphérique fichier
 
 Un autre exercice était de construire et monter un disque d'une très grosse capacité sur un disque physique beaucoup plus petit sur mon poste. Il a fallu que je trouve un moyen d'effectuer cette tâche.
 
-Un des moyens d'éffectuer cette tâche était d'utiliser la commande dd qui permet de copier une partie d'un disque ou du système de fichiers par blocs d'octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d'une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu'à monter le fichier et changer son format pour obtenir un "disque virtuel".
+Un des moyens pour réaliser cette tâche était d'utiliser la commande dd qui permet de copier une partie d'un disque ou du système de fichiers par blocs d'octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d'une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu'à monter le fichier et changer son format pour obtenir un "disque virtuel".
 
 [[app-listing]]
 [source,shell]
@@ -296,7 +296,6 @@ J'ai ensuite écrit une deuxième version améliorée, utilisant le mécanisme i
 - *IN_ACCESS* : Le fichier est accédé en lecture
 - *IN_MODIFY* : Le fichier est modifié
 - *IN_CLOSE_WRITE* : Le fichier est fermé après avoir été ouvert en écriture
-- ...
 
 Et enfin, j'ai écrit une dernière version en Python3 qui s'exécute en tant que daemon. D'un point de vue strictement technique, sous un système UNIX, un daemon peut être n'importe quel processus ayant le processus init (le premier processus lancé au démarrage de la machine) comme parent. En d'autres termes, pour qu'un processus soit un daemon dans le sens strict du terme, est qu'il soit complètement détaché du terminal et gérer entièrement par le système sans que l'utilisateur puisse reprendre le contrôle dessus. Communément un deamon est simplifié par n'importe quel processus fonctionnant en arrière-plan, qu'il soit ou non un enfant du processus init, c'est à dire que le processus s'exécute en tâche de fond par le système, sans que l'utilisateur s'en aperçoive.
 
@@ -467,7 +466,7 @@ Grâce à ces interventions, j'ai pu constater qu'un administrateur système n'e
 
 Comme décrit dans l'intitulé de mon projet d'apprentissage, notre service utilise l'outil Nagios pour la supervision.
 
-Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n'a pas été suffisamemnt maintenue. L'état actuel de sa configuration, à force de rajouter des sondes hâtivement, est désormais difficile à nettoyer, au point de se demander s'il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.
+Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n'a pas été suffisamemnt maintenue. L'état actuel de sa configuration est désormais difficile à entretenir, au point de se demander s'il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.
 
 Malgré son énorme catalogue de possibilité, Son système de configuration via un ensemble de fichier rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.
 
@@ -475,11 +474,11 @@ De plus, vu le manque de réactivité du développeur principal de Nagios et sa 
 
 S'ouvre donc l'opportunité de découvrir ces nouvelles solutions. C'est de cette occasion, que l'unité a souhaité m'engager pour dresser l'état des lieux des solutions existantes afin de refondre la supervision de son système d'information.
 
-=== Instantané des solutions libres/open-sources.
+=== Inventaire des solutions libres/open-sources.
 
 Pour trouver une nouvelle solution de supervision, il était nécessaire de connaître les enjeux de la supervision, les solutions existantes sur le marché et ce qu'elles proposent. J'ai commencé mes recherches sans connaissance de l'état de la solution existante.
 
-J'ai en effet choisi de faire l'inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d'identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l'équipe à besoin. Le seul critère de recherche que l'équipe m'a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.
+J'ai en effet choisi de faire l'inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d'identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l'équipe a besoin. Le seul critère de recherche que l'équipe m'a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.
 
 Durant ce recensement, j'ai pu inventorier une énorme quantité de solutions. Pas moins de 72 solutions sont ressorties.
 
@@ -511,7 +510,7 @@ En parallèle, il y a l'IPMI, Intelligent Platform Management Interface. IPMI es
 
 Le cœur d'IPMI est un contrôleur appelé BMC (Baseboard Management Controller). Il surveille les différents capteurs intégrés à la carte mère, comme la température, la vitesse de rotation des ventilateurs, l'état du système d'exploitation, ... et permet certaines actions sur la machine comme l'extinction ou le démarrage.
 
-ICMP est un protocole de couche réseau qui vient palier à l'absence de message d'erreur du protocole IP. En effet, s'il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l'erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C'est un protocole très simple, qui n'a pas pour fonction directe la supervision d'un réseau mais qui est utilisé comme source d'information sur la qualité du réseau ou sur la présence d'une machine.
+ICMP (Internet Control Message Protocol) est un protocole de couche réseau qui vient palier à l'absence de message d'erreur du protocole IP. En effet, s'il y a un incident de transmission, les équipements intermédiaires vont utiliser ce protocole pour prévenir la machine émettrice. Les paquets ICMP sont encapsulés dans des paquets IP, et peuvent contenir des bouts de paquets IP pour citer celui ayant généré l'erreur. Afin de catégoriser les erreurs, elles sont divisés en types eux-mêmes parfois redivisés en codes. C'est un protocole très simple, qui n'a pas pour fonction directe la supervision d'un réseau mais qui est utilisé comme source d'information sur la qualité du réseau ou sur la présence d'une machine.
 
 Un autre protocole très utilisé, voir indispensable dans la supervision, le SNMP, Simple Network Management Protocol, est principalement utilisé pour superviser des équipements réseaux, des serveurs ou même des périphériques tels que des baies de stockages de disques, des sondes météorologique, des onduleurs, ...
 
@@ -523,9 +522,9 @@ Le protocole SNMP est basé sur trois éléments :
 
 Le protocole Syslog est aussi un outil très utile pour la supervision. C'est un protocole de transmission d'événements systèmes. Il permet de centraliser les événements systèmes de chaque serveur ou équipement réseau sur une seule machine pour des fins d'analyse statistique, d'archivage ou production d'alertes. Retrouvé dans les journaux, chaque événement système est accompagné de son type de service, sa gravité, la date et l'heure à laquelle l'événement est survenu, et l'hôte sur lequel l'événement s'est produit.
 
-==== Visualisation de la supervision
-
 De nombreux autres protocoles sont utilisés mais tous les citer et les expliquer serait beaucoup trop long. C'est pour cela que je ne présente que les plus importants, ceux qui sont les plus utilisés par les différentes solutions de supervision.
+
+==== Visualisation de la supervision
 
 En supplément de ces protocoles, les solutions de supervision sont souvent accompagnées d'outils ou de logiciels de suivi graphiques. En effet, une fois les données récupérées, il est souvent intéressant de les visualiser. Pour ça, les outils de supervision comme MRTG, Munin, Ganglia, Cacti, ... utilisent régulièrement, une suite d'utilitaires de création de graphes basés sur des statistiques temporelles appelé RRDtool. Cet outil de gestion de base de données RRD (Round-Robin database) devenu incontournable, est utilisé pour la sauvegarde de données cycliques et le tracé de graphiques. C'est un outil idéal pour superviser des données serveurs, telles la bande passante ou la température d'un processeur.
 
@@ -534,11 +533,11 @@ image::Images/Rrd_week.png[]
 
 Mais il existe d'autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d'utilisation et entièrement configurables permettant de rendre un visuel esthétique et lisible sur une large variété de données.
 
-Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'on doit superviser un grand nombre d'hôtes et de services. Il indispensable d'avoir un aperçu global de l'état de ces hôtes et de ces services. En effet, voir d'un rapide coup d'œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.
+Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'il faut superviser un grand nombre d'hôtes et de services. Il indispensable d'avoir un aperçu global de l'état de ces hôtes et de ces services. En effet, voir d'un rapide coup d'œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.
 
 Beaucoup de solutions misent d'ailleurs sur ce point. Certaines proposent des interfaces sophistiquées, habituellement destinées pour le web, permettant justement cet aperçu global de l'état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurables, nous offrant la possibilité de choisir les vues importantes, souvent accompagnées par les graphiques adéquats.
 
-D'autres solutions préfèrent se concentrer sur le moteur de supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu'ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté.
+D'autres solutions préfèrent se concentrer sur le moteur de supervision, laissant place parfois à des tiers la possibilité de développer leur propre interface qu'ils partagent ensuite à la communauté. Ainsi, par exemple, pour Nagios, on retrouve en parallèle à son interface web simpliste, des versions parfois plus évolués et plus esthétiques développées et mises à disposition par la communauté (Adagios, NConf, Thruk, ...).
 
 De cet inventaire, on constate des fonctionnalités ressortant sur la plupart des solution. Ces fonctionnalités, que l'on pourrait qualifiées parfois d'indispensables pour la supervision semblent former des critères important dans le choix d'une bonne solution de supervision, comme la nécessité d'un protocole SNMP, d'alertes, d'interface web, ...
 
@@ -588,15 +587,17 @@ Ce second graphique reprend le principe du premier graphique, en précisant les 
 
 <<<
 
-=== Présentation des solutions sélectionnées
+=== Évaluation de deux solutions
 
-Transition critère et choix des solutions.
+Présentation de 2 solutions : application des critères sur deux solutions.
 
-Présentation des 2 solutions : carte d'identité des solutions
+==== Nagios
 
-==== Solution 1
 
-==== Solution 2
+
+==== Zabbix
+
+
 
 <<<
 
