@@ -115,7 +115,7 @@ La DLSI se découpe en 6 services :
 .Organigramme de la DLSI
 image::Images/Organigramme-DLSI.jpg[]
 
-Chaque service se décompose généralement en une ou plusieurs unités qui vont s'occuper d'une ou plusieurs tâches plus spécifiques. Mon service SPISP, géré par son chef de service M. Gérard PHILIPPE, se présente en deux unités distinctes, l'unité administration des postes informatiques et l'unité système de production dans laquelle je travaille sous la responsabilité du responsable d'unité et tuteur de mon apprentissage M. Denis PITHON.
+Chaque service se décompose généralement en une ou plusieurs unités qui vont s'occuper d'une ou plusieurs tâches plus spécifiques. Mon service SPISP, géré par son chef de service M. Gérard PHILIPPE, se présente en deux unités distinctes, l'unité administration des postes informatiques et l'unité systèmes de production dans laquelle je travaille sous la responsabilité du responsable d'unité et tuteur de mon apprentissage M. Denis PITHON.
 
 .Organigramme du Service Poste Informatique et Système de Production
 image::Images/Organigramme-SPISP.jpg[]
@@ -173,7 +173,7 @@ Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 - Les serveurs
 - Les périphériques
 - Les applications
-- Le workflow
+- Le flux de travail
 
 <<<
 
