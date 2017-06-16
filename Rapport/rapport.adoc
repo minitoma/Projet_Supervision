@@ -44,13 +44,11 @@ d.pithon@maine-et-loire.fr
 
 == Remerciements
 
-Je tiens, avant tout, à remercier mon tuteur en entreprise, M. Denis PITHON pour son expérience, son soutien et ses conseils avisés, ainsi que Arnaud, Styve et Stéphane. Ils ont été, pendant toute cette première année, mes principaux interlocuteurs, toujours présents pour me conseiller et m'accompagner en cas de problème. Ce sont aussi des personnes présentant d'importantes qualités humaines. C'est un plaisir de travailler toujours dans la bonne humeur avec eux. Je suis heureux d'avoir passé cette première année d'apprentissage avec eux et je suis très content d'avoir l'opportunité de continuer l'année prochaine à leur côté.
+Je tiens avant tout à remercier Christian Lecomte, DSI du Conseil Départemental de Maine-et-Loire ainsi que Gérard Philippe, chef du service Poste Informatique et Système de Production, pour m'avoir accueilli au sein de la DLSI. Je remercie également mon tuteur en entreprise, M. Denis Pithon, pour son expérience, son soutien et ses conseils avisés, ainsi que Arnaud Plé, Styve Jaumotte et Stéphane Michel. Ils ont été mes principaux interlocuteurs, toujours présents pour me conseiller et m'accompagner. Je suis heureux d'avoir passé cette année d'apprentissage avec eux et de poursuivre l'année prochaine à leur côté.
 
-Je tiens de plus à exprimer toute ma reconnaissance à M. Gérard PHILIPPE, responsable du service Postes Informatiques et Systèmes de Production au sein du Conseil Départemental, pour m'avoir accueilli dans son service.
+Je remercie Cécile Naud qui a toujours été présente pour m'aider administrativement, mais aussi pour son soutien, sa gentillesse et sa bonne humeur. Merci aussi à tous les membres de la Direction Logistique et Système d'Information pour tout ce qu'ils m'ont apporté tout au long de cette première année.
 
-Je souhaite remercier Cécile qui a toujours été présente pour m'aider administrativement, mais aussi pour son soutien, sa gentillesse et sa bonne humeur. Merci aussi à tous les membres de la Direction Logistique et Système d'Information pour tout ce qu'ils m'ont apportée tout au long de cette première année.
-
-J'aimerai remercier M. Frédéric Lardeux, Enseignant à l'université d'Angers et chercheur au Laboratoire d'Étude et de Recherche en Informatique d'Angers, de m'avoir conseillé, accompagné tout au long de cette première année d'apprentissage. C'est son enthousiasme qui m'a donnée l'envie et l'opportunité d'effectuer ce Master en tant qu'apprenti.
+Je remercie M. Frédéric Lardeux, enseignant à l'université d'Angers et chercheur au Laboratoire d'Étude et de Recherche en Informatique d'Angers, de m'avoir conseillé, accompagné lors de cette année d'apprentissage. C'est son enthousiasme qui m'a donnée l'envie et l'opportunité d'effectuer ce Master en tant qu'apprenti.
 
 Pour finir, j'aimerai aussi remercier mon ami et collègue Alexis Leblond pour sa présence et sa bonne humeur à la fois à l'université et au Conseil Départemental.
 
@@ -62,7 +60,7 @@ toc::[]
 
 == Introduction
 
-Après avoir obtenu mon diplôme de Licence informatique, j'ai choisis de continuer mon parcours vers un Master Informatique. Deux choix se sont offerts à moi : continuer mes études dans un parcours orienté vers la recherche ou dans un parcours professionnalisant.
+Après avoir obtenu mon diplôme de Licence informatique, j'ai choisi de continuer mon parcours vers un Master Informatique. Deux choix se sont offerts à moi : continuer mes études dans un parcours orienté vers la recherche ou dans un parcours professionnalisant.
 
 Mon premier choix était particulièrement porté vers le parcours recherche. Je me suis donc inscrit en première année de Master Informatique qui est générale aux deux parcours, dans l'optique de poursuivre sur une deuxième année en Master Intelligence Décisionnelle.
 
@@ -70,7 +68,7 @@ Il m'a été rappelé qu'il était notamment possible d'effectuer ces deux anné
 
 Malgré ma passion pour les études, apprendre de nouvelles choses, la découverte et la recherche de nouveauté, l'idée d'effectuer ce Master en alternance m'a plutôt attiré, j'ai donc décidé de me lancer dans la recherche d'une entreprise, prête à m'accueillir et à m'offrir un sujet d'apprentissage qui puisse m'intéresser.
 
-C'est ainsi, que j'ai découvert cette offre au Conseil Départemental de Maine-et-Loire. J'ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d'Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m'a demandé d'identifier les solutions libres ou open sources et de faire émerger les deux produits les plus à mêmes de répondre aux besoins de l'unité.
+C'est ainsi que j'ai découvert une offre émanant du Conseil Départemental de Maine-et-Loire  ayant trait à la supervision des systèmes d'information. J'ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d'Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m'a demandé d'identifier les solutions libres ou open sources et de faire émerger les deux produits les plus à mêmes de répondre aux besoins de l'unité.
 
 Finalement, j'ai choisis l'apprentissage pour me permettre d'avoir un premier aperçu de l'informatique dans un contexte professionnel. Cela me permet d'avoir un peu plus d'expérience dans ce domaine. Et grâce à cette alternance je peux continuer d'étudier à l'université tout en apprenant de nouvelles choses au Conseil Départemental. J'ai l'opportunité d'étudier et de travailler dans un domaine qui me plait. J'ai accepté ce sujet dans le but de découvrir l'administration système, un aspect de l'informatique que je ne connaissait pas beaucoup.
 
@@ -182,7 +180,7 @@ Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 //Supervision de serveurs, services, BD, environnement (Température, Luminosité, clim), équipement,...
 //http://artisan.karma-lab.net/supervision-nagios
 
-Nagios, qui s'appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s'architecture autour d'un moteur écrit en C. Il permet d'auditer en permanence des machines, des services sur ces machines, de recevoir des alertes en cas de problème et de disposer d'un tableau de bord de l'état du système à un moment donné. C'est un programme modulaire qui se décompose en trois parties :
+Nagios, qui s'appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s'architecture autour d'un moteur écrit en C. Il permet d'auditer en permanence des machines, des services sur ces machines, de recevoir des alertes (mails, SMS...) en cas de problème et de disposer d'un tableau de bord de l'état du système à un moment donné. C'est un programme modulaire qui se décompose en trois parties :
 
 - Le moteur de l'application qui vient ordonnancer les tâches de supervision.
 - L'interface web, qui permet d'avoir une vue d'ensemble du Système d'Information et des éventuelles anomalies.
@@ -257,11 +255,11 @@ consommations CPU, RAM ...).
 
 ==== Mise à niveau technique
 
-À mon arrivée, j'ai souhaité monter en puissance sur le système pour gagner en compétences techniques. J'ai donc effectué une série de petits exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l'environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l'administration système pour gagner en autonomie.
+À mon arrivée, j'ai souhaité acquérir de nouvelles compétences en administration système pour aborder convenablement mon sujet d'apprentissage. J'ai donc effectué une série d'exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l'environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l'administration système.
 
 Avant tout, il a fallu que j'installe et je configure entièrement mon poste de travail sous Linux.
 
-J'ai ensuite découvert l'outil Ovirt que notre unité utilise pour l'installation et la gestion de machines virtuelles, pour installer et configurer une machine virtuelle Windows.
+J'ai ensuite découvert l'outil oVirt que notre unité utilise pour la gestion de son cloud privé.
 
 .Ovirt
 image::Images/ovirt.png[Ovirt]
