@@ -464,7 +464,7 @@ Grâce à ces interventions, j'ai pu constater qu'un administrateur système n'e
 
 Comme décrit dans l'intitulé de mon projet d'apprentissage, notre service utilise l'outil Nagios pour la supervision.
 
-Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n'a pas été suffisamemnt maintenue. L'état actuel de sa configuration est désormais difficile à entretenir, au point de se demander s'il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.
+Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n'a pas été suffisamement maintenue. L'état actuel de sa configuration est désormais difficile à entretenir, au point de se demander s'il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.
 
 Malgré son énorme catalogue de possibilité, Son système de configuration via un ensemble de fichier rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.
 
@@ -585,20 +585,6 @@ Ce second graphique reprend le principe du premier graphique, en précisant les 
 
 <<<
 
-=== Évaluation de deux solutions
-
-Présentation de 2 solutions : application des critères sur deux solutions.
-
-==== Nagios
-
-
-
-==== Zabbix
-
-
-
-<<<
-
 == Bilan
 
 Cette première année d'apprentissage au Conseil Départemental a dans un premier temps été l'occasion pour moi d'avoir une première expérience de travail dans un contexte qui me plait vraiment : l'informatique.
@@ -611,7 +597,7 @@ J'ai rencontré quelques difficultés techniques au début de mon apprentissage,
 
 Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéressantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle justifiée. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite repérer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe tout au long de cette première année.
 
-Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu'à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous avons retenu pour ensuite potentiellement, si une des solution nous conviens vraiment, l'installer définitivement sur les serveurs de productions.
+Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu'à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous allons retenir pour ensuite potentiellement, si une des solution nous conviens vraiment, l'installer définitivement sur les serveurs de productions.
 
 L'équipe compte sur moi et mon travail. J'espère être à la hauteur de leurs attentes et répondre à leurs besoins en trouvant une solution adaptée et pérenne.
 
