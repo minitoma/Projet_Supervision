@@ -169,19 +169,19 @@ La supervision recouvre principalement les activités ou les aspects suivants :
 Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 
 * Les équipements physiques
-** Supervision environnementale d'une salle serveur (température, hygrométrie ...)
+** Supervision environnementale d'une salle serveur (température, hygrométrie, ...)
 ** Alimentation électrique des équipements
-** État des disques durs, des éléments électroniques ...
+** État des disques durs, des éléments électroniques, ...
 ** Connectique des équipements serveurs ou réseaux (switchs)
 * Les différents systèmes d'exploitation
 ** Charge CPU
 ** Consommation RAM
 ** latences et débits IO (réseaux et disques)
-** nombre de processus, d'utilisateurs connectés ...
+** nombre de processus, d'utilisateurs connectés, ...
 * Les services de premier niveau
 ** service http(s) : apache, tomcat, nginx, iis (service démarré, port ouvert, ...)
-** bases de données : MariaDB, MySQL, PostGreSQL, Oracle, SQL Server ... (espace de tables, nombre de connexions, de transactions/s ...)
-** services smtp, ftp ...
+** bases de données : MariaDB, MySQL, PostGreSQL, Oracle, SQL Server, ... (espace de tables, nombre de connexions, de transactions/s, ...)
+** services smtp, ftp, ...
 * les services métiers
 ** service ouvert
 ** temps de réponse normal
@@ -193,7 +193,7 @@ Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 
 ==== Présentation de l'outil Nagios
 
-//Supervision de serveurs, services, BD, environnement (Température, Luminosité, clim), équipement,...
+//Supervision de serveurs, services, BD, environnement (Température, Luminosité, clim), équipement, ...
 //http://artisan.karma-lab.net/supervision-nagios
 
 Nagios, qui s'appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s'architecture autour d'un moteur écrit en C. Il permet d'auditer en permanence des machines, des services sur ces machines, de recevoir des alertes (mails, SMS...) en cas de problème et de disposer d'un tableau de bord de l'état du système à un moment donné. C'est un programme modulaire qui se décompose en trois parties :

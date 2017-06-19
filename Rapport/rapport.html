@@ -700,7 +700,7 @@ La direction logistique et systèmes d&#8217;information gère la logistique, l&
 <p>Le service relation citoyens usagers.</p>
 </li>
 <li>
-<p>Le service postes informatiques et systèmes de production. C&#8217;est dans ce dernier service que j&#8217;ai été intégré</p>
+<p>Le service postes informatiques et systèmes de production. C&#8217;est dans ce dernier service que j&#8217;ai été intégré.</p>
 </li>
 </ul>
 </div>
@@ -725,7 +725,7 @@ La direction logistique et systèmes d&#8217;information gère la logistique, l&
 <h3 id="_l_unité_système_de_production_et_ses_missions">L&#8217;unité Système de Production et ses missions</h3>
 <div class="paragraph">
 <p>L&#8217;unité système de production travaille au sein de la DLSI du Conseil
-Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde, la restauration, à la virtualisation, à l&#8217;administration des systèmes Linux et Windows, à l&#8217;administration des bases de données, à la gestion des profils et des boites mails, ainsi qu&#8217;à la supervision des matériels et applications cotés serveurs. L&#8217;unité s&#8217;engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.</p>
+Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l&#8217;administration des systèmes Linux et Windows, à l&#8217;administration des bases de données, à la gestion des profils et des boites mails, ainsi qu&#8217;à la supervision des matériels et applications cotés serveurs. L&#8217;unité s&#8217;engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -756,7 +756,7 @@ Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au
 <p>21 To consommés pour la bureautique</p>
 </li>
 <li>
-<p>Supervision avec Nagios</p>
+<p>Supervision principalement avec Nagios, mais aussi Observium et Grafana</p>
 </li>
 </ul>
 </div>
@@ -777,30 +777,30 @@ Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au
 <p>Il existe deux enjeux majeurs pour les directions informatiques. Le premier est de garantir la disponibilité et les niveaux de service du système en cas de panne ou de dégradation des performances. Le second est de prévenir en cas de problème et, le cas échéant, garantir une remontée d&#8217;information rapide et une durée d&#8217;intervention minimale. Ces enjeux sont assurés par la supervision.</p>
 </div>
 <div class="paragraph">
-<p>La supervision recouvre les activités ou les aspects suivants :</p>
+<p>La supervision recouvre principalement les activités ou les aspects suivants :</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Surveiller</p>
+<p>Surveiller le système d&#8217;information</p>
 </li>
 <li>
-<p>Visualiser</p>
+<p>Visualiser rapidement son état général</p>
 </li>
 <li>
-<p>Analyser</p>
+<p>Analyser les incidents</p>
 </li>
 <li>
-<p>Prévenir</p>
+<p>Prévenir les futurs problèmes</p>
 </li>
 <li>
-<p>Piloter</p>
+<p>Alerter les reponsables applicatifs et systèmes</p>
 </li>
 <li>
-<p>Agir</p>
+<p>Agir en vue de la résolution des incidents.</p>
 </li>
 <li>
-<p>Alerter</p>
+<p>Piloter l&#8217;ensemble de ces actions</p>
 </li>
 </ul>
 </div>
@@ -810,19 +810,77 @@ Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au
 <div class="ulist">
 <ul>
 <li>
-<p>Le réseau et ses équipements</p>
+<p>Les équipements physiques</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Supervision environnementale d&#8217;une salle serveur (température, hygrométrie, &#8230;&#8203;)</p>
 </li>
 <li>
-<p>Les serveurs</p>
+<p>Alimentation électrique des équipements</p>
 </li>
 <li>
-<p>Les périphériques</p>
+<p>État des disques durs, des éléments électroniques, &#8230;&#8203;</p>
 </li>
 <li>
-<p>Les applications</p>
+<p>Connectique des équipements serveurs ou réseaux (switchs)</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Le flux de travail</p>
+<p>Les différents systèmes d&#8217;exploitation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Charge CPU</p>
+</li>
+<li>
+<p>Consommation RAM</p>
+</li>
+<li>
+<p>latences et débits IO (réseaux et disques)</p>
+</li>
+<li>
+<p>nombre de processus, d&#8217;utilisateurs connectés, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Les services de premier niveau</p>
+<div class="ulist">
+<ul>
+<li>
+<p>service http(s) : apache, tomcat, nginx, iis (service démarré, port ouvert, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>bases de données : MariaDB, MySQL, PostGreSQL, Oracle, SQL Server, &#8230;&#8203; (espace de tables, nombre de connexions, de transactions/s, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>services smtp, ftp, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>les services métiers</p>
+<div class="ulist">
+<ul>
+<li>
+<p>service ouvert</p>
+</li>
+<li>
+<p>temps de réponse normal</p>
+</li>
+<li>
+<p>tâches planifiées correctement exécutées</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -991,7 +1049,7 @@ consommations CPU, RAM &#8230;&#8203;).</p>
 <div class="sect3">
 <h4 id="_mise_à_niveau_technique">Mise à niveau technique</h4>
 <div class="paragraph">
-<p>À mon arrivée, j&#8217;ai souhaité acquérir de nouvelles compétences en administration système pour aborder convenablement mon sujet d&#8217;apprentissage. J&#8217;ai donc effectué une série d&#8217;exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l&#8217;environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l&#8217;administration système.</p>
+<p>À mon arrivée, j&#8217;ai souhaité acquérir de nouvelles compétences en administration système pour aborder convenablement mon sujet d&#8217;apprentissage. J&#8217;ai donc effectué une série d&#8217;exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l&#8217;environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l&#8217;administration système pour gagner en autonomie.</p>
 </div>
 <div class="paragraph">
 <p>Avant tout, il a fallu que j&#8217;installe et je configure entièrement mon poste de travail sous Linux.</p>
@@ -2023,7 +2081,7 @@ Les solutions présentant du bleu sont des solutions où je n&#8217;ai pas trouv
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-06-19 10:51:04 CEST
+Last updated 2017-06-19 13:57:17 CEST
 </div>
 </div>
 </body>
