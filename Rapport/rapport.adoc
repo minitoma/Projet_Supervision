@@ -108,7 +108,7 @@ La DLSI se découpe en 6 services :
 - Le service réseau et sécurité.
 - Le service logistique accueil.
 - Le service relation citoyens usagers.
-- Le service postes informatiques et systèmes de production. C'est dans ce dernier service que j'ai été intégré
+- Le service postes informatiques et systèmes de production. C'est dans ce dernier service que j'ai été intégré.
 
 .Organigramme de la DLSI
 image::Images/Organigramme-DLSI.jpg[]
@@ -123,7 +123,7 @@ image::Images/Organigramme-SPISP.jpg[]
 === L'unité Système de Production et ses missions
 
 L'unité système de production travaille au sein de la DLSI du Conseil
-Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde, la restauration, à la virtualisation, à l'administration des systèmes Linux et Windows, à l'administration des bases de données, à la gestion des profils et des boites mails, ainsi qu'à la supervision des matériels et applications cotés serveurs. L'unité s'engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.
+Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l'administration des systèmes Linux et Windows, à l'administration des bases de données, à la gestion des profils et des boites mails, ainsi qu'à la supervision des matériels et applications cotés serveurs. L'unité s'engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.
 
 [NOTE]
 .Quelques éléments d'information concernant le système d'information :
@@ -140,7 +140,8 @@ Virtualisation sur oVirt (Linux/KVM) outil open source
 
 * 21 To consommés pour la bureautique
 
-* Supervision avec Nagios
+* Supervision principalement avec Nagios, mais aussi Observium et Grafana
+
 ====
 
 <<<
@@ -155,23 +156,38 @@ L'informatique est intégrée et est devenue un outil indispensable dans une ent
 
 Il existe deux enjeux majeurs pour les directions informatiques. Le premier est de garantir la disponibilité et les niveaux de service du système en cas de panne ou de dégradation des performances. Le second est de prévenir en cas de problème et, le cas échéant, garantir une remontée d'information rapide et une durée d'intervention minimale. Ces enjeux sont assurés par la supervision.
 
-La supervision recouvre les activités ou les aspects suivants :
+La supervision recouvre principalement les activités ou les aspects suivants :
 
-- Surveiller
-- Visualiser
-- Analyser
-- Prévenir
-- Piloter
-- Agir
-- Alerter
+- Surveiller le système d'information
+- Visualiser rapidement son état général
+- Analyser les incidents
+- Prévenir les futurs problèmes
+- Alerter les reponsables applicatifs et systèmes
+- Agir en vue de la résolution des incidents.
+- Piloter l'ensemble de ces actions
 
 Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 
-- Le réseau et ses équipements
-- Les serveurs
-- Les périphériques
-- Les applications
-- Le flux de travail
+* Les équipements physiques
+** Supervision environnementale d'une salle serveur (température, hygrométrie ...)
+** Alimentation électrique des équipements
+** État des disques durs, des éléments électroniques ...
+** Connectique des équipements serveurs ou réseaux (switchs)
+* Les différents systèmes d'exploitation
+** Charge CPU
+** Consommation RAM
+** latences et débits IO (réseaux et disques)
+** nombre de processus, d'utilisateurs connectés ...
+* Les services de premier niveau
+** service http(s) : apache, tomcat, nginx, iis (service démarré, port ouvert, ...)
+** bases de données : MariaDB, MySQL, PostGreSQL, Oracle, SQL Server ... (espace de tables, nombre de connexions, de transactions/s ...)
+** services smtp, ftp ...
+* les services métiers
+** service ouvert
+** temps de réponse normal
+** tâches planifiées correctement exécutées
+** ...
+
 
 <<<
 
@@ -255,7 +271,7 @@ consommations CPU, RAM ...).
 
 ==== Mise à niveau technique
 
-À mon arrivée, j'ai souhaité acquérir de nouvelles compétences en administration système pour aborder convenablement mon sujet d'apprentissage. J'ai donc effectué une série d'exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l'environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l'administration système.
+À mon arrivée, j'ai souhaité acquérir de nouvelles compétences en administration système pour aborder convenablement mon sujet d'apprentissage. J'ai donc effectué une série d'exercices à difficulté progressive. Ils avaient pour but de me faire progresser sur l'environnement serveur Linux et les outils qui lui sont habituellement associés et me familiariser avec l'administration système pour gagner en autonomie.
 
 Avant tout, il a fallu que j'installe et je configure entièrement mon poste de travail sous Linux.
 
