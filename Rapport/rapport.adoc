@@ -1,4 +1,4 @@
-= Rapport d'apprentissage                    Master 1 - Informatique: Supervision open-source d'un système d'information
+= Rapport d'apprentissage                    Master 1 - Informatique: Supervision libre/open source d'un système d'information
 Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
 2016-2017
 :description: Projet d'alternance de Master réalisé par {author}
@@ -68,9 +68,9 @@ Il m'a été rappelé qu'il était notamment possible d'effectuer ces deux anné
 
 Malgré ma passion pour les études, apprendre de nouvelles choses, la découverte et la recherche de nouveauté, l'idée d'effectuer ce Master en alternance m'a plutôt attiré, j'ai donc décidé de me lancer dans la recherche d'une entreprise, prête à m'accueillir et à m'offrir un sujet d'apprentissage qui puisse m'intéresser.
 
-C'est ainsi que j'ai découvert une offre émanant du Conseil Départemental de Maine-et-Loire  ayant trait à la supervision des systèmes d'information. J'ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d'Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m'a demandé d'identifier les solutions libres ou open sources et de faire émerger les deux produits les plus à mêmes de répondre aux besoins de l'unité.
+C'est ainsi que j'ai découvert une offre émanant du Conseil Départemental de Maine-et-Loire  ayant trait à la supervision des systèmes d'information. J'ai donc intégré le service Système de Production au sein de la Direction Logistique et Système d'Information en ayant pour projet de remettre à neuf le système de supervision. Pour cela on m'a demandé d'identifier les solutions libres ou open source et de faire émerger les deux produits les plus à mêmes de répondre aux besoins de l'unité.
 
-Finalement, j'ai choisis l'apprentissage pour me permettre d'avoir un premier aperçu de l'informatique dans un contexte professionnel. Cela me permet d'avoir un peu plus d'expérience dans ce domaine. Et grâce à cette alternance je peux continuer d'étudier à l'université tout en apprenant de nouvelles choses au Conseil Départemental. J'ai l'opportunité d'étudier et de travailler dans un domaine qui me plait. J'ai accepté ce sujet dans le but de découvrir l'administration système, un aspect de l'informatique que je ne connaissait pas beaucoup.
+Finalement, j'ai choisis l'apprentissage pour me permettre d'avoir un premier aperçu de l'informatique dans un contexte professionnel. Cela me permet d'avoir un peu plus d'expérience dans ce domaine. Et grâce à cette alternance je peux continuer d'étudier à l'université tout en apprenant de nouveaux aspects au Conseil Départemental. J'ai l'opportunité d'étudier et de travailler dans un domaine qui me plait. J'ai accepté ce sujet dans le but de découvrir l'administration système, un aspect de l'informatique que je ne connaissait pas beaucoup.
 
 <<<
 
@@ -123,7 +123,7 @@ image::Images/Organigramme-SPISP.jpg[]
 === L'unité Système de Production et ses missions
 
 L'unité système de production travaille au sein de la DLSI du Conseil
-Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l'administration des systèmes Linux et Windows, à l'administration des bases de données, à la gestion des profils et des boites mails, ainsi qu'à la supervision des matériels et applications cotés serveurs. L'unité s'engage via un système de tickets à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.
+Départemental de Maine-et-Loire sur les problématiques liées aux serveurs, au stockage, à la sauvegarde et la restauration, à la virtualisation, à l'administration des systèmes Linux et Windows, à l'administration des bases de données, à la gestion des profils et des boites mails, ainsi qu'à la supervision des matériels et applications cotés serveurs. L'unité s'engage aussi, via un système de tickets, à résoudre les problèmes liés à ces domaines que les utilisateurs, les agents du Conseil Départemental pourraient rencontrer.
 
 [NOTE]
 .Quelques éléments d'information concernant le système d'information :
@@ -150,7 +150,7 @@ Virtualisation sur oVirt (Linux/KVM) outil open source
 
 //https://www.monitoring-fr.org/supervision/
 
-La supervision est une fonction permettant d'indiquer, contrôler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le tout dans un but de détection et de traitement des problèmes le plus automatique possible.
+La supervision est une fonction permettant d'indiquer, contrôler, commander l'état d'un système ou d'un réseau. Les outils de supervision remontent des informations techniques et fonctionnelles du système d'information. Le tout dans un but de détection et de traitement des problèmes le plus automatique et instantané possible.
 
 L'informatique est intégrée et est devenue un outil indispensable dans une entreprise, quel que soit son secteur d'activité, le système d'information est placé désormais au centre de l'activité de différentes entités métiers et doit fonctionner pleinement et en permanence pour garantir l'efficacité de l'entreprise. A tous les niveaux, les réseaux, les terminaux utilisateurs, les serveurs d'applications et toutes les données constituent autant de maillons sensibles dont la disponibilité et la qualité de service conditionnent le bon fonctionnement de l'entreprise.
 
@@ -196,20 +196,20 @@ Elle permet de couvrir l'ensemble du Système d'Information d'une entreprise :
 //Supervision de serveurs, services, BD, environnement (Température, Luminosité, clim), équipement, ...
 //http://artisan.karma-lab.net/supervision-nagios
 
-Nagios, qui s'appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s'architecture autour d'un moteur écrit en C. Il permet d'auditer en permanence des machines, des services sur ces machines, de recevoir des alertes (mails, SMS...) en cas de problème et de disposer d'un tableau de bord de l'état du système à un moment donné. C'est un programme modulaire qui se décompose en trois parties :
+Nagios, qui s'appelait précédemment NetSaint, est un outil de supervision libre sous licence GPL. Développé en 1996, Nagios, s'architecture autour d'un moteur écrit en C. Il permet d'auditer en permanence des machines, des services sur ces machines, de recevoir des alertes (mails, SMS, ...) en cas de problème et de disposer d'un tableau de bord de l'état du système à un moment donné. C'est un programme modulaire qui se décompose en trois parties :
 
 - Le moteur de l'application qui vient ordonnancer les tâches de supervision.
 - L'interface web, qui permet d'avoir une vue d'ensemble du Système d'Information et des éventuelles anomalies.
 - Les sondes (ou plugins), une centaine de mini programmes/scripts que l'on peut compléter, voire même créer, en fonction des besoins de chacun pour superviser les services ou ressources disponibles sur l'ensemble des éléments du réseaux du Système d'Information.
 
-Cet outil offre de nombreuse possibilités :
+Cet outil offre de nombreuses possibilités :
 
-- De superviser des services réseaux (SMTP, HTTP, ...)
-- De superviser les ressources des serveurs (charge du processeur, occupation des systèmes de fichiers, utilisation de la mémoire, ...) sur la majorité des systèmes d'exploitation.
-- De superviser les équipements réseau (CPU, ventilateurs, ...)
-- De superviser les Bases de données
 - De superviser l'environnement (température, luminosité, humidité, ...)
-- Interface via le protocole SNMP
+- De superviser les équipements réseaux (CPU, ventilateurs, ...)
+- De superviser les ressources des serveurs (charge du processeur, occupation des systèmes de fichiers, utilisation de la mémoire, ...) sur la majorité des systèmes d'exploitation.
+- De superviser des services réseaux (SMTP, HTTP, ...)
+- De superviser les Bases de données.
+- Interface via le protocole SNMP.
 - De superviser à distance via SSH ou agent NRPE.
 - De remonter des alertes par mails, SMS via un système de notification.
 - De gérer des utilisateurs (accès limité à certains utilisateurs)
@@ -217,9 +217,9 @@ Cet outil offre de nombreuse possibilités :
 
 <<<
 
-=== Étude et mise en place d'une solution libre/open-source de supervision
+=== Logiciel libre et logiciel open source
 
-Avant tout, il me semble important de clarifier le terme de solution libre et de solution open-source.
+Avant tout, il me semble important de clarifier le terme de solution libre et de solution open source.
 
 .Un logiciel libre
 
@@ -234,34 +234,38 @@ Les libertés 1 et 3 impliquent un accès total aux sources d'un programme, sino
 
 Il n'est pas fait mention ici de la gratuité, on peut donc tout à fait vendre un logiciel libre bien qu'on ne puisse empêcher un acheteur de redistribuer le logiciel à titre gratuit.
 
-.Un logiciel open-source
+.Un logiciel open source
 
-Les licences open-source sont le fruit de l'Open Source Initiative, née à la suite de nombreuses divergences au sein de la communauté "libre".
+Les licences open source sont le fruit de l'Open Source Initiative, née à la suite de nombreuses divergences au sein de la communauté "libre".
 
 Plus pragmatique, l'OSI souhaitait proposer une licence plus lisible aux professionnels et entreprises qui avaient tendance à repousser les licences libres pour de nombreuses raison, parmi lesquelles le problème de compréhension entre "libre" et "gratuit"
 
 L'OSI a donc crée une définition de l'open source qui décrit 10 conditions requises pour qu'une licence appliquée à un logiciel soit considérée open source :
 
 - Condition 1 : la libre distribution logicielle. La licence ne peut, par exemple faire l'objet d'une redevance supplémentaire.
-- Condition 2 : le code source doit être fourni ou accessible. Un patch peut être fourni en tant que package indépendant, contrairement avec un logiciel libre ou il faut obligatoirement fournir tout le code.
-- Condition 3 : les dérivés des oeuvres doivent être permises.
+- Condition 2 : le code source doit être fourni ou accessible. Un patch peut être fourni en tant que package indépendant, contrairement avec un logiciel libre où il faut obligatoirement fournir tout le code.
+- Condition 3 : les dérivés des œuvres doivent être permises.
 - Condition 4 : l'intégrité du code source doit être préservée. La licence ne peut restreindre l'accès au code source.
 - Condition 5 : pas de discrimination entre les groupes et les personnes. Toute personne détentrice du logiciel bénéficie des termes de la licence tant qu'elle s'y conforme elle-même.
-- Condition 6 : pas de discrimination entre les domaines d'application. la licence se limite à la propriété intellectuelle, elle ne peut en aucun cas réguler d'autres domaines.
+- Condition 6 : pas de discrimination entre les domaines d'application. La licence se limite à la propriété intellectuelle, elle ne peut en aucun cas réguler d'autres domaines.
 - Condition 7 : la licence s'applique sans dépendre d'autres contrats. On ne peut par exemple ajouter d'accord de confidentialité lors de la cession du logiciel.
 - Condition 8 : la licence ne doit pas être propre à un produit. Elle est attachée au code source et non à un logiciel particulier. Une brique logicielle peut donc être ré-utilisée dans un logiciel différent.
 - Condition 9 : la licence d'un logiciel ne doit pas s'étendre à un autre.
 - Condition 10 : la licence doit être neutre technologiquement. Elle ne concerne que le code et pas les technologies et applications qui en découlent.
 
-Il existe de très nombreuses licences open-source et la grande majorité sont également considérée comme libres. Il n'est pas obligatoire d'être certifié par l'OSI pour être définie comme licence open-source, mais il faut qu'elle respecte ces 10 conditions pour qu'elle soit considérée comme telle. Il est commun de vulgariser l'ensemble des logiciels open-source ou libre alors qu'ils ne le sont pas toujours réellement. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.
+Il existe de très nombreuses licences open source et la grande majorité sont également considérée comme libres. Il n'est pas obligatoire d'être certifié par l'OSI pour être définie comme licence open source, mais il faut qu'elle respecte ces 10 conditions pour qu'elle soit considérée comme telle. Il est commun de vulgariser l'ensemble des logiciels open source ou libre alors qu'ils ne le sont pas toujours réellement. Il est donc important de bien définir ces deux mouvements et de bien identifier les licences des logiciels.
+
+<<<
+
+=== Étude et mise en place d'une solution libre/open source de supervision
 
 Actuellement, la supervision de l'ensemble du système d'information est opérée par Nagios. Cette solution libre,
 en place depuis près de 10 ans, contrôle un peu plus de 2700 points de
 fonctionnement du SI (espaces disques, sites webs, bases de données,
-consommations CPU, RAM ...).
+consommations CPU, RAM, ...).
 
 .*Il m'est demandé dans le cadre de mon apprentissage de :*
-. Identifier et comparer les solutions libres/open-sources de supervision
+. Identifier et comparer les solutions libres/open source de supervision
 . Préconiser la solution la plus adaptée aux besoins de l'unité
 . Mettre en place la solution de supervision retenue
 
@@ -277,16 +281,18 @@ Avant tout, il a fallu que j'installe et je configure entièrement mon poste de 
 
 J'ai ensuite découvert l'outil oVirt que notre unité utilise pour la gestion de son cloud privé.
 
-.Ovirt
+.oVirt
 image::Images/ovirt.png[Ovirt]
 
 J'ai d'ailleurs plus tard grâce à cet outils répondu aux besoins d'un utilisateur. En effet, nous recevons parfois des demandes d'installation, de configuration et dépannage concernant les serveurs pour certains utilisateurs. C'est mon collègue, lui aussi étudiant de l'université d'Angers et apprenti travaillant à la DLSI du Conseil Départemental au service projets et intégration logiciels, qui nous a fait la demande de l'installation et la configuration d'un serveur et d'une base de donnée pour qu'il puisse travailler sur son projet de gestion de contrôle technique du parc automobile du Conseil Départemental. Mon tuteur Denis, m'a confié cette tâche pour prendre encore un peu plus en main l'installation et la configuration d'un serveur.
+
+<<<
 
 ===== Monter un disque sur un périphérique fichier
 
 Un autre exercice était de construire et monter un disque d'une très grosse capacité sur un disque physique beaucoup plus petit sur mon poste. Il a fallu que je trouve un moyen d'effectuer cette tâche.
 
-Un des moyens pour réaliser cette tâche était d'utiliser la commande dd qui permet de copier une partie d'un disque ou du système de fichiers par blocs d'octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d'une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu'à monter le fichier et changer son format pour obtenir un "disque virtuel".
+Un des moyens pour réaliser cette tâche était d'utiliser la commande `dd` qui permet de copier une partie d'un disque ou du système de fichiers par blocs d'octets, indépendamment de la structure et du contenu du système de fichiers. Grâce à cette commande, on peut simuler un fichier d'une très grande taille en spécifiant un décallage de blocs sur le fichier de sortie. Ainsi, on indique le début du fichier, puis on lui dit de sauter autant de blocs que nécéssaire pour écrire la fin du fichier. Il ne reste plus qu'à monter le fichier et changer son format pour obtenir un "disque virtuel".
 
 [[app-listing]]
 [source,shell]
@@ -305,7 +311,7 @@ Je me suis lancé sur un second exercice, écrire un script d'actions sur évèn
 
 Dans un premier temps j'ai écrit un premier script en shell bash. Ce script transfère par mail un fichier donnée en paramètre s'il est dans le répertoire surveillé puis il le supprime une fois qu'il a été envoyé.
 
-J'ai ensuite écrit une deuxième version améliorée, utilisant le mécanisme inotify proposé par le noyau Linux qui fournit des notifications concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associées à l'évolution de l'état du système de fichiers. Les principaux événements qui peuvent être suvis sont :
+J'ai ensuite écrit une deuxième version améliorée, utilisant le mécanisme inotify proposé par le noyau Linux qui fournit des notifications concernant le système de fichiers. Ce mécanisme permet de mettre en place des actions associées à l'évolution de l'état du système de fichiers. Les principaux événements qui peuvent être suivis sont :
 
 - *IN_ACCESS* : Le fichier est accédé en lecture
 - *IN_MODIFY* : Le fichier est modifié
@@ -315,7 +321,7 @@ Et enfin, j'ai écrit une dernière version en Python3 qui s'exécute en tant qu
 
 J'y ai inclus la gestion de logs pour qu'on puisse avoir un rapport, si nécessaire, des actions que le script a effectué et pour permettre d'avoir un aperçu du bon fonctionnement et de la bonne exécution du programme.
 
-J'ai notamment utilisé un fichier de configuration de type "ini" qui permet de définir des paramètres à l'utilisateur et de les rassembler dans un même endroit pour pouvoir les utiliser ensuite dans le programme.
+J'ai aussi utilisé un fichier de configuration de type "ini" qui permet de définir des paramètres à l'utilisateur et de les rassembler dans un même endroit pour pouvoir les utiliser ensuite dans le programme.
 
 [[app-listing]]
 [source,ini]
@@ -341,7 +347,7 @@ logfile = /var/log/MyLog/MyScriptDaemon.log # <6>
 <5> Chemin du fichier où on retrouve l'id du processus
 <6> Chemin du fichier de log
 
-Pour l'exécuter, il suffit de lancer le programme avec l'argument "start". Il s'arrête avec l'argument "stop". Il est possible d'obtenir les informations concernant le statut du programme avec l'argument "status".
+Pour exécuter ce script, il suffit de lancer le programme avec l'argument "start". Il s'arrête avec l'argument "stop". Il est possible d'obtenir les informations concernant le statut du programme avec l'argument "status".
 
 Je n'ai pas poursuivi plus loin cet exercice. Mais il aurait été possible de l'intégrer à systemd (le système d'initialisation du noyau Linux) afin de l'intégrer plus finement au système de démarrage Linux.
 
@@ -351,15 +357,15 @@ Dans la continuité de cette mise à niveau, j'ai commencé à regarder l'outil 
 
 J'ai décidé, pour prendre en main cet outil complexe et puissant, de mettre en place ma propre instance de Nagios.
 
-Il m'a été nécessaire d'abord, de configurer un serveur pour pouvoir le déployer. J'ai donc installé et configuré, grâce à l'outil Ovirt, une nouvelle machine virtuelle sous CentOS, qui est une distribution Linux pour les serveurs. Puis je me suis lancé dans l'installation du Nagios en suivant la documentation, sur lequel j'ai configuré quelques sondes pour comprendre leur fonctionnement.
+Il m'a été nécessaire d'abord, de configurer un serveur pour pouvoir le déployer. J'ai donc installé et configuré, grâce à l'outil oVirt, une nouvelle machine virtuelle sous CentOS, qui est une distribution Linux pour les serveurs. Puis je me suis lancé dans l'installation du Nagios en suivant la documentation, sur lequel j'ai configuré quelques sondes pour comprendre leur fonctionnement.
 
 Nagios est basé sur un ensemble de fichiers de configuration. Ces fichiers sont situés par défaut dans le dossier _/usr/local/nagios/etc/_ et généralement classés sous forme de contact, d'hôtes, de services et de commandes.
 
-Les contacts représentent les personnes qui seront alerté en cas d'alertes. Il faut leur définir une adresse mail et des périodes de notifications.
+Les contacts représentent les personnes qui seront alerté en cas d'incidents. Il faut leur définir, entre autre, une adresse mail et des périodes de notifications.
 
 Les hôtes sont les différents serveurs, équipements en réseaux que l'on supervise. Il est impératif de définir l'adresse IP à laquelle ils sont affectés sur le réseau.
 
-Pour chaque hôte il faut définir les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments, si nécéssaire. Ils remontent via les commandes et les points de contrôle l'état des hôtes dans lequel ils sont. Classiquement, trois types d'états pour les services sont reconnus :
+Pour chaque hôte il faut définir les différents services à superviser en lui précisant la commande à éxecuter et en précisant les différents arguments, si nécéssaire. Ces services remontent via les commandes et les points de contrôle l'état des hôtes. Classiquement, trois types d'états pour les hôtes et services sont reconnus :
 
 - *OK*
 - *WARNING*
@@ -385,6 +391,8 @@ define contact{
         host_notification_commands          notify-host-by-email
         }
 ----
+
+<<<
 
 Dans un deuxième temps, j'ai rajouté les différents hôtes que je souhaite superviser.
 Voici un exemple d'hôtes que j'ai configuré. C'est le serveur hébergeant le site web interne prévu pour les agents du département.
@@ -430,6 +438,8 @@ define service {
 <1> Ce service va utiliser un point de contrôle, une commande qui va envoyer une requête http dans le but de savoir si oui ou non le serveur web répond.
 <2> Ce service va utiliser un point de contrôle qui va remonter le temps de réponse d'un ping. Cette commande est configurée de sorte que si le temps de réponse dépasse 100 ms il se placera dans l'état WARNING. Si le temps de réponse dépasse 400 ms il se placera dans l'état CRITICAL.
 
+<<<
+
 Voici quelques exemples de commandes utilisant des points de contrôle définit par Nagios.
 [[app-listing]]
 [source,cfg]
@@ -464,11 +474,11 @@ image::Images/xthomasnagios2.png[Nagios]
 
 Pour l'unité, deux serveurs Nagios sont installés qui servent à la supervision des sites web publiques du Conseil Départemental, un serveur principal et un deuxième Nagios secondaire. Dans le cas d'une panne du serveur principal, j'ai dû trouver un moyen de pouvoir synchroniser sa configuration sur le Nagios secondaire.
 
-J'ai donc écrit un programme s'exécutant en tant que service système, c'est à dire un daemon système géré par le protocole systemd. Utilisable via la commande systemctl, ce petit programme utilise, dans la même optique que le script d'envois de mail que j'ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu'il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d'avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second Nagios. Il ne restera plus qu'à extraire l'archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.
+J'ai donc écrit un programme s'exécutant en tant que service système, c'est à dire un daemon système géré par le protocole systemd. Utilisable via la commande systemctl, ce programme utilise, dans la même optique que le script d'envois de mail que j'ai écrit, le système inotify pour surveiller le répertoire de configuration de Nagios. Lorsqu'il repère un changement, il va transférer au Nagios secondaire, une archive contenant la configuration du Nagios principal, permettant ainsi d'avoir toujours la dernière configuration bien à jours. Ainsi, si le Nagios principal tombe en panne, sa configuration sera disponible sur le second Nagios. Il ne restera plus qu'à extraire l'archive dans le dossier de configuration et relancer le Nagios pour prendre en compte les modifications.
 
 ==== Mise en place d'un nouveau datacenter et installation de baies de stockage.
 
-Pour répondre aux besoins grandissant du Conseil Départemental, l'ouverture d'une nouvelle salle de serveurs a été nécessaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. Elle est mutualisée avec 4 autres Conseils territoriaux et est consacrée au système d'archivage électronique inter-départemental et régional. J'ai donc assisté aux travaux et à son installation. J'ai notamment assisté au déploiement de l'outil Ovirt pour ce nouveau réseau et j'ai moi même mis en place le Nagios.
+Pour répondre aux besoins grandissant du Conseil Départemental, l'ouverture d'une nouvelle salle de serveurs a été nécessaire. En effet, pour assister les trois autres salles déjà en place, dont une sur le site de Frémur, une sur le site de Lavoisier et une dernière dans nos locaux du centre ville, une 4ème salle sur le site de Frémur à été mise en place. Elle est mutualisée avec 4 autres Conseils territoriaux et est consacrée au système d'archivage électronique inter-départemental et régional. J'ai donc assisté aux travaux et à son installation. J'ai notamment assisté au déploiement de l'outil oVirt pour ce nouveau réseau et j'ai moi même mis en place le Nagios.
 
 En parallèle à cette installation, j'ai aussi pu aider à mettre en place sur le site de Lavoisier de nouvelles baies de stockages.
 
@@ -476,23 +486,23 @@ Grâce à ces interventions, j'ai pu constater qu'un administrateur système n'e
 
 <<<
 
-== Identification des solutions libres/open-sources de supervision
+== Identification des solutions libres/open source de supervision
 
 Comme décrit dans l'intitulé de mon projet d'apprentissage, notre service utilise l'outil Nagios pour la supervision.
 
 Malgré sa grande importance et son utilisation quotidienne au sein de nos activités, cette solution mise en place depuis plus 10 ans au Conseil Départemental, n'a pas été suffisamement maintenue. L'état actuel de sa configuration est désormais difficile à entretenir, au point de se demander s'il ne vaut pas mieux se pencher sur une toute nouvelle solution, plutôt que de se perdre dans nos fichiers pour remettre à jours, voir peut-être réinstaller, une instance plus propre de Nagios.
 
-Malgré son énorme catalogue de possibilité, Son système de configuration via un ensemble de fichier rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.
+Malgré son énorme catalogue de possibilité, son système de configuration via un ensemble de fichiers rend sa maintenance plutôt laborieuse et des problèmes de compatibilité peuvent parfois survenir sur certains niveaux, notamment au niveau de certains plugins, lors des mises à jours.
 
-De plus, vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, d'autres outils plus ou moins similaire à Nagios ont émergé.
+De surcroît, vu le manque de réactivité du développeur principal de Nagios et sa volonté de ne plus diffuser tous les modules sous licence libre, de nombreux développeurs actifs sur le projet ont fait diverger Nagios. Ainsi, d'autres outils plus ou moins similaire à Nagios ont émergé.
 
 S'ouvre donc l'opportunité de découvrir ces nouvelles solutions. C'est de cette occasion, que l'unité a souhaité m'engager pour dresser l'état des lieux des solutions existantes afin de refondre la supervision de son système d'information.
 
-=== Inventaire des solutions libres/open-sources.
+=== Inventaire des solutions libres/open source.
 
 Pour trouver une nouvelle solution de supervision, il était nécessaire de connaître les enjeux de la supervision, les solutions existantes sur le marché et ce qu'elles proposent. J'ai commencé mes recherches sans connaissance de l'état de la solution existante.
 
-J'ai en effet choisi de faire l'inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision. Grâce à ce regard neuf, je pouvais être capable d'identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l'équipe a besoin. Le seul critère de recherche que l'équipe m'a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open-source.
+J'ai en effet choisi de faire l'inventaire le plus exhaustif et complet possible avec un regard "naïf" sur la supervision et détaché de l'outil actuellement utilisé. Grâce à ce regard neuf, je pouvais être capable d'identifier un maximum de solutions sans me restreindre aux fonctionnalités dont l'équipe a besoin. Le seul critère de recherche que l'équipe m'a réellement imposé lors de cet inventaire est le fait que la solution soit libre ou open source.
 
 Durant ce recensement, j'ai pu inventorier une énorme quantité de solutions. Pas moins de 72 solutions sont ressorties.
 
@@ -518,7 +528,7 @@ Il est important que ces tâches soient effectuées le plus automatiquement poss
 
 ==== Les protocoles utilisés par la supervision
 
-Il est possible d'accéder à de nombreuses informations localement sur une machine en utilisant des outils système. En quelques lignes de script shell par exemple, on peut construire un rapport d'état de la machine. On rajoute une entrée dans la crontab (la table de planification permettant aux utilisateurs des systèmes Unix d'exécuter automatiquement des scripts) des commandes ou des logiciels à une date et une heure spécifiées, ou selon un cycle défini à l'avance, et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide aperçu de l'état d'un système. La commande ping, par exemple pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, ...
+Il est possible d'accéder à de nombreuses informations localement sur une machine en utilisant des outils système. En quelques lignes de script shell par exemple, on peut construire un rapport d'état de la machine. On rajoute une entrée dans la crontab (la table de planification permettant aux utilisateurs des systèmes Unix d'exécuter automatiquement des scripts), des commandes ou des logiciels à une date et une heure spécifiées, ou selon un cycle défini à l'avance, et la supervision locale peut être assurée. De nombreuse lignes de commandes sont aussi disponibles pour avoir un rapide aperçu de l'état d'un système. La commande ping, par exemple, très connue, pour tester si une machine est connectée au réseau. Ou encore, la commande free, pour visualiser la mémoire, ...
 
 En parallèle, il y a l'IPMI, Intelligent Platform Management Interface. IPMI est une spécification commune à la plupart des constructeurs, permettant de superviser une machine, indépendamment de son système d'exploitation, y compris si elle est éteinte mais connectée à une prise électrique.
 
@@ -547,7 +557,7 @@ image::Images/Rrd_week.png[]
 
 Mais il existe d'autres outils permettant de stocker et transformer les données en graphiques : Graphite, Kibana, ou encore Grafana, un outil très simple d'utilisation et entièrement configurables permettant de rendre un visuel esthétique et lisible sur une large variété de données.
 
-Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'il faut superviser un grand nombre d'hôtes et de services. Il indispensable d'avoir un aperçu global de l'état de ces hôtes et de ces services. En effet, voir d'un rapide coup d'œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.
+Lorsque le système d'information s'élargit, lorsqu'il commence à prendre de l'ampleur et qu'il faut superviser un grand nombre d'hôtes et de services. Il est indispensable d'avoir un aperçu global de l'état de ces hôtes et de ces services. En effet, voir d'un rapide coup d'œil les données supervisées le plus synthétiquement et globalement possible, est un enjeu important.
 
 Beaucoup de solutions misent d'ailleurs sur ce point. Certaines proposent des interfaces sophistiquées, habituellement destinées pour le web, permettant justement cet aperçu global de l'état des hôtes et des services supervisés. Elles incluent généralement des tableaux de bords configurables, nous offrant la possibilité de choisir les vues importantes, souvent accompagnées par les graphiques adéquats.
 
@@ -561,13 +571,13 @@ De cet inventaire, on constate des fonctionnalités ressortant sur la plupart de
 
 On peut donc s'apercevoir grâce à cet inventaire, qu'il existe énormément de solutions. Cependant, il n'est pas pertinent de tester ces 72 solutions en profondeur. Il est donc nécessaire de réduire cette liste.
 
-J'ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d'une liste de 72 solutions à une liste d'une dizaine de solutions. Ces 10 solutions se sont démarquées principalement par mon analyse personnelle de Nagios et des discussions avec les membres de l'équipe.
+J'ai donc commencé à faire un premier filtrage et à réduire drastiquement la liste des solutions établies. Je suis ainsi passé d'une liste de 72 solutions à une liste d'une dizaine de solutions. Ces 10 solutions se sont démarquées principalement par mon analyse personnelle de toutes ces solutions, de Nagios, de la supervision en générale et des discussions avec les membres de l'équipe.
 
 Mais une liste de 10 solutions semble toujours autant compliqué à évaluer et à tester. Malgré ma curiosité et mon envie de vouloir tester le plus de solution possible, l'équipe et moi avons décidé de n'en retenir que deux. Pour les identifier, il est nécessaire de savoir lesquels sont les plus intéressantes selon nos besoins.
 
 C'est ainsi qu'est apparu la nécessité d'établir un ensemble de critère définissant si telle ou telle solution est plus intéressante qu'une autre. Ainsi, à l'image d'un tamis, les critères que j'aurai établi pourront filtrer les solutions restantes en faisant ressortir les deux meilleures.
 
-Est donc venu le moment de bien identifier les besoins de l'unité. En effet, pour construire ce filtre il a fallu dans un premier temps, cerner le domaine à superviser. J'ai parcouru les Nagios déjà installés pour identifier et lister les différentes sondes mises en place. Dans un deuxième temps, j'ai repris les solutions restantes du premier filtrage pour les comparer entre elles et identifier des fonctionnalités qui sont souvent utilisées. En parallèle, de nombreuses discussions avec l'équipe m'ont permis d'établir une liste de 25 critères que j'ai classé selon trois catégories : les critères impératifs, souhaitables ou facultatifs.
+Est donc venu le moment de bien identifier les besoins de l'unité. En effet, pour construire ce filtre il a fallu dans un premier temps, cerner le domaine à superviser. J'ai parcouru les Nagios déjà installés pour identifier et lister les différentes sondes mises en place. Dans un deuxième temps, j'ai repris les solutions restantes du premier filtrage pour les comparer entre elles et identifier des fonctionnalités qui sont souvent utilisées. En parallèle, de nombreuses discussions avec l'équipe m'ont permis d'établir une liste de 25 critères que j'ai classé selon trois catégories : les critères impératifs, souhaitables ou facultatifs. Ces deux dernières catégories me permettent de départager les solutions concurrentes.
 
 Voici donc la liste classée des critères retenus avec une brève explication concernant le critère et _son appréciation._
 
@@ -584,20 +594,20 @@ image::Images/Comparatif.png[]
 
 On peut donc rapidement juger quelles sont les solutions les plus intéressantes par un code couleur intuitif : vert indique que le critère est respecté, jaune indique que le critère est respecté sous certaines conditions (par exemple via un plugin) et rouge indique que le critère n'est pas respecté.
 
-J'ai aussi généré deux graphiques permettant de mieux comparer de façon plus quantifié.
+J'ai aussi généré deux graphiques permettant de mieux comparer les solutions entre elles de façon plus quantifié.
 
 .Graphique représentant les solutions en fonction des critères
 image::Images/diagram.png[]
 
 Plus la solution présente de vert, plus elle aura de critères validés et totalement intégrés. +
-Plus la solution présente de jaune, plus elle aura besoin de module/plugins supplémentaires à installer. +
+Plus la solution présente de jaune, plus elle aura besoin de module/plugins supplémentaires à installer et donc de temps de travail à rajouter. +
 Plus la solution présente de rouge, plus elle aura de critère non validés. +
 Les solutions présentant du bleu sont des solutions où je n'ai pas trouvé d'information concernant certains critères.
 
 .Graphique représentant les solutions en fonction des critères classés selon leur importance.
 image::Images/diagram2.png[]
 
-Ce second graphique reprend le principe du premier graphique, en précisant les différentes catégories de critères (Impératif, souhaitable, facultatif). Ainsi, on peut voir d'un rapide coup d'œil quelle solution rempli les critères les plus important. Ce graphique permet de faciliter l'identification des deux meilleures solutions.
+Ce second graphique reprend le principe du premier graphique, en précisant les différentes catégories de critères (impératif, souhaitable, facultatif). Ainsi, on peut voir d'un rapide coup d'œil quelle solution rempli les critères les plus important. Ce graphique permet de faciliter l'identification des deux meilleures solutions.
 
 <<<
 
@@ -611,7 +621,7 @@ Grâce au poste que l'on m'a proposé au Conseil Départemental, j'ai pu non seu
 
 J'ai rencontré quelques difficultés techniques au début de mon apprentissage, justement dues au fait que je n'avais jamais vraiment travaillé sur le domaine de l'administration système auparavant. Mais j'ai rapidement surmonté ces difficultés par une légère et rapide remise à niveau notamment grâce aux exercices proposés par mon tuteur. Ainsi, j'ai rapidement pu me mettre au travail en autonomie et commencer le projet de supervision.
 
-Concernant mon projet de supervision, un premier cap a été franchis. En effet, dans un premier temps, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéressantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle justifiée. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite repérer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe tout au long de cette première année.
+Concernant mon projet de supervision, un premier cap a été franchis. En effet, j'ai pu comme il m'a été demandé, identifier le plus exhaustivement possible les solutions libres de supervision existantes. Puis pour définir les solutions les plus intéressantes à tester, j'ai établis une liste de critères en me basant sur le système existant, sur les demandes et besoins de l'unité tout en rajoutant mon opinion personnelle justifiée. Une fois ces critères établis, j'ai pu les croiser avec les solutions que j'avais trouvé pour qu'ils puissent agir de filtre et pour que je puisse ensuite repérer rapidement quelles solutions il faut retenir et tester. Chacune de ces étapes que j'ai méthodologiquement établis ont été suivi de près et progressivement validé par l'équipe tout au long de cette première année.
 
 Pour la suite de mon apprentissage, maintenant que la première étape a été effectuée et validée, il ne me reste plus qu'à tester, installer, configurer selon nos besoins sur les serveurs de tests, les deux solutions que nous allons retenir pour ensuite potentiellement, si une des solution nous conviens vraiment, l'installer définitivement sur les serveurs de productions.
 
