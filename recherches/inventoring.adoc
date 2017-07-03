@@ -491,6 +491,7 @@ Solutions envisageables
 - [x] <<naemon, *Naemon*>>
 - [x] <<pandoraFMS, PandoraFMS>>
 - [x] <<spiceworks, SpiceWorks>>
+- [ ] <<prometheus, Prometheurs>>
 - [ ] <<netdata, NetData ??>>
 - [ ] <<bosun, Bosun ??>>
 ====
