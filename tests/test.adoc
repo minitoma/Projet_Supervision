@@ -1,0 +1,27 @@
+= Rapport des tests
+Thomas Calatayud <thomas.calatayud@etud.univ-angers.fr>
+
+== Contexte
+À la fin de l'année dernière, j'avais présenté le résultat de mes recherches en introduisant une dizaine de solutions potentielles pour la refonte du système de supervision. Un peu plus tard avec l'équipe nous avons décidé, ensemble, pour poursuivre cette étude, de sélectionner 3 de ces solutions et ainsi, les mettre en place pour pouvoir constater des réelles possibilités qu'elles peuvent nous offrir via des installations et tests et ainsi voir laquelle satisfait au mieux nos besoin.
+Nous avons donc décider d'approfondir l'étude avec les outils suivants :
+
+  * *Icinga2* : Une solution très ressemblante dans la configuration et l'utilisation à l'outil nagios actuellement installé
+  * *Zabbix* : Une solution se détachant de nagios et promettant une simplicité d'utilisation et d'installation via son interface très accessible.
+  * *Prometheus* : Une jeune solution totalement modulable qui à défaut de son accessibilité, propose un noyau à qui on greffe les différents modules.
+
+== Pourquoi Zabbix ?
+Très rapidement, cette phase de tests s'est concentrée sur un seul outil : *Zabbix*.
+
+En effet, même si les deux autres outils, *Icinga2* et *Prometheus* offrent de nombreuses fonctionnalités et ont de très bon avantages.
+
+*Icinga2* : C'est un outils de supervision fonctionnel qui utilise les plugins de nagios. De par sa configuration par des fichiers, son interface web ressemblant beaucoup à celle de nagios, il permet, pour les anciens utilisateurs de nagios de ne pas être dépaysé. Mais n'offre malheureusement pas suffisamment de fonctionnalités supplémentaires.
+
+*Prometheus* : Par sa modularité importante, cet outil de supervision est très complet. Cependant, pour nous permettre d'avoir une solution entièrement fonctionnelle dans le cadre des besoins de l'unité, Prometheus requiert l'installation et la configuration très poussée de plusieurs modules. De ce fait, la supervision via cet outil est très laborieuse et peu accessible.
+
+En parallèle à ces deux outils, j'ai pu testé *Zabbix* qui contrairement à ses deux prédécesseurs, proposent une solution complète et très simple d'installation et d'utilisation. Je n'ai rencontré que très peu d'obstacle vis à vis de son installation et son utilisation si on compare aux deux autres outils que j'ai testé. Non seulement j'ai été capable d'installer et configurer l'outils relativement simplement en m'aidant de la documentation bien renseignée, mais Denis à aussi pu être capable, après une très brêve présentation de l'outil que j'ai pu lui faire, installer et mettre en place de la supervision pour différent services que notre équipe utilise (netapp, idrac, docker, etc.).
+
+De plus, cet outil nativement très complet, permet à la communauté, qui est d'ailleur déjà très présente, de créer ses propres plugins et ainsi superviser très simplement toute sorte de services qui ne sont pas nativement proposer par zabbix. Ainsi, j'ai été capable de mettre en place la supervision de serveurs linux et windows sur lesquels j'ai pu installer, configurer et superviser différent services (tomcat, mysql, postgresql, oracle, apache, nginx, script, etc.).
+
+Comme dit précédemment, non seulement la communauté est présente et active, mais les développeurs aussi. Ils proposent des mises à jours régulièrement.
+
+En comparaison aux autres outils de supervision, zabbix proposent un système de configuration via son interface web, rendant la supervision beaucoup plus accessible. De plus de nombreuses méthodes d'automatisations sont disponibles nativement et via des plugins permettant de rendre la supervision encore moins laborieuse.

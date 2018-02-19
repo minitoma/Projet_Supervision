@@ -446,6 +446,10 @@ link:../nagios-2/config.adoc[Nagios-2 Config]
 | http://bosun.org/[Bosun]
 |
 
+[[tick]]
+| https://www.influxdata.com/[TICK]
+|
+
 
 | http://www.sysdig.org/[Sysdig]
 | 
@@ -491,7 +495,8 @@ Solutions envisageables
 - [x] <<naemon, *Naemon*>>
 - [x] <<pandoraFMS, PandoraFMS>>
 - [x] <<spiceworks, SpiceWorks>>
-- [ ] <<prometheus, Prometheurs>>
+- [x] <<prometheus, Prometheurs>>
+- [ ] <<tick, TICK>>
 - [ ] <<netdata, NetData ??>>
 - [ ] <<bosun, Bosun ??>>
 ====
