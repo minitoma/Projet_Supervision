@@ -1,0 +1,41 @@
+= Modifier un trigger
+Thomas Calatayud <t.calatayud@maine-et-loire.fr>
+
+Après l'installation d'un template sur un hôte, nous pouvons constater, comme sur le  <<graph,graphique>> ci-dessous, que régulièrement une alerte est levé par trigger est levé par zabbix à la même heure. Après analyse du problème, on s'apperçoit que ce trigger est levé suite à une tâche que nous avons planifiée. Donc, nous souhaiterions ne pas recevoir d'alertes pour ce genre de problème dont nous sommes conscient, sans pour autant ne plus recevoir d'alertes si le même problème est relevé lors d'une autre période que nous ne contrôlons pas.
+
+[[graph]]
+image::Images/Triggers/picstriggers.png[]
+
+== Solution
+
+=== Modifier le trigger en question
+
+Une solution est de modifier le trigger relevant cette alerte et faire en sorte qu'il ne la relève plus lors de cette période.
+
+. Identifier l'hôte et afficher la liste des triggers
++
+image::Images/Triggers/hoststrigger.png[]
+
+. Identifier le trigger levant l'alerte
++
+image::Images/Triggers/selecttrigger.png[]
+
+. Cloner le trigger
++
+image::Images/Triggers/clonetrigger.png[]
+Pour garder l'autre trigger intact en cas de nécéssité.
+
+. Modifier l'expression
++
+image::Images/Triggers/modifyexpression.png[]
+Cette expression va exclure le trigger pendant la période donnée.
++
+*Ou encore*
++
+image::Images/Triggers/duringtrigger.png[]
+Cette expression modifie le trigger pour lever l'alerte seulement si le pic dure plus de 10 minutes.
+
+. Désactivé le trigger
++
+image::Images/Triggers/disabletrigger.png[]
+On désactive le trigger original pour garder seulement le trigger que nous avons modififié.

@@ -1,4 +1,4 @@
-= Projet d'apprentissage de M1 Info
+= Projet d'apprentissage de Master Informatique
 Thomas Calatayud
 
 [blue]*Recherche, étude et mise en place d'une solution OpenSource de supervision.*

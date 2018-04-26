@@ -1,0 +1,107 @@
+Liste des serveurs sur le SAEiR
+===============================
+
+.Liste des hôtes
+[NOTE]
+====
+* Fremur
+** ovs101.admin.intra-saeir.fr
+** ovs102.admin.intra-saeir.fr
+** ovs103.admin.intra-saeir.fr
+** ovs104.admin.intra-saeir.fr
+
+* Le Mans
+** ovs105.admin.intra-saeir.fr
+====
+
+== Fremur
+
+[cols="<.^h,3*^.^", options="header", width="100%"]
+|===
+|Nom |Adresse IP |FQDN |Services
+
+|HostedEngine |172.17.3.10 |engine.admin.intra-saeir.fr |
+|xansible1 |172.17.3.13 |xansible1.admin.intra-saeir.fr |
+|xdns1 |172.17.3.1 |xdns1.admin.intra-saeir.fr |
+|xnagios1 |172.17.3.11 |xnagios1.admin.intra-saeir.fr |
+|xocum1 |172.17.3.12 |xocum1 |
+|xrevproxya1 |172.20.0.2 |xrevproxya1.intra-saeir.fr |nginx
+|xrevproxyb1 |172.20.0.3 |xrevproxyb1.intra-saeir.fr |nginx
+|xsae49app2 |172.20.49.6 |test-49.saeir.fr |postgres, apache, tomcat
+|xsae49app4 |172.20.49.1 |form-49.saeir.fr |
+|xsae49db1 |172.20.49.3 |xsae49db1.intra-saeir.fr |
+|xsae49def1 |172.20.49.5 |def-49.saeir.fr |
+|xsae49int1 |172.20.49.2 |int-49.saeir.fr |
+|xsae53app2 |172.20.53.6 |test-53.saeir.fr |
+|xsae53app4 |172.20.53.1 |form-53.saeir.fr |
+|xsae53db1 |172.20.53.3 |xsae53db1.intra-saeir.fr |
+|xsae53def1 |172.20.53.5 |def-53.saeir.fr |
+|xsae53int1 |172.20.53.2 |int-53.saeir.fr |
+|xsae75app2 |172.20.72.6 |test-72.saeir.fr |
+|xsae72app4 |172.20.72.1 |form-72.saeir.fr |
+|xsae72db1 |172.20.72.3 |xsae72db1.intra-saeir.fr |
+|xsae72def1 |172.20.72.5 |def-72.saeir.fr |
+|xsae72int1 |172.20.72.2 |int-72.saeir.fr |
+|xsae85app2 |172.20.85.6 |test-85.saeir.fr |
+|xsae85app4 |172.20.85.1 |form-85.saeir.fr |
+|xsae85db1 |172.20.85.3 |xsae85db1.intra-saeir.fr |
+|xsae85def1 |172.20.85.5 |def-85.saeir.fr |
+|xsae85int1 |172.20.85.2 |int-85.saeir.fr |
+|xsae99app2 |172.20.99.6 |test-region.saeir.fr |
+|xsae99app4 |172.20.99.1 |form-region.saeir.fr |
+|xsae99db1 |172.20.99.3 |xsae99db1.intra-saeir.fr |
+|xsae99def1 |172.20.99.5 |def-99.saeir.fr |
+|xsae99int1 |172.20.99.2 |int-99.saeir.fr |
+|xsaepastell1 |172.20.100.2 |xsaepastell1.intra-saeir.fr |
+|xsaepastell2 |172.20.100.3 |xsaepastell2.intra-saeir.fr |
+|xsaepastell4 |172.20.100.1 |xsaepastell4.intra-saeir.fr |
+|===
+
+== Le Mans
+
+[cols="<.^h,3*^.^", options="header", width="100%"]
+|===
+|Nom |Adresse IP |FQDN |Services
+
+|xsae49rpl1 |172.20.49.4 |xsae49rpl1.intra-saeir.fr |
+|xsae53rpl1 |172.20.53.4 |xsae53rpl1.intra-saeir.fr |
+|xsae72rpl1 |172.20.72.4 |xsae72rpl1.intra-saeir.fr |
+|xsae85rpl1 |172.20.85.4 |xsae85rpl1.intra-saeir.fr |
+|xsae99rpl1 |172.20.99.4 |xsae99rpl1.intra-saeir.fr |
+|===
+
+== Par Types
+
+=== Serveurs "outils"
+
+- xdns1
+- xansible1
+- xocum1
+
+=== Serveurs "infra"
+
+- xrevproxya1
+- xrevproxyb1
+
+=== Serveurs "DB"
+
+- *db1
+- *rpl1
+
+=== Serveurs "SAEiR"
+
+==== Avec DB
+
+- *app2
+- *app4
+
+==== Sans DB
+
+- *int1
+- *def1
+
+=== Serveurs Pastell
+
+- pastell1
+- pastell2
+- pastell4
