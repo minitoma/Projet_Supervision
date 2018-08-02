@@ -39,3 +39,7 @@ Cette expression modifie le trigger pour lever l'alerte seulement si le pic dure
 +
 image::Images/Triggers/disabletrigger.png[]
 On désactive le trigger original pour garder seulement le trigger que nous avons modififié.
+
+== Conclusion
+
+Pendant ce tutoriel nous avons appris à modifier un trigger pour qu'il ne nous envois plus d'alertes mail pendant une période spécifique.
